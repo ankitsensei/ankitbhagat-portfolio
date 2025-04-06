@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
 const WorkExperience = () => {
@@ -12,7 +11,7 @@ const WorkExperience = () => {
                         <FaArrowRight className="rotate-320 text-[10px]" />
                     </button>
                 </div>
-                <div className="border-2 border-zinc-700 rounded-xl w-full">
+                <div className="border-2 border-zinc-900 rounded-xl w-full">
                     <div className="flex justify-between m-2 p-2">
                         <h2>Software Development Engineer</h2>
                         <p className="text-zinc-400">November 2024</p>
