@@ -3,7 +3,7 @@ import { FaArrowRight } from 'react-icons/fa';
 const WorkExperience = () => {
     return (
         <div>
-            <div className="mt-10 flex flex-col gap-4">
+            <div className="mt-10 px-4  flex flex-col gap-4">
                 <div className="flex gap-2">
                     <h1 className="text-lg">Work Experience</h1>
                     <button className="flex justify-center items-center gap-2 text-sm w-30 h-8 rounded-3xl bg-zinc-800">
