@@ -4,8 +4,8 @@ import Projects from './components/Projects'
 
 const App = () => {
   return (
-    <div className="bg-black w-full h-screen text-white">
-      <div className='h-full flex flex-col pt-20 lg:w-2/5 lg:flex lg:flex-col lg:items-center lg:justify-center'>
+    <div className="bg-black w-full h-full text-white">
+      <div className='h-full flex flex-col pt-20 lg:w-2/5 lg:mx-[30%]'>
         <Intro/>
         <WorkExperience />
         <Projects />
