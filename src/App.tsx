@@ -1,6 +1,8 @@
 import Intro from './components/Intro'
 import WorkExperience from './components/WorkExperience'
 import Projects from './components/Projects'
+import Connect from "./components/Connect"
+
 
 const App = () => {
   return (
@@ -9,6 +11,7 @@ const App = () => {
         <Intro/>
         <WorkExperience />
         <Projects />
+        <Connect />
       </div>
     </div>
   )

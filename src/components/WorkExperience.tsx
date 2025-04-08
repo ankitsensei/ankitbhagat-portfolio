@@ -1,15 +1,12 @@
 import { FaArrowRight } from 'react-icons/fa';
-
+import Button from "./Button"
 const WorkExperience = () => {
     return (
         <div>
             <div className="mt-10 px-4  flex flex-col gap-4">
                 <div className="flex gap-2">
                     <h1 className="text-lg">Work Experience</h1>
-                    <button className="flex justify-center items-center gap-2 text-sm w-30 h-8 rounded-3xl bg-zinc-800">
-                        Know more
-                        <FaArrowRight className="rotate-320 text-[10px]" />
-                    </button>
+                    <Button btnName="Know more"/>
                 </div>
                 <div className="border-2 border-zinc-900 rounded-xl w-full m-2 p-2 flex flex-col gap-4">
                     <div>
