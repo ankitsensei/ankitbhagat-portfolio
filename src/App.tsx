@@ -2,6 +2,7 @@ import Intro from './components/Intro'
 import WorkExperience from './components/WorkExperience'
 import Projects from './components/Projects'
 import Connect from "./components/Connect"
+import Footer from './components/Footer'
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
         <WorkExperience />
         <Projects />
         <Connect />
+        <Footer />
       </div>
     </div>
   )
