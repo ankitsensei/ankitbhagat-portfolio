@@ -1,5 +1,10 @@
 import { FaArrowRight } from "react-icons/fa"
-const Button = ({btnName, link}) => {
+
+type ButtonProps = {
+  btnName: string;
+  link:string;
+}
+const Button: React.FC<ButtonProps> = ({btnName, link}) => {
   return (
     <div>
         <a href={link} target="#"><button className="flex justify-center items-center gap-2 text-sm px-3 h-8 rounded-3xl bg-zinc-800">
