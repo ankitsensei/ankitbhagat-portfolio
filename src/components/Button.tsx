@@ -8,7 +8,7 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({btnName, link}) => {
   return (
     <motion.div
-    whileHover={{scale:1.1}}
+    whileHover={{scale:1.1}} 
     >
         <a href={link} target="#"><button className="flex justify-center items-center gap-2 text-sm px-3 h-8 rounded-3xl bg-zinc-800">
             {btnName}
