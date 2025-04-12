@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import { FaArrowRight } from "react-icons/fa"
 
 type ButtonProps = {
@@ -6,13 +7,15 @@ type ButtonProps = {
 }
 const Button: React.FC<ButtonProps> = ({btnName, link}) => {
   return (
-    <div>
+    <motion.div
+    whileHover={{scale:1.1}}
+    >
         <a href={link} target="#"><button className="flex justify-center items-center gap-2 text-sm px-3 h-8 rounded-3xl bg-zinc-800">
             {btnName}
             <FaArrowRight className="rotate-320 text-[10px]" />
         </button></a>
         
-    </div>
+    </motion.div>
   )
 }
 
