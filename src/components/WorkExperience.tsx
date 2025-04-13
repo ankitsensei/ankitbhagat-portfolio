@@ -1,7 +1,7 @@
-import { FaArrowRight } from 'react-icons/fa';
-
 import Button from "./Button"
-const WorkExperience = () => {
+
+
+const WorkExperience: React.FC= () => {
     return (
         <div>
             <div className="mt-10 px-4  flex flex-col gap-4">
