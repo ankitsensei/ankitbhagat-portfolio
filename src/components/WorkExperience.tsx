@@ -7,7 +7,7 @@ const WorkExperience: React.FC= () => {
             <div className="mt-10 px-4  flex flex-col gap-4">
                 <div className="flex gap-2">
                     <h1 className="text-lg font-medium">Work Experience</h1>
-                    <Button btnName="Know more"/>
+                    <Button btnName="Know more" link="#"/>
                 </div>
                 <div className="border-2 border-zinc-100 dark:border-zinc-900 rounded-xl w-full m-2 p-2 flex flex-col gap-4">
                     <div>
