@@ -10,7 +10,7 @@ import Footer from './components/Footer'
 const App = () => {
   return (
     <ThemeProvider>
-      <motion.div className="bg-white dark:bg-black w-full h-full text-black dark:text-white">
+      <motion.div animate={{}} className="bg-white dark:bg-black w-full h-full text-black dark:text-white">
         <div className='h-full flex flex-col pt-20 lg:w-2/5 lg:mx-[30%]'>
           <Intro />
           <WorkExperience />
