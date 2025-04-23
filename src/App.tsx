@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { ThemeProvider } from './components/ThemeContext'
 
 import Intro from './components/Intro'
@@ -10,7 +9,7 @@ import Footer from './components/Footer'
 const App = () => {
   return (
     <ThemeProvider>
-      <motion.div animate={{}} className="bg-white dark:bg-black w-full h-full text-black dark:text-white">
+      <div className="bg-white dark:bg-black w-full h-full text-black dark:text-white">
         <div className='h-full flex flex-col pt-20 lg:w-2/5 lg:mx-[30%]'>
           <Intro />
           <WorkExperience />
@@ -18,7 +17,7 @@ const App = () => {
           <Connect />
           <Footer />
         </div>
-      </motion.div>
+      </div>
     </ThemeProvider>
   )
 }
