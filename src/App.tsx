@@ -5,6 +5,7 @@ import WorkExperience from './components/WorkExperience'
 import Projects from './components/Projects'
 import Connect from "./components/Connect"
 import Footer from './components/Footer'
+import TechIUse from "./components/TechIUse"
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Intro />
           <WorkExperience />
           <Projects />
+          <TechIUse />
           <Connect />
           <Footer />
         </div>
