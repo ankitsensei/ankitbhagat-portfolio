@@ -10,7 +10,7 @@ const WorkExperience: React.FC = () => {
                     <Button btnName="Know more" link="#" />
                 </div>
                 {/* Experience 1 */}
-                <div className="border-2 border-zinc-100 dark:border-zinc-900 rounded-xl w-full m-2 p-2 flex flex-col gap-4">
+                <div className="border-2 border-zinc-100 dark:border-zinc-900 rounded-xl w-full m-2 p-4 flex flex-col gap-4">
                     <div>
                         <div className="flex justify-between ">
                             <h2>Frontend Web-Developer</h2>
@@ -28,7 +28,7 @@ const WorkExperience: React.FC = () => {
 
                 </div>
                 {/* Experience 2 */}
-                <div className="border-2 border-zinc-100 dark:border-zinc-900 rounded-xl w-full m-2 p-2 flex flex-col gap-4">
+                <div className="border-2 border-zinc-100 dark:border-zinc-900 rounded-xl w-full m-2 p-4 flex flex-col gap-4">
                     <div>
                         <div className="flex justify-between ">
                             <h2>Frontend Web-Developer <span className="text-zinc-400">(Freelancer)</span></h2>
