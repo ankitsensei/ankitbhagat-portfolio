@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import ProjectComp from "./ProjectsComp"
-import FocusMode from "../assets/imgs/focusModeExtension.jpeg"
+import FocusMode from "../assets/imgs/focusModeExtension.png"
 import MovieDB from "../assets/imgs/MovieDB.png"
 const Projects = () => {
   return (
