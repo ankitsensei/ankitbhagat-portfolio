@@ -10,7 +10,7 @@ const Connect = () => {
             <Button btnName="X" link="https://x.com/webdevankit"/>
             <Button btnName="Linkedin" link="https://www.linkedin.com/in/ankit-bhagat-139276241/"/>
             <Button btnName="Instagram" link="https://www.instagram.com/ankitsensei/"/>
-            <Button btnName="Resume" link="https://www.instagram.com/ankitsensei/"/>
+            <Button btnName="Resume" link="#"/>
         </div>
     </div>
   )
