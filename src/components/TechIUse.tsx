@@ -13,8 +13,6 @@ const TechIUse = () => {
                     <TechIUseComp title="TypeScript" img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpnbmobile.com%2Fimages%2Ftypescript_logo.png&f=1&nofb=1&ipt=adcf3e5571893739508298e68b222fb4badac3352e2b56e3863e800a5a34d7d2" />
                     <TechIUseComp title="HTML" img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1532%2F1532556.png&f=1&nofb=1&ipt=d5da54f70ff7d462eea32c02805f15cef7417ad4797576d9c2fd2522e64f2483" />
                     <TechIUseComp title="CSS" img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipartcraft.com%2Fimages%2Fhtml5-logo-transparent-background-4.png&f=1&nofb=1&ipt=6aa8744a2662a39fbc384f029b53ab9f4b904b57afcd86cd95094aa762084668" />
-                    <TechIUseComp title="C" img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ingenioempresa.com%2Fwp-content%2Fuploads%2F2022%2F09%2FC-Language.png&f=1&nofb=1&ipt=2b23a9ae4625f7da69ec6b907a22675b08f5129a9681380e3e51966775bbb4b8" />
-                    <TechIUseComp title="C++" img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Framhegu27.github.io%2FMy-Portfolio%2FImage%2Fc%2B%2B.png&f=1&nofb=1&ipt=420056dfceda45367e59969fdf1f7d55b30c6438b1764c2b340854bf2b84b357" />
                 </div>
             </div>
             <div>
