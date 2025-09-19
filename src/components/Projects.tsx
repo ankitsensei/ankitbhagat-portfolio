@@ -1,3 +1,4 @@
+import { motion } from "motion/react"
 // import { useState } from "react";
 import ProjectComp from "./ProjectsComp"
 import FocusMode from "../assets/imgs/focusModeExtension.png"
@@ -5,7 +6,11 @@ import MovieDB from "../assets/imgs/MovieDB.png"
 import BillSplitter from "../assets/imgs/Bill-splitter.png"
 const Projects = () => {
   return (
-    <div className="mt-10 px-4  w-full h-full bg-white dark:bg-black">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="mt-10 px-4  w-full h-full bg-white dark:bg-black">
       <h1 className="text-lg font-medium">Projects</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <ProjectComp image={BillSplitter} heading='Bill Splitter' description='A bill Splitter Web App, which stores the history of bill splits among friends. It has two sections Unsettled and Settled which shows dues paid by friends or not. And other features too.' />
@@ -13,7 +18,7 @@ const Projects = () => {
         <ProjectComp image={MovieDB} heading='MovieDB' description="It is a movie database, where you can find a lot of movies. (Can't watch)" />
       </div>
 
-    </div>
+    </motion.div>
   )
 }
 

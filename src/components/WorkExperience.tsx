@@ -1,9 +1,13 @@
+import { motion } from "motion/react"
 import Button from "./Button"
 
 
 const WorkExperience: React.FC = () => {
     return (
-        <div>
+        <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}>
             <div className="mt-10 px-4  flex flex-col gap-1">
                 <div className="flex gap-2">
                     <h1 className="text-lg font-medium">Work Experience</h1>
@@ -43,7 +47,7 @@ const WorkExperience: React.FC = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
