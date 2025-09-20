@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "motion/react"
 
 // import { useState } from "react";
@@ -9,6 +9,19 @@ import BillSplitter from "../assets/imgs/Bill-splitter.png"
 
 const Projects = () => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key == "Escape") {
+        setPreviewImage(null);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    }
+  }, []);
+
   return (
     <>
       <motion.div
