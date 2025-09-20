@@ -8,7 +8,7 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType>({
     theme: "system",
-    setTheme: () => {},
+    setTheme: () => { },
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
@@ -30,6 +30,8 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
         };
 
         applyTheme();
+
+        localStorage.setItem("theme", theme);
 
         if (theme === "system") {
             const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
