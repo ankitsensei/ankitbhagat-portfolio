@@ -16,7 +16,7 @@ const WorkExperience: React.FC = () => {
                 {/* Experience 1 */}
                 <div className="border-2 border-zinc-100 dark:border-zinc-900 rounded-xl w-full m-2 p-4 flex flex-col gap-4">
                     <div>
-                        <div className="flex justify-between ">
+                        <div className="flex justify-between">
                             <h2>Frontend Web-Developer</h2>
                             <p className="text-zinc-600 dark:text-zinc-400">November 2024</p>
                         </div>
@@ -43,7 +43,7 @@ const WorkExperience: React.FC = () => {
                     <ul className='text-zinc-600 dark:text-zinc-400 flex flex-col gap-2 list-disc px-5'>
                         <li><b className='underline'>Working as a freelancer</b> - I started my own journey as a freelance developer, specializing in web development and UI/UX design.</li>
 
-                        <li><b className='underline'>Impact</b> - This will improve my communication skills, and I will have a chance to work on some <b className='text-zinc-200'>real-world projects </b>.</li>
+                        <li><b className='underline'>Impact</b> - This will improve my communication skills, and I will have a chance to work on some <b className='text-zinc-800 dark:text-zinc-200'>real-world projects </b>.</li>
                     </ul>
                 </div>
             </div>
