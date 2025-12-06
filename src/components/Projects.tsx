@@ -33,7 +33,6 @@ const Projects = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <ProjectComp image={BillSplitter} heading='Bill Splitter' description='A bill Splitter Web App, which stores the history of bill splits among friends. It has two sections Unsettled and Settled which shows dues paid by friends or not. And other features too.' onImageClick={setPreviewImage} />
           <ProjectComp image={FocusMode} heading='Focus Mode' description='It is a chrome extension which block any sites you put in it. It really helps you to be productive without any distractions.' onImageClick={setPreviewImage} />
-          <ProjectComp image={MovieDB} heading='MovieDB' description="It is a movie database, where you can find a lot of movies. (Can't watch)" onImageClick={setPreviewImage} />
         </div>
 
       </motion.div >
