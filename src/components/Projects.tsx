@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "motion/react"
 // import { useState } from "react";
 import ProjectComp from "./ProjectsComp"
 import FocusMode from "../assets/imgs/focusModeExtension.png"
-import MovieDB from "../assets/imgs/MovieDB.png"
 import BillSplitter from "../assets/imgs/Bill-splitter.png"
 
 const Projects = () => {
