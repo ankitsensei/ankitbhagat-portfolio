@@ -17,7 +17,7 @@ const App = () => {
     <ThemeProvider>
       <motion.div
         className=" bg-white dark:bg-black w-full h-full text-black dark:text-white">
-        <div className='h-screen flex flex-col pt-20 w-full max-w-2xl mx-auto font-geist'>
+        <div className='h-full flex flex-col pt-20 w-full max-w-2xl mx-auto font-geist'>
             <Navbar />
             <Intro />
             <hr className='text-zinc-700 my-10'/>

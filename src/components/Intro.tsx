@@ -7,7 +7,7 @@ const Intro: React.FC = () => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}>
-      <div className='flex flex-col gap-7 '>
+      <div className='flex flex-col gap-7'>
         <div className="flex flex-col gap-2">
           <p className='text-2xl font-roman text-white'>Sup, I'm Ankit Bhagat 👋</p>
           <p className=' text-lg text-zinc-300'>Frontend Developer</p>
@@ -19,9 +19,7 @@ const Intro: React.FC = () => {
           <p className="text-zinc-400 text-md">Apart from Programming and studies, I enjoy video editing, cooking, doing something new everyday and many more...</p>
         </div>
         <h1 className="text-2xl">Github Contributions</h1>
-        <div>
           <GithubCalendar username="ankitsensei" />
-        </div>
       </div>
     </motion.div>
   )
