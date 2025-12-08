@@ -1,5 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Gideon+Roman:regular);
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
 @import "tailwindcss";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@theme{
+  --font-roman: "Gideon Roman", serif;
+  --font-geist: "Geist", sans-serif;
+}
 
 /* html,
 body {
