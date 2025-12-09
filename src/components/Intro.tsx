@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import GithubCalendar from "./GithubCalendar/GithubCalendar"
+import { GitHubCalendar } from 'react-github-calendar';
 
 const Intro: React.FC = () => {
   return (
@@ -19,10 +19,10 @@ const Intro: React.FC = () => {
           <p className="text-zinc-400 text-md">Apart from Programming and studies, I enjoy video editing, cooking, doing something new everyday and many more...</p>
         </div>
         <h1 className="text-2xl">Github Contributions</h1>
-          <GithubCalendar username="ankitsensei" />
+        <GitHubCalendar username="ankitsensei" />
       </div>
     </motion.div>
   )
-}
+} 
 
 export default Intro
