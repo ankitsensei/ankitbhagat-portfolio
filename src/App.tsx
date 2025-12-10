@@ -16,6 +16,7 @@ const App = () => {
         <div className='h-full flex flex-col pt-20 w-full max-w-2xl mx-auto font-geist'>
           <Home />
         </div>
+        
       </motion.div>
     </ThemeProvider>
   )

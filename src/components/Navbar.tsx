@@ -1,12 +1,43 @@
+import { NavLink, Link } from "react-router";
 
 const Navbar = () => {
   return (
     <div className="mb-10 w-full">
       <ul className="flex items-center gap-4">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Resume</a></li>
-        <li><a href="#">Contact</a></li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/projects"
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          Projects
+        </NavLink>
+        <NavLink
+          to="/resume"
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          Resume
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          Contact
+        </NavLink>
+
+        <Link to="/concerts/salt-lake-city">Concerts</Link>
       </ul>
     </div>
   )
