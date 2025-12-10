@@ -37,7 +37,6 @@ const Navbar = () => {
           Contact
         </NavLink>
 
-        <Link to="/concerts/salt-lake-city">Concerts</Link>
       </ul>
     </div>
   )

@@ -1,9 +1,6 @@
 import { ThemeProvider } from './components/ThemeContext'
 import { motion } from "motion/react"
 
-import Navbar from "./components/Navbar"
-import Intro from './components/Intro'
-import Footer from './components/Footer'
 import Home from './pages/Home'
 
 
