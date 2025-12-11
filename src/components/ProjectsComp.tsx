@@ -14,7 +14,7 @@ const ProjectsComp = ({ image, heading, description, onImageClick }: ProjectProp
     <ThemeProvider>
       <motion.div
         className=" bg-white dark:bg-black w-full h-full text-black dark:text-white">
-        <div className='h-full flex flex-col pt-20 w-full max-w-2xl mx-auto font-geist'>
+        <div className='h-full flex flex-col w-full max-w-2xl mx-auto font-geist'>
           <div className="flex flex-col mt-8 gap-1">
             <img src={image} alt={heading || "Project image"} className="rounded-2xl border-2 border-zinc-800"
               onClick={() => onImageClick && onImageClick(image)} />
