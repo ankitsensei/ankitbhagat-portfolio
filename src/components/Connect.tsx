@@ -8,7 +8,7 @@ const Connect = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className='flex flex-col gap-4'>
-      <h2 className="text-lg font-medium">Connect</h2>
+      <h2 className="text-2xl">Connect📧</h2>
       <p className="text-md text-zinc-600 dark:text-zinc-300">Feel free to contact me <a href="mailto:main.ankitbhagat@gmail.com"
         className="underline font-semibold">main.ankitbhagat@gmail.com</a></p>
       <div className="flex flex-wrap gap-2">
