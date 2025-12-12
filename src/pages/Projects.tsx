@@ -23,19 +23,21 @@ const Projects = () => {
     }
   }, []);
 
-  return (
-    <div className='h-screen flex flex-col w-full mx-auto pt-20 font-geist bg-white dark:bg-black text-black dark:text-white'>
+  return ( 
+    <div className='h-full flex flex-col w-full mx-auto pt-20 font-geist bg-white dark:bg-black text-black dark:text-white'>
       <div className='max-w-2xl h-full flex flex-col justify-between mx-auto'>
         <Navbar />
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 10 }} 
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-full h-full bg-white dark:bg-black">
-          <h1 className="text-2xl">Projects</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <h1 className="text-2xl">Projects 🚀</h1>
+          <div className="">
             <ProjectComp image={BillSplitter} heading='Bill Splitter' description='A bill Splitter Web App, which stores the history of bill splits among friends. It has two sections Unsettled and Settled which shows dues paid by friends or not. And other features too.' onImageClick={setPreviewImage} />
+            <hr className='text-zinc-800 my-2' />
             <ProjectComp image={FocusMode} heading='Focus Mode' description='It is a chrome extension which block any sites you put in it. It really helps you to be productive without any distractions.' onImageClick={setPreviewImage} />
+            <hr className='text-zinc-800 my-2' />
           </div>
 
         </motion.div >
