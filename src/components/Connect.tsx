@@ -1,4 +1,6 @@
 import { motion } from "motion/react"
+import { NavLink } from "react-router";
+import { FaArrowRight } from "react-icons/fa"
 import Button from "./Button"
 
 const Connect = () => {
@@ -16,10 +18,20 @@ const Connect = () => {
         <Button btnName="X" link="https://x.com/webdevankit" />
         <Button btnName="Linkedin" link="https://www.linkedin.com/in/ankit-bhagat-139276241/" />
         <Button btnName="Instagram" link="https://www.instagram.com/ankitsensei/" />
-        <Button btnName="Resume" link="#" />
+        <NavLink
+          to="/resume"
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          <button className="flex justify-center items-center gap-2 text-sm px-3 h-8 rounded-3xl bg-zinc-100 dark:bg-zinc-800">
+            Resume
+            <FaArrowRight className="rotate-320 text-[10px]" />
+          </button>
+        </NavLink>
       </div>
     </motion.div>
   )
 }
-  
+
 export default Connect
