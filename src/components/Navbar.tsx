@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 const Navbar = () => {
   return (
-    <div className="mb-10 w-full">
+    <div className="mb-10 mt-10 lg:mt-20 w-full">
       <ul className="flex items-center gap-4">
         <NavLink
           to="/"
