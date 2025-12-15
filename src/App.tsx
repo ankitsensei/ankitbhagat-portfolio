@@ -9,7 +9,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <motion.div
-        className=" bg-white dark:bg-black w-full h-full text-black dark:text-white px-3">
+        className=" bg-white dark:bg-black w-full h-full text-black dark:text-white px-6">
         <div className='h-full flex flex-col pt-20 w-full max-w-2xl mx-auto font-geist'>
           <Home />
         </div>
