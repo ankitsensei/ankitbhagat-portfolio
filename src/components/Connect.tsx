@@ -13,7 +13,7 @@ const Connect = () => {
       <h2 className="text-2xl">Connect📧</h2>
       <p className="text-md text-zinc-600 dark:text-zinc-300">Feel free to contact me <a href="mailto:main.ankitbhagat@gmail.com"
         className="underline font-semibold">main.ankitbhagat@gmail.com</a></p>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 max-w-2xl">
         <Button btnName="Github" link="https://github.com/ankitsensei" />
         <Button btnName="X" link="https://x.com/webdevankit" />
         <Button btnName="Linkedin" link="https://www.linkedin.com/in/ankit-bhagat-139276241/" />
