@@ -29,7 +29,7 @@ const ProjectsComp = ({ image, heading, description, onImageClick, techStack, gi
                 techStack?.map((element, index) => (
                   <li
                     key={index}
-                    className='list-none px-2 py-1 border-1 border-zinc-700 text-zinc-300 rounded-xl text-sm font-light'
+                    className='list-none px-2 py-1 border-1 border-zinc-900 dark:border-zinc-700 dark:text-zinc-300 text-zinc-600 rounded-xl text-sm font-light'
                   >{element}</li>
                 ))
               }
