@@ -8,8 +8,6 @@
   --font-geist: "Geist", sans-serif;
 }
 
-/* html,
-body {
-  background-color: #000;
-  color: #fff;
-} */
+html{
+   @apply bg-white dark:bg-black text-black dark:text-white;
+}

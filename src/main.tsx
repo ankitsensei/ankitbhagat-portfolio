@@ -16,6 +16,6 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-    </BrowserRouter>,
-  </StrictMode>,
+    </BrowserRouter>
+  </StrictMode>
 )
