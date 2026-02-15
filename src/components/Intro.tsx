@@ -17,7 +17,7 @@ const Intro: React.FC = () => {
         <hr className='text-zinc-800 my-2' />
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl">What I do?</h1>
-          <p className="dark:text-zinc-400 text-zinc-500 text-md">Currently, I am a 2nd year B.Tech Student of Computer Science department. As a developer, I am more focused into Web Development.</p>
+          <p className="dark:text-zinc-400 text-zinc-500 text-md">Currently, I am a 2nd year B.Tech Student of Computer Science department. As a developer, I am more focused into backend web development</p>
           <p className="dark:text-zinc-400 text-zinc-500 text-md">Apart from Programming and studies, I enjoy video editing, cooking, doing something new everyday and many more...</p>
         </div>
         <hr className='text-zinc-800 my-2' />
