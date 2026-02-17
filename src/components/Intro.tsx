@@ -10,7 +10,7 @@ const Intro: React.FC = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}>
       <div className='flex flex-col gap-7'>
         <div className="flex flex-col gap-2">
-          <p className='text-2xl font-roman '>Sup, I'm Ankit Bhagat 👋</p>
+          <p className='text-2xl font-roman' id="handShake">Sup, I'm Ankit Bhagat 👋</p>
           <p className=' text-lg dark:text-zinc-300 text-black'>Frontend Developer</p>
           <p className="text-zinc-500 dark:text-zinc-400">I'm a Frontend Web Developer from Jharkhand, India, trying to make the internet a bit cooler one website at a time.</p>
         </div>

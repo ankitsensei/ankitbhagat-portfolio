@@ -1,13 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Gideon+Roman:regular);
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 @import "tailwindcss";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-@theme{
+@theme {
   --font-roman: "Gideon Roman", serif;
   --font-geist: "Geist", sans-serif;
 }
 
-html{
-   @apply bg-white dark:bg-black text-black dark:text-white;
+html {
+  @apply bg-white dark:bg-black text-black dark:text-white;
+}
+
+#handShake:hover {
+  animation: shake 0.8s;
+  cursor: default;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(25px);
+  }
+
+  50% {
+    transform: translateX(-25px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
