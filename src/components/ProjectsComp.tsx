@@ -24,7 +24,7 @@ const ProjectsComp = ({ image, heading, description, onImageClick, techStack, gi
             <img src={image} alt={heading || "Project image"} className="rounded-2xl border-2 border-zinc-800"
               onClick={() => onImageClick && onImageClick(image)} />
             <p className="text-zinc-600 dark:text-zinc-400 text-md">{description}</p>
-            <div className='flex flex-wrap gap-1'>
+            <div className='flex flex-wrap gap-1 cursor-default'>
               {
                 techStack?.map((element, index) => (
                   <li
