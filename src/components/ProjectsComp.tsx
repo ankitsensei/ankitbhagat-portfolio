@@ -1,5 +1,6 @@
 import { ThemeProvider } from '../components/ThemeContext'
 import { motion } from "motion/react"
+// import { Skeleton } from "../components/ui/skeleton"
 
 type ProjectProps = {
   image: string;

@@ -8,6 +8,7 @@ import BillSplitter from "../assets/imgs/Bill-splitter.png"
 import Connect from '../components/Connect';
 import Footer from '../components/Footer';
 
+
 const Projects = () => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
 
