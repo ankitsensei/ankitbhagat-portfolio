@@ -5,6 +5,7 @@ import ProjectComp from "../components/ProjectsComp"
 import Navbar from '../components/Navbar';
 import FocusMode from "../assets/imgs/focusModeExtension.png"
 import BillSplitter from "../assets/imgs/Bill-splitter.png"
+import BookList from "../assets/imgs/bookList.png"
 import Connect from '../components/Connect';
 import Footer from '../components/Footer';
 
@@ -40,9 +41,11 @@ const Projects = () => {
               heading='Bill Splitter'
               description='A bill Splitter Web App, which stores the history of bill splits among friends. It has two sections Unsettled and Settled which shows dues paid by friends or not. And other features too.'
               onImageClick={setPreviewImage}
-              techStack={["React", "TypeScript", "Supabase"]}
+              techStack={["ReactJs", "TypeScript", "Supabase"]}
               github="https://github.com/ankitsensei/Bill-Splitter-with-History" />
-            <ProjectComp image={FocusMode} heading='Focus Mode' description='It is a chrome extension which block any sites you put in it. It really helps you to be productive without any distractions.' onImageClick={setPreviewImage} techStack={["HTML", "CSS", "JavaScript"]} github="https://github.com/ankitsensei/Focus-Mode-Extension" />
+            <ProjectComp image={FocusMode} heading='Focus Mode' description='It is a chrome extension which block 
+            any sites you put in it. It really helps you to be productive without any distractions.' onImageClick={setPreviewImage} techStack={["HTML", "CSS", "JavaScript"]} github="https://github.com/ankitsensei/Focus-Mode-Extension" />
+            <ProjectComp image={BookList} heading='Book List' description='A simple full-stack CRUD (Create, Read, Update, Delete) web application for managing a collection of books. This app allows users to store and manage book details including title, author, publish year, and a book cover image.' onImageClick={setPreviewImage} techStack={["NodeJs", "ExpressJs", "MongoDB", "ReactJs"]} github="https://github.com/ankitsensei/book-store" />
           </div>
 
         </motion.div >
