@@ -1,6 +1,16 @@
 import { motion } from "motion/react"
 import { GitHubCalendar } from 'react-github-calendar';
 import Connect from "./Connect"
+import DP from "../assets/ankit-dp.jpg"
+
+import { FaXTwitter } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { BsLinkedin } from "react-icons/bs";
+import { SiLeetcode } from "react-icons/si";
+import { SiCodeforces } from "react-icons/si";
+import { SiChessdotcom } from "react-icons/si";
+import { FaDiscord } from "react-icons/fa";
+
 
 const Intro: React.FC = () => {
   return (
@@ -9,20 +19,27 @@ const Intro: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}>
       <div className='flex flex-col gap-7'>
-        <div className="flex flex-col gap-2">
-          <p className='text-2xl font-roman flex items-center'>Sup, <img
-            src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif"
-            alt="gif"
-            className="w-10"
-          /> I'm Ankit Bhagat</p>
-          <p className=' text-lg dark:text-zinc-300 text-black'>Frontend Developer</p>
-          <p className="text-zinc-500 dark:text-zinc-400">I'm a Frontend Web Developer from Jharkhand, India, trying to make the internet a bit cooler one website at a time.</p>
+        <div className="flex gap-3">
+          <img src={DP} alt="dp" className="w-24 rounded-lg" />
+          <div className="flex flex-col justify-center">
+            <p className='text-2xl font-semibold text-zinc-200 flex items-center'>Ankit Bhagat</p>
+            <p className='text-sm dark:text-zinc-600 text-black'>Frontend Developer</p>
+            <p className='text-sm dark:text-zinc-600 text-black'>From Jharkhand, India</p>
+          </div>
         </div>
-        <hr className='text-zinc-800 my-2' />
-        <div className="flex flex-col gap-2">
-          <h1 className="text-2xl">What I do?</h1>
-          <p className="dark:text-zinc-400 text-zinc-500 text-md">Currently, I am a 2nd year B.Tech Student of Computer Science department. As a developer, I am more focused into backend web development</p>
-          <p className="dark:text-zinc-400 text-zinc-500 text-md">Apart from Programming and studies, I enjoy video editing, cooking, doing something new everyday and many more...</p>
+        <div className="flex gap-6 text-xl text-zinc-400">
+          <a href="https://x.com/webdevankit" target="_blank"><FaXTwitter /></a>
+          <a href="https://github.com/ankitsensei" target="_blank"><FaGithub /></a>
+          <a href="https://www.linkedin.com/in/ankit-bhagat-139276241/" target="_blank"><BsLinkedin /></a>
+          <a href="https://leetcode.com/u/ankitsensei/" target="_blank"><SiLeetcode /></a>
+          <a href="https://codeforces.com/profile/ankitsensei" target="_blank"><SiCodeforces /></a>
+          <a href="https://www.chess.com/member/devilking7112" target="_blank"><SiChessdotcom /></a>
+          <a href="https://discord.com/users/ankitsensei" target="_blank"><FaDiscord /></a>
+        </div>
+        {/* <hr className='text-zinc-800 my-2' /> */}
+        <div className="flex flex-col gap-4 font-inter text-sm">
+          <p className="dark:text-zinc-400 text-zinc-500 text-md">2nd year B.Tech Student of Computer Science department. As a developer, I am more focused into backend web development right now</p>
+          <p className="dark:text-zinc-400 text-zinc-500 text-md">Also, I enjoy video editing, cooking, maybe good at chess.</p>
         </div>
         <hr className='text-zinc-800 my-2' />
         <div>

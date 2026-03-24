@@ -12,15 +12,16 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 @theme {
   --font-roman: "Gideon Roman", serif;
-  --font-geist: "Inter", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-geist: "Geist Mono", monospace;
 }
 
-.geist-mono {
+/* .geist-mono {
   font-family: "Geist Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-}
+} */
 
 html {
   @apply bg-white dark:bg-black text-black dark:text-white;
