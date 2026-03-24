@@ -2,6 +2,7 @@ import { motion } from "motion/react"
 import { NavLink } from "react-router";
 import { GitHubCalendar } from 'react-github-calendar';
 import Connect from "./Connect"
+import SkillsComp from "./ui/SkillsComp";
 import DP from "../assets/ankit-dp.jpg"
 
 import { FaXTwitter } from "react-icons/fa6";
@@ -13,6 +14,12 @@ import { SiChessdotcom } from "react-icons/si";
 import { FaDiscord } from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
 import { CgMail } from "react-icons/cg";
+// Skills icons
+import { FaReact, FaNodeJs, FaPython, FaGitAlt, FaFigma } from "react-icons/fa";
+import { SiExpress, SiMongodb, SiPostman, SiTypescript } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { TbBrandFramerMotion, TbBrandCpp, TbFileTypeSql } from "react-icons/tb";
+import { IoLogoJavascript } from "react-icons/io5";
 
 
 const Intro: React.FC = () => {
@@ -45,10 +52,30 @@ const Intro: React.FC = () => {
             <CgMail /> Hire Me
           </a>
         </div>
-        {/* <hr className='text-zinc-800 my-2' /> */}
+
         <div className="flex flex-col gap-4 font-inter text-sm">
           <p className="dark:text-zinc-400 text-zinc-500 text-md">2nd year B.Tech Student of Computer Science department. As a developer, I am more focused into backend web development right now</p>
           <p className="dark:text-zinc-400 text-zinc-500 text-md">Also, I enjoy video editing, cooking, maybe good at chess.</p>
+        </div>
+        <div>
+          <h1 className="text-2xl mb-4">Skills</h1>
+          <div className="flex flex-wrap gap-2">
+            <SkillsComp title="React" icon={<FaReact />} />
+            <SkillsComp title="Express" icon={<SiExpress />} />
+            <SkillsComp title="Node" icon={<FaNodeJs />} />
+            <SkillsComp title="MongoDB" icon={<SiMongodb />} />
+            <SkillsComp title="Postman" icon={<SiPostman />} />
+            <SkillsComp title="Tailwind" icon={<RiTailwindCssFill />} />
+            <SkillsComp title="Motion" icon={<TbBrandFramerMotion />} />
+            <SkillsComp title="JavaScript" icon={<IoLogoJavascript />} />
+            <SkillsComp title="TypeScript" icon={<SiTypescript />} />
+            <SkillsComp title="Python" icon={<FaPython />} />
+            <SkillsComp title="C/C++" icon={<TbBrandCpp />} />
+            <SkillsComp title="SQL" icon={<TbFileTypeSql />} />
+            <SkillsComp title="Git" icon={<FaGitAlt />} />
+            <SkillsComp title="Github" icon={<FaGithub />} />
+            <SkillsComp title="Figma" icon={<FaFigma />} />
+          </div>
         </div>
         <hr className='text-zinc-800 my-2' />
         <div>
