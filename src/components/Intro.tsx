@@ -1,4 +1,5 @@
 import { motion } from "motion/react"
+import { NavLink } from "react-router";
 import { GitHubCalendar } from 'react-github-calendar';
 import Connect from "./Connect"
 import DP from "../assets/ankit-dp.jpg"
@@ -10,6 +11,8 @@ import { SiLeetcode } from "react-icons/si";
 import { SiCodeforces } from "react-icons/si";
 import { SiChessdotcom } from "react-icons/si";
 import { FaDiscord } from "react-icons/fa";
+import { HiOutlineDownload } from "react-icons/hi";
+import { CgMail } from "react-icons/cg";
 
 
 const Intro: React.FC = () => {
@@ -35,6 +38,12 @@ const Intro: React.FC = () => {
           <a href="https://codeforces.com/profile/ankitsensei" target="_blank"><SiCodeforces /></a>
           <a href="https://www.chess.com/member/devilking7112" target="_blank"><SiChessdotcom /></a>
           <a href="https://discord.com/users/ankitsensei" target="_blank"><FaDiscord /></a>
+        </div>
+        <div className="flex item-center gap-4 text-zinc-400">
+          <NavLink target="_blank" to="/resume" className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400"><HiOutlineDownload className="" /> Resume</NavLink>
+          <a href="mailto:ankitbhagat.dev@gmail.com" className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg">
+            <CgMail /> Hire Me
+          </a>
         </div>
         {/* <hr className='text-zinc-800 my-2' /> */}
         <div className="flex flex-col gap-4 font-inter text-sm">
