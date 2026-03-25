@@ -79,14 +79,14 @@ const Intro: React.FC = () => {
           </div>
         </div>
         {/* <hr className='text-zinc-800 my-2' /> */}
-        <div>
+        {/* <div>
           <h1 className="text-2xl mb-4">Projects</h1>
           <div className="mt-10">
             <div >
               
             </div>
           </div>
-        </div>
+        </div> */}
         <div>
           <h1 className="text-2xl">Github Contributions</h1>
           <GitHubCalendar username="ankitsensei" />

@@ -24,7 +24,8 @@ const ProjectsComp = ({ image, heading, description, onImageClick, techStack, gi
         // Will be used when gesture ends
         transition={{ duration: 0.3 }}
         className="bg-white dark:bg-black w-68 pb-2 text-black dark:text-white border border-zinc-800 rounded-xl ">
-        <div className='h-full w-full flex flex-col mx-auto font-inter'>
+        <div className='h-full w-full flex flex-col mx-auto font-inter relative'>
+          <p className='px-3 bg-green-500 w-fit rounded text-sm absolute right-3 top-3'>Live</p>
           <div className="flex flex-col gap-4 w-full">
             <img src={image} alt={heading || "Project image"} className="w-full h-48"
               onClick={() => onImageClick && onImageClick(image)} />
