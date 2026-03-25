@@ -26,8 +26,8 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className='h-full flex flex-col w-full mx-auto px-6 font-geist bg-white dark:bg-black text-black dark:text-white'>
-      <div className='max-w-2xl h-full flex flex-col justify-between mx-auto'>
+    <div className='h-full w-full flex flex-col mx-auto px-6 font-geist bg-white dark:bg-black text-black dark:text-white'>
+      <div className='max-w-4xl h-full flex flex-col justify-between mx-auto'>
         <Navbar />
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -35,7 +35,7 @@ const Projects = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-full h-full bg-white dark:bg-black">
           <h1 className="text-2xl">Projects 🚀</h1>
-          <div className="mt-10">
+          <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <ProjectComp
               image={BillSplitter}
               heading='Bill Splitter'

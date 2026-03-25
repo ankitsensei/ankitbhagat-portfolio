@@ -22,6 +22,7 @@ import { TbBrandFramerMotion, TbBrandCpp, TbFileTypeSql } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
 
 
+
 const Intro: React.FC = () => {
   return (
     <motion.div
@@ -77,7 +78,15 @@ const Intro: React.FC = () => {
             <SkillsComp title="Figma" icon={<FaFigma />} />
           </div>
         </div>
-        <hr className='text-zinc-800 my-2' />
+        {/* <hr className='text-zinc-800 my-2' /> */}
+        <div>
+          <h1 className="text-2xl mb-4">Projects</h1>
+          <div className="mt-10">
+            <div >
+              
+            </div>
+          </div>
+        </div>
         <div>
           <h1 className="text-2xl">Github Contributions</h1>
           <GitHubCalendar username="ankitsensei" />

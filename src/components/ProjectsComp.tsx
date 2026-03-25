@@ -1,5 +1,6 @@
 import { ThemeProvider } from '../components/ThemeContext'
 import { motion } from "motion/react"
+
 // import { Skeleton } from "../components/ui/skeleton"
 
 type ProjectProps = {
@@ -15,29 +16,36 @@ const ProjectsComp = ({ image, heading, description, onImageClick, techStack, gi
 
   return (
     <ThemeProvider>
-      <motion.div
-        className=" bg-white dark:bg-black w-full h-full text-black dark:text-white">
-        <div className='h-full flex flex-col w-full max-w-2xl mx-auto font-geist'>
-          <div className="flex flex-col gap-4">
-            <a href={github} target='_blank'>
-              <h2 className="text-xl underline">{heading}</h2>
-            </a>
-            <img src={image} alt={heading || "Project image"} className="rounded-2xl border-2 border-zinc-800"
+      <motion.div whileHover={{
+        scale: 1.04,
+        // Will be used when gesture starts
+        transition: { duration: 0.3 }
+      }}
+        // Will be used when gesture ends
+        transition={{ duration: 0.3 }}
+        className="bg-white dark:bg-black w-68 pb-2 text-black dark:text-white border border-zinc-800 rounded-xl ">
+        <div className='h-full w-full flex flex-col mx-auto font-inter'>
+          <div className="flex flex-col gap-4 w-full">
+            <img src={image} alt={heading || "Project image"} className="w-full h-48"
               onClick={() => onImageClick && onImageClick(image)} />
-            <p className="text-zinc-600 dark:text-zinc-400 text-md">{description}</p>
-            <div className='flex flex-wrap gap-1 cursor-default'>
-              {
-                techStack?.map((element, index) => (
-                  <li
-                    key={index}
-                    className='list-none px-2 py-1 border-1 border-zinc-900 dark:border-zinc-700 dark:text-zinc-300 text-zinc-600 rounded-xl text-sm font-light'
-                  >{element}</li>
-                ))
-              }
+            <div className='px-4 py-2 flex flex-col gap-3'>
+              <a href={github} target='_blank'>
+                <h2 className="text-md text-zinc-300">{heading}</h2>
+              </a>
+              <p className="text-zinc-600 dark:text-zinc-500 text-sm">{description}</p>
+              <div className='flex flex-wrap gap-1 cursor-default'>
+                {
+                  techStack?.map((element, index) => (
+                    <li
+                      key={index}
+                      className='list-none px-2 py-[.5px] border-1 border-zinc-900 dark:border-zinc-700 dark:text-zinc-400 text-zinc-600 rounded text-sm font-light'
+                    >{element}</li>
+                  ))
+                }
+              </div>
             </div>
           </div>
         </div>
-        <hr className='text-zinc-800 my-6' />
       </motion.div>
     </ThemeProvider>
 
