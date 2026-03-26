@@ -26,9 +26,9 @@ import { IoLogoJavascript } from "react-icons/io5";
 const Intro: React.FC = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}>
+      initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}>
       <div className='flex flex-col gap-7'>
         <div className="flex gap-3">
           <img src={DP} alt="dp" className="w-24 rounded-lg" />

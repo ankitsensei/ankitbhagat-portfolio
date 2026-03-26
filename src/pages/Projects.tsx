@@ -6,7 +6,6 @@ import Navbar from '../components/Navbar';
 import FocusMode from "../assets/imgs/focusModeExtension.png"
 import BillSplitter from "../assets/imgs/Bill-splitter.png"
 import BookList from "../assets/imgs/bookList.png"
-import Connect from '../components/Connect';
 import Footer from '../components/Footer';
 
 
@@ -26,13 +25,13 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className='h-full w-full flex flex-col mx-auto px-6 font-geist bg-white dark:bg-black text-black dark:text-white'>
+    <div className='h-full w-full flex flex-col justify-between mx-auto px-6 font-geist bg-white dark:bg-black text-black dark:text-white'>
       <div className='max-w-4xl h-full flex flex-col justify-between mx-auto'>
         <Navbar />
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full h-full bg-white dark:bg-black">
           <h1 className="text-2xl">Projects 🚀</h1>
           <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
@@ -88,7 +87,6 @@ const Projects = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        <Connect />
         <Footer />
       </div>
     </div>
