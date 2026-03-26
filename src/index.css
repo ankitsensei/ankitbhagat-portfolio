@@ -1,8 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Gideon+Roman:regular);
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @import "tailwindcss";
 
@@ -25,6 +24,21 @@
 
 html {
   @apply bg-white dark:bg-black text-black dark:text-white;
+}
+
+.blink_me {
+  animation: blinker 2s linear infinite;
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 100%;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0.1;
+  }
 }
 
 @theme inline {

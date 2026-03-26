@@ -25,7 +25,7 @@ const ProjectsComp = ({ image, heading, description, onImageClick, techStack, gi
         transition={{ duration: 0.3 }}
         className="bg-white dark:bg-black w-full md:w-68 lg:w-68 pb-2 text-black dark:text-white border border-zinc-800 rounded-xl">
         <div className='h-full w-full flex flex-col mx-auto font-inter relative'>
-          <p className='px-3 bg-green-500 w-fit rounded text-sm absolute right-3 top-3'>Live</p>
+          <p className='px-2 py-[1px] bg-green-500  w-fit rounded text-sm absolute right-3 top-3 flex gap-1 items-center'><span className="blink_me"></span>Live</p>
           <div className="flex flex-col gap-4 w-full">
             <img src={image} alt={heading || "Project image"} className="w-full h-48"
               onClick={() => onImageClick && onImageClick(image)} />
