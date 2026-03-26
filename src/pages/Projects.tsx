@@ -39,13 +39,29 @@ const Projects = () => {
             <ProjectComp
               image={BillSplitter}
               heading='Bill Splitter'
-              description='A bill Splitter Web App, which stores the history of bill splits among friends. It has two sections Unsettled and Settled which shows dues paid by friends or not. And other features too.'
+              description='A bill splitter web app that tracks shared expenses and keeps a history of transactions among friends. It includes settled and unsettled sections to clearly show who has paid or still owes money.'
               onImageClick={setPreviewImage}
               techStack={["ReactJs", "TypeScript", "Supabase"]}
-              github="https://github.com/ankitsensei/Bill-Splitter-with-History" />
-            <ProjectComp image={FocusMode} heading='Focus Mode' description='It is a chrome extension which block 
-            any sites you put in it. It really helps you to be productive without any distractions.' onImageClick={setPreviewImage} techStack={["HTML", "CSS", "JavaScript"]} github="https://github.com/ankitsensei/Focus-Mode-Extension" />
-            <ProjectComp image={BookList} heading='Book List' description='A simple full-stack CRUD (Create, Read, Update, Delete) web application for managing a collection of books. This app allows users to store and manage book details including title, author, publish year, and a book cover image.' onImageClick={setPreviewImage} techStack={["NodeJs", "ExpressJs", "MongoDB", "ReactJs"]} github="https://github.com/ankitsensei/book-store" />
+              github="https://github.com/ankitsensei/Bill-Splitter-with-History"
+            />
+
+            <ProjectComp
+              image={FocusMode}
+              heading='Focus Mode'
+              description='A Chrome extension that helps improve productivity by blocking distracting websites. Users can add sites to a custom block list and stay focused on tasks without interruptions during work sessions.'
+              onImageClick={setPreviewImage}
+              techStack={["HTML", "CSS", "JavaScript"]}
+              github="https://github.com/ankitsensei/Focus-Mode-Extension"
+            />
+
+            <ProjectComp
+              image={BookList}
+              heading='Book List'
+              description='A full-stack CRUD web app for managing a personal book collection. Users can add, edit, delete, and view books with details like title, author, publish year, and cover images in one place.'
+              onImageClick={setPreviewImage}
+              techStack={["NodeJs", "ExpressJs", "MongoDB", "ReactJs"]}
+              github="https://github.com/ankitsensei/book-store"
+            />
           </div>
 
         </motion.div >
