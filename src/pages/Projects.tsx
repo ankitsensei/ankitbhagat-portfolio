@@ -35,7 +35,7 @@ const Projects = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-full h-full bg-white dark:bg-black">
           <h1 className="text-2xl">Projects 🚀</h1>
-          <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
             <ProjectComp
               image={BillSplitter}
               heading='Bill Splitter'
