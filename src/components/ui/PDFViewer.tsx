@@ -1,6 +1,14 @@
 import { createPluginRegistration } from '@embedpdf/core';
 import { EmbedPDF } from '@embedpdf/core/react';
 import { usePdfiumEngine } from '@embedpdf/engines/react';
+import { ExportPluginPackage } from '@embedpdf/plugin-export/react'
+import { useExport } from '@embedpdf/plugin-export/react';
+
+// Icons
+import { LuDownload } from "react-icons/lu";
+
+
+
 
 // Import the essential plugins
 import { Viewport, ViewportPluginPackage } from '@embedpdf/plugin-viewport/react';
@@ -21,7 +29,27 @@ const plugins = [
   createPluginRegistration(ViewportPluginPackage),
   createPluginRegistration(ScrollPluginPackage),
   createPluginRegistration(RenderPluginPackage),
+  // Register the export plugin
+  createPluginRegistration(ExportPluginPackage, {
+    defaultFileName: 'ankitbhagat-resume.pdf',
+  }),
 ];
+
+const ExportToolbar = ({ documentId }: { documentId: string }) => {
+  const { provides: exportApi } = useExport(documentId)
+  return (
+    <div className="w-full px-5 flex justify-between items-center dark:bg-black">
+      <p></p>
+      <button
+        onClick={() => exportApi?.download()}
+        disabled={!exportApi}
+        className="inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium text-white shadow-sm transition-all hover:bg-zinc-600 disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        <LuDownload />
+      </button>
+    </div>
+  )
+}
 
 export const PDFViewer = () => {
   // 2. Initialize the engine with the React hook
@@ -33,20 +61,22 @@ export const PDFViewer = () => {
 
   // 3. Wrap your UI with the <EmbedPDF> provider
   return (
-    <div>
+    <div className='w-full flex flex-col justify-center items-center'>
       <EmbedPDF engine={engine} plugins={plugins}>
         {({ activeDocumentId }) =>
           activeDocumentId && (
             <DocumentContent documentId={activeDocumentId}>
               {({ isLoaded }) =>
                 isLoaded && (
+
                   <Viewport
                     documentId={activeDocumentId}
                   >
+                    <ExportToolbar documentId={activeDocumentId} />
                     <Scroller
                       documentId={activeDocumentId}
-                      renderPage={({ width, height, pageIndex }) => (
-                        <div style={{ width, height }}>
+                      renderPage={({ pageIndex }) => (
+                        <div className='w-96 md:w-full h-fit'>
                           {/* The RenderLayer is responsible for drawing the page */}
                           <RenderLayer
                             documentId={activeDocumentId}

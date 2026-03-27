@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@embedpdf/core": "^2.10.1",
+    "@embedpdf/plugin-export": "^2.10.1",
     "@embedpdf/react-pdf-viewer": "^2.10.1",
     "@embedpdf/snippet": "^2.10.1",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
