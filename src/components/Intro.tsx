@@ -47,8 +47,8 @@ const Intro: React.FC = () => {
           <a href="https://discord.com/users/ankitsensei" target="_blank"><FaDiscord /></a>
         </div>
         <div className="flex item-center gap-4 text-zinc-400">
-          <NavLink to="/resume" className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400"><HiOutlineDownload className="" /> Resume</NavLink>
-          <a href="mailto:ankitbhagat.dev@gmail.com" className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg">
+          <NavLink to="/resume" className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400 hover:rotate-3 transition duration-150"><HiOutlineDownload className="" /> Resume</NavLink>
+          <a href="mailto:ankitbhagat.dev@gmail.com" className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400 hover:rotate-3 transition duration-150">
             <CgMail /> Hire Me
           </a>
         </div>
