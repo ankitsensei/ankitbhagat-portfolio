@@ -3,7 +3,7 @@ import DP from "../assets/ankit-dp.jpg"
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-center mb-10 mt-6 lg:mt-6 w-full text-sm text-zinc-300">
+    <div className="flex items-center justify-center mb-10 mt-6 lg:mt-6 w-full text-sm text-zinc-300 font-geist">
       <ul className="flex items-center gap-6 border border-zinc-700 rounded-lg w-fit px-6 py-2 bg-zinc-900">
         <NavLink
           to="/"
@@ -22,13 +22,21 @@ const Navbar = () => {
           Projects
         </NavLink>
         <NavLink
+          to="/resume"
+          className={({ isActive }) =>
+            isActive ? "active" : ""
+          }
+        >
+          Resume
+        </NavLink>
+        {/* <NavLink
           to="/blogs"
           className={({ isActive }) =>
             isActive ? "active" : ""
           }
         >
           Blogs
-        </NavLink>
+        </NavLink> */}
       </ul>
     </div>
   )
