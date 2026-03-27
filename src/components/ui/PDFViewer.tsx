@@ -38,7 +38,7 @@ const plugins = [
 const ExportToolbar = ({ documentId }: { documentId: string }) => {
   const { provides: exportApi } = useExport(documentId)
   return (
-    <div className="w-full px-5 flex justify-between items-center dark:bg-black">
+    <div className="w-96 md:w-full h-fit px-5 flex justify-between items-center dark:bg-black">
       <p></p>
       <button
         onClick={() => exportApi?.download()}
@@ -74,9 +74,10 @@ export const PDFViewer = () => {
                   >
                     <ExportToolbar documentId={activeDocumentId} />
                     <Scroller
+                    className='w-100 '
                       documentId={activeDocumentId}
                       renderPage={({ pageIndex }) => (
-                        <div className='w-96 md:w-full h-fit'>
+                        <div className='w-100 md:w-full h-fit flex flex-col items-center justify-center'>
                           {/* The RenderLayer is responsible for drawing the page */}
                           <RenderLayer
                             documentId={activeDocumentId}
