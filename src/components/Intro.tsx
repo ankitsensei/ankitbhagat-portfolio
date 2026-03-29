@@ -1,7 +1,7 @@
 import { motion } from "motion/react"
 import { NavLink } from "react-router";
 import { GitHubCalendar } from 'react-github-calendar';
-import Connect from "./Connect"
+// import Connect from "./Connect"
 import SkillsComp from "./ui/SkillsComp";
 import DP from "../assets/ankit-dp.jpg"
 
