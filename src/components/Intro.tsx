@@ -49,7 +49,7 @@ const Intro: React.FC = () => {
         <div className="flex item-center gap-4 text-zinc-400">
           <NavLink to="/resume" className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400 hover:rotate-3 transition duration-150"><HiOutlineDownload className="" /> Resume</NavLink>
           <a href="mailto:ankitbhagat.dev@gmail.com" className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400 hover:rotate-3 transition duration-150">
-            <CgMail /> Hire Me
+            <CgMail /> Mail me
           </a>
         </div>
 
@@ -77,22 +77,9 @@ const Intro: React.FC = () => {
             <SkillsComp title="Figma" icon={<FaFigma />} />
           </div>
         </div>
-        {/* <hr className='text-zinc-800 my-2' /> */}
-        {/* <div>
-          <h1 className="text-2xl mb-4">Projects</h1>
-          <div className="mt-10">
-            <div >
-              
-            </div>
-          </div>
-        </div> */}
-        <div>
+        <div className="flex flex-col gap-4">
           <h1 className="text-2xl">Github Contributions</h1>
           <GitHubCalendar username="ankitsensei" />
-        </div>
-        <hr className='text-zinc-800 my-2' />
-        <div>
-          <Connect />
         </div>
       </div>
     </motion.div>
