@@ -42,6 +42,7 @@ const Projects = () => {
               onImageClick={setPreviewImage}
               techStack={["Nodejs", "Expressjs", "MongoDB", "ReactJs"]}
               github="https://github.com/ankitsensei/Bill-Splitter-with-History"
+              liveLink="https://x-clone-phi-one.vercel.app/"
             />
             <ProjectComp
               image={BookList}
@@ -50,6 +51,7 @@ const Projects = () => {
               onImageClick={setPreviewImage}
               techStack={["NodeJs", "ExpressJs", "MongoDB", "ReactJs"]}
               github="https://github.com/ankitsensei/book-store"
+              liveLink="https://book-store-one-lac.vercel.app/"
             />
             <ProjectComp
               image={FocusMode}
@@ -58,6 +60,7 @@ const Projects = () => {
               onImageClick={setPreviewImage}
               techStack={["HTML", "CSS", "JavaScript"]}
               github="https://github.com/ankitsensei/Focus-Mode-Extension"
+              liveLink="https://github.com/ankitsensei/Focus-Mode-Extension"
             />
             <ProjectComp
               image={BillSplitter}
@@ -66,6 +69,7 @@ const Projects = () => {
               onImageClick={setPreviewImage}
               techStack={["ReactJs", "TypeScript", "Supabase"]}
               github="https://github.com/ankitsensei/Bill-Splitter-with-History"
+              liveLink="https://bill-splitter-with-history.vercel.app/"
             />
           </div>
 
