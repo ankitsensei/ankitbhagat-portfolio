@@ -6,12 +6,12 @@ import Navbar from '../components/Navbar';
 import FocusMode from "../assets/imgs/focusModeExtension.png"
 import BillSplitter from "../assets/imgs/Bill-splitter.png"
 import BookList from "../assets/imgs/bookList.png"
-import Footer from '../components/Footer';
+import XClone from "../assets/imgs/XClone.png"
 
+import Footer from '../components/Footer';
 
 const Projects = () => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key == "Escape") {
@@ -36,14 +36,21 @@ const Projects = () => {
           <h1 className="text-2xl">Projects 🚀</h1>
           <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
             <ProjectComp
-              image={BillSplitter}
-              heading='Bill Splitter'
-              description='A bill splitter web app that tracks shared expenses and keeps a history of transactions among friends. It includes settled and unsettled sections to clearly show who has paid or still owes money.'
+              image={XClone}
+              heading='X-Clone'
+              description='A X (twitter) clone. Just CRUD operations'
               onImageClick={setPreviewImage}
-              techStack={["ReactJs", "TypeScript", "Supabase"]}
+              techStack={["Nodejs", "Expressjs", "MongoDB", "ReactJs"]}
               github="https://github.com/ankitsensei/Bill-Splitter-with-History"
             />
-
+            <ProjectComp
+              image={BookList}
+              heading='Book List'
+              description='A full-stack CRUD web app for managing a personal book collection. Users can add, edit, delete, and view books with details like title, author, publish year, and cover images in one place.'
+              onImageClick={setPreviewImage}
+              techStack={["NodeJs", "ExpressJs", "MongoDB", "ReactJs"]}
+              github="https://github.com/ankitsensei/book-store"
+            />
             <ProjectComp
               image={FocusMode}
               heading='Focus Mode'
@@ -52,14 +59,13 @@ const Projects = () => {
               techStack={["HTML", "CSS", "JavaScript"]}
               github="https://github.com/ankitsensei/Focus-Mode-Extension"
             />
-
             <ProjectComp
-              image={BookList}
-              heading='Book List'
-              description='A full-stack CRUD web app for managing a personal book collection. Users can add, edit, delete, and view books with details like title, author, publish year, and cover images in one place.'
+              image={BillSplitter}
+              heading='Bill Splitter'
+              description='A bill splitter web app that tracks shared expenses and keeps a history of transactions among friends. It includes settled and unsettled sections to clearly show who has paid or still owes money.'
               onImageClick={setPreviewImage}
-              techStack={["NodeJs", "ExpressJs", "MongoDB", "ReactJs"]}
-              github="https://github.com/ankitsensei/book-store"
+              techStack={["ReactJs", "TypeScript", "Supabase"]}
+              github="https://github.com/ankitsensei/Bill-Splitter-with-History"
             />
           </div>
 

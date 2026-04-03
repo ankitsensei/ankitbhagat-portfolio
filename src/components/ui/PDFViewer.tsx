@@ -7,9 +7,6 @@ import { useExport } from '@embedpdf/plugin-export/react';
 // Icons
 import { LuDownload } from "react-icons/lu";
 
-
-
-
 // Import the essential plugins
 import { Viewport, ViewportPluginPackage } from '@embedpdf/plugin-viewport/react';
 import { Scroller, ScrollPluginPackage } from '@embedpdf/plugin-scroll/react';
@@ -56,12 +53,12 @@ export const PDFViewer = () => {
   const { engine, isLoading } = usePdfiumEngine();
 
   if (isLoading || !engine) {
-    return <div>Loading PDF Engine...</div>;
+    return <div className='bg-black dark:bg-black'>Loading PDF Engine...</div>;
   }
 
   // 3. Wrap your UI with the <EmbedPDF> provider
   return (
-    <div className='w-full flex flex-col justify-center items-center'>
+    <div className='w-full flex flex-col justify-center items-center bg-black dark:bg-black'>
       <EmbedPDF engine={engine} plugins={plugins}>
         {({ activeDocumentId }) =>
           activeDocumentId && (
