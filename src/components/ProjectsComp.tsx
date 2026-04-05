@@ -29,14 +29,16 @@ const ProjectsComp = ({ image, heading, description, onImageClick, techStack, gi
           <a href={liveLink} target='_blank'>
             <p className='px-2 py-[1px] bg-green-500  w-fit rounded text-sm absolute right-3 top-3 flex gap-1 items-center'><span className="blink_me"></span>Live</p>
           </a>
-          <div className="flex flex-col gap-4 w-full">
-            <img src={image} alt={heading || "Project image"} className="w-full h-48"
+          <div className="flex flex-col gap-4 w-full h-full">
+            <img src={image} alt={heading || "Project image"} className="w-full h-44 rounded-xl"
               onClick={() => onImageClick && onImageClick(image)} />
-            <div className='px-4 py-2 flex flex-col gap-3'>
-              <a href={github} target='_blank'>
-                <h2 className="text-md text-zinc-300">{heading}</h2>
-              </a>
-              <p className="text-zinc-600 dark:text-zinc-500 text-sm">{description}</p>
+            <div className='px-4 py-2 flex flex-col gap-3 justify-between h-full'>
+              <div className='flex flex-col '>
+                <a href={github} target='_blank'>
+                  <h2 className="text-md text-zinc-300">{heading}</h2>
+                </a>
+                <p className="text-zinc-600 dark:text-zinc-500 text-[13px]">{description}</p>
+              </div>
               <div className='flex flex-wrap gap-1 cursor-default'>
                 {
                   techStack?.map((element, index) => (

@@ -38,7 +38,7 @@ const Projects = () => {
             <ProjectComp
               image={XClone}
               heading='X-Clone'
-              description='A X (twitter) clone. Just CRUD operations'
+              description='A full-stack CRUD web app for X-posts collection. Users can add, edit, delete, and view X-posts with details like texts and images in one place.'
               onImageClick={setPreviewImage}
               techStack={["Nodejs", "Expressjs", "MongoDB", "ReactJs"]}
               github="https://github.com/ankitsensei/Bill-Splitter-with-History"
