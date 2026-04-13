@@ -8,9 +8,9 @@ import DP from "../assets/ankit-dp.jpg"
 import { FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
-import { SiLeetcode } from "react-icons/si";
-import { SiCodeforces } from "react-icons/si";
-import { SiChessdotcom } from "react-icons/si";
+// import { SiLeetcode } from "react-icons/si";
+// import { SiCodeforces } from "react-icons/si";
+// import { SiChessdotcom } from "react-icons/si";
 import { FaDiscord } from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
 import { CgMail } from "react-icons/cg";
@@ -41,9 +41,9 @@ const Intro: React.FC = () => {
           <a href="https://x.com/webdevankit" target="_blank"><FaXTwitter /></a>
           <a href="https://github.com/ankitsensei" target="_blank"><FaGithub /></a>
           <a href="https://www.linkedin.com/in/ankit-bhagat-139276241/" target="_blank"><BsLinkedin /></a>
-          <a href="https://leetcode.com/u/ankitsensei/" target="_blank"><SiLeetcode /></a>
-          <a href="https://codeforces.com/profile/ankitsensei" target="_blank"><SiCodeforces /></a>
-          <a href="https://www.chess.com/member/devilking7112" target="_blank"><SiChessdotcom /></a>
+          {/* <a href="https://leetcode.com/u/ankitsensei/" target="_blank"><SiLeetcode /></a> */}
+          {/* <a href="https://codeforces.com/profile/ankitsensei" target="_blank"><SiCodeforces /></a> */}
+          {/* <a href="https://www.chess.com/member/devilking7112" target="_blank"><SiChessdotcom /></a> */}
           <a href="https://discord.com/users/ankitsensei" target="_blank"><FaDiscord /></a>
         </div>
         <div className="flex item-center gap-4 text-zinc-400">
