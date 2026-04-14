@@ -55,7 +55,7 @@ const Intro: React.FC = () => {
 
         <div className="flex flex-col gap-4 font-inter text-sm">
           <p className="dark:text-zinc-400 text-zinc-500 text-md">2nd year B.Tech Student of Computer Science department. As a developer, I am more focused into backend web development right now</p>
-          <p className="dark:text-zinc-400 text-zinc-500 text-md">Also, I enjoy video editing, cooking, maybe good at chess.</p>
+          <p className="dark:text-zinc-400 text-zinc-500 text-md">Apart from that, I enjoy video editing, cooking, maybe good at chess.</p>
         </div>
         <div>
           <h1 className="text-2xl mb-4">Skills</h1>
