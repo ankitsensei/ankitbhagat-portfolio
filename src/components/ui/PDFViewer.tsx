@@ -58,7 +58,7 @@ export const PDFViewer = () => {
 
   // 3. Wrap your UI with the <EmbedPDF> provider
   return (
-    <div className='w-full flex flex-col justify-center items-center bg-black dark:bg-black'>
+    <div className='w-full flex flex-col justify-center items-center bg-zinc-900 dark:bg-zinc-900'>
       <EmbedPDF engine={engine} plugins={plugins}>
         {({ activeDocumentId }) =>
           activeDocumentId && (
@@ -79,7 +79,7 @@ export const PDFViewer = () => {
                           <RenderLayer
                             documentId={activeDocumentId}
                             pageIndex={pageIndex}
-                            className='bg-black border-2 rounded-2xl'
+                            className='bg-zinc-900 border-2 rounded-2xl'
                           />
                         </div>
                       )}

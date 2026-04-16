@@ -24,7 +24,7 @@ const ProjectsComp = ({ image, heading, description, onImageClick, techStack, gi
       }}
         // Will be used when gesture ends
         transition={{ duration: 0.3 }}
-        className="bg-white dark:bg-black w-full md:w-68 lg:w-68 pb-2 text-black dark:text-white border border-zinc-800 rounded-xl">
+        className="bg-white dark:bg-zinc-900 w-full md:w-68 lg:w-68 pb-2 text-black dark:text-white border border-zinc-800 rounded-xl">
         <div className='h-full w-full flex flex-col mx-auto font-inter relative'>
           <a href={liveLink} target='_blank'>
             <p className='px-2 py-[1px] bg-green-500  w-fit rounded text-sm absolute right-3 top-3 flex gap-1 items-center'><span className="blink_me"></span>Live</p>

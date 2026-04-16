@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 
 const Resume = () => {
     return (
-        <div className="flex flex-col items-center justify-center w-full text-sm bg-zinc-9 font-geist bg-black dark:bg-black text-black dark:text-white overflow-hidden">
+        <div className="flex flex-col items-center justify-center w-full text-sm bg-zinc-9 font-geist bg-zinc-900 dark:bg-zinc-900 text-black dark:text-white overflow-hidden">
             <div className="w-full md:w-fit">
                 <Navbar />
                 <motion.div initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
