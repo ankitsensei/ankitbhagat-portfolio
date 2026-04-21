@@ -16,14 +16,14 @@
 }
 
 /* .geist-mono {
-  font-family: "Geist Mono", monospace;
+font-family: "Geist Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
 } */
 
 html {
-  @apply bg-white dark:bg-black text-black dark:text-white;
+  @apply bg-white dark:bg-zinc-900 text-black dark:text-white;
 }
 
 .blink_me {

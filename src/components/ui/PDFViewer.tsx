@@ -35,7 +35,7 @@ const plugins = [
 const ExportToolbar = ({ documentId }: { documentId: string }) => {
   const { provides: exportApi } = useExport(documentId)
   return (
-    <div className="w-full h-fit px-4 flex justify-between items-center dark:bg-black">
+    <div className="w-full h-fit px-4 flex justify-between items-center dark:bg-zinc-900">
       <p></p>
       <button
         onClick={() => exportApi?.download()}
