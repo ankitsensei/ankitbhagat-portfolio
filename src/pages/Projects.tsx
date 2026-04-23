@@ -27,7 +27,7 @@ const Projects = () => {
   return (
     <div className='h-full w-full flex flex-col justify-between mx-auto px-6 font-geist bg-white dark:bg-zinc-900 text-black dark:text-white'>
       <div className='max-w-4xl h-full flex flex-col justify-between mx-auto'>
-        <Navbar/>
+        <Navbar />
         <motion.div
           initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}

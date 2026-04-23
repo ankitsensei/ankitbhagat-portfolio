@@ -9,7 +9,7 @@ const Navbar = () => {
   bg-white/10 backdrop-blur-lg 
   border border-white/20 
   shadow-lg shadow-black/30
-  supports-[backdrop-filter]:bg-white/10">
+  supports-[backdrop-filter]:bg-white/0">
         <NavLink
           to="/"
           className={({ isActive }) =>
