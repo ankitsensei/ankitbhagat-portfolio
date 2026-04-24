@@ -30,7 +30,7 @@ const ProjectsComp = ({ image, heading, description, onImageClick, techStack, gi
             <p className='px-2 py-[1px] bg-green-500  w-fit rounded text-sm absolute right-3 top-3 flex gap-1 items-center'><span className="blink_me"></span>Live</p>
           </a>
           <div className="flex flex-col gap-4 w-full h-full">
-            <img src={image} alt={heading || "Project image"} className="w-full h-44 rounded-xl"
+            <img src={image} alt={heading || "Project image"} className="w-full h-full rounded-xl object-cover"
               onClick={() => onImageClick && onImageClick(image)} />
             <div className='px-4 py-2 flex flex-col gap-3 justify-between h-full'>
               <div className='flex flex-col '>
