@@ -35,7 +35,7 @@ const plugins = [
 const ExportToolbar = ({ documentId }: { documentId: string }) => {
   const { provides: exportApi } = useExport(documentId)
   return (
-    <div className="w-full h-fit px-4 flex justify-between items-center dark:bg-zinc-900">
+    <div className="w-full h-fit px-4 flex justify-between items-center dark:bg-zinc-950">
       <p></p>
       <button
         onClick={() => exportApi?.download()}
@@ -58,7 +58,7 @@ export const PDFViewer = () => {
 
   // 3. Wrap your UI with the <EmbedPDF> provider
   return (
-    <div className='w-full flex flex-col justify-center items-center bg-zinc-900 dark:bg-zinc-900'>
+    <div className='w-full flex flex-col justify-center items-center bg-zinc-950 dark:bg-zinc-950'>
       <EmbedPDF engine={engine} plugins={plugins}>
         {({ activeDocumentId }) =>
           activeDocumentId && (
@@ -79,7 +79,7 @@ export const PDFViewer = () => {
                           <RenderLayer
                             documentId={activeDocumentId}
                             pageIndex={pageIndex}
-                            className='bg-zinc-900 border-2 rounded-2xl'
+                            className='bg-zinc-950 border-2 rounded-2xl'
                           />
                         </div>
                       )}

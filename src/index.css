@@ -23,7 +23,7 @@ font-family: "Geist Mono", monospace;
 } */
 
 html {
-  @apply bg-white dark:bg-zinc-900 text-black dark:text-white;
+  @apply bg-white dark:bg-zinc-950 text-black dark:text-white;
 }
 
 .blink_me {

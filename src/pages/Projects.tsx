@@ -25,7 +25,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className='h-full w-full flex flex-col justify-between mx-auto px-6 font-geist bg-white dark:bg-zinc-900 text-black dark:text-white'>
+    <div className='h-full w-full flex flex-col justify-between mx-auto px-6 font-geist bg-white dark:bg-zinc-950 text-black dark:text-white'>
       <div className='max-w-4xl h-full flex flex-col justify-between mx-auto'>
         <Navbar />
         <motion.div
