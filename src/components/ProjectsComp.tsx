@@ -10,7 +10,7 @@ type ProjectProps = {
   onImageClick?: (image: string) => void;
   techStack?: string[];
   github: string;
-  liveLink: string;
+  liveLink?: string;
 }
 
 const ProjectsComp = ({ image, heading, description, onImageClick, techStack, github, liveLink }: ProjectProps) => {
