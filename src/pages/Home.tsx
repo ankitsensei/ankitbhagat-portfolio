@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar"
-import Intro from "../components/Intro"
-import Footer from "../components/Footer"
+import Navbar from "../components/Navbar";
+import Intro from "../components/Intro";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       <Intro />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

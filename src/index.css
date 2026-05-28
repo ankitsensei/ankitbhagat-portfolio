@@ -2,30 +2,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
 @import "tailwindcss";
 
 @import "tw-animate-css";
-
 @import "shadcn/tailwind.css";
+
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
   --font-roman: "Gideon Roman", serif;
   --font-inter: "Inter", sans-serif;
   --font-geist: "Geist Mono", monospace;
-}
 
-/* .geist-mono {
-font-family: "Geist Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-} */
+  --color-primary: #d51c39;
+  --color-primary-dark: #0d0d0d;
+}
 
 html {
   @apply bg-white dark:bg-zinc-950 text-black dark:text-white;
 }
 
+/* Live blinking status */
 .blink_me {
   animation: blinker 2s linear infinite;
   width: 6px;
@@ -117,7 +114,7 @@ html {
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-.dark {
+[data-theme="dark"] {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);

@@ -1,51 +1,54 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark" | "system";
+
 type ThemeContextType = {
-    theme: Theme;
-    setTheme: (theme: Theme) => void;
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
 };
 
 const ThemeContext = createContext<ThemeContextType>({
-    theme: "system",
-    setTheme: () => { },
+  theme: "system",
+  setTheme: () => {},
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-    const [theme, setTheme] = useState<Theme>(() => {
-        const saved = localStorage.getItem("theme") as Theme | null;
-        return saved || "system";
-    });
+  const [theme, setTheme] = useState<Theme>(() => {
+    return (localStorage.getItem("theme") as Theme) || "system";
+  });
 
-    useEffect(() => {
-        const applyTheme = () => {
-            if (theme === "dark") {
-                document.documentElement.setAttribute("data-theme", "dark");
-            } else if (theme === "light") {
-                document.documentElement.setAttribute("data-theme", "light");
-            } else {
-                const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                document.documentElement.setAttribute("data-theme", prefersDark ? "dark" : "light");
-            }
-        };
+  useEffect(() => {
+    const root = document.documentElement;
 
-        applyTheme();
+    const applyTheme = () => {
+      const systemDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
 
-        localStorage.setItem("theme", theme);
+      const resolvedTheme =
+        theme === "system" ? (systemDark ? "dark" : "light") : theme;
 
-        if (theme === "system") {
-            const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-            const listener = () => applyTheme();
-            mediaQuery.addEventListener("change", listener);
-            return () => mediaQuery.removeEventListener("change", listener);
-        }
-    }, [theme]);
+      root.dataset.theme = resolvedTheme;
+    };
 
-    return (
-        <ThemeContext.Provider value={{ theme, setTheme }}>
-            {children}
-        </ThemeContext.Provider>
-    );
+    applyTheme();
+
+    localStorage.setItem("theme", theme);
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    mediaQuery.addEventListener("change", applyTheme);
+
+    return () => {
+      mediaQuery.removeEventListener("change", applyTheme);
+    };
+  }, [theme]);
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };
 
 export const useTheme = () => useContext(ThemeContext);
