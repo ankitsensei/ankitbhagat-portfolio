@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 import ProjectComp from "../components/ProjectsComp";
-import ProjectCompSkeleton from "../skeletons/ProjectCompSkeleton";
 import Navbar from "../components/Navbar";
 import FocusMode from "../assets/imgs/focusModeExtension.png";
 import BillSplitter from "../assets/imgs/Bill-splitter.png";
@@ -14,8 +13,6 @@ import Footer from "../components/Footer";
 
 const Projects = () => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key == "Escape") {
@@ -26,40 +23,6 @@ const Projects = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
-
-  // Artificial loading
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  // }, []);
-
-  useEffect(() => {
-    const images = [UrlShortener, XClone, BookList, FocusMode, BillSplitter];
-
-    let loadedCount = 0;
-
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-
-      img.onload = () => {
-        loadedCount++;
-
-        if (loadedCount === images.length) {
-          setLoading(false);
-        }
-      };
-
-      img.onerror = () => {
-        loadedCount++;
-
-        if (loadedCount === images.length) {
-          setLoading(false);
-        }
-      };
-    });
   }, []);
 
   return (
@@ -73,63 +36,53 @@ const Projects = () => {
           className="w-full h-full "
         >
           <h1 className="text-2xl">Projects 🚀</h1>
-          {loading ? (
-            <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center w-full">
-              <ProjectCompSkeleton />
-              <ProjectCompSkeleton />
-              <ProjectCompSkeleton />
-              <ProjectCompSkeleton />
-              <ProjectCompSkeleton />
-            </div>
-          ) : (
-            <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-              <ProjectComp
-                image={UrlShortener}
-                heading="url-shortener"
-                description="A URL shortener converts long web links into shorter, easy-to-share URLs while redirecting users to the original page."
-                onImageClick={setPreviewImage}
-                techStack={["Nodejs", "Expressjs", "MongoDB", "ReactJs"]}
-                github="https://github.com/ankitsensei/url-shortener"
-                // liveLink="https://x-clone-phi-one.vercel.app/"
-              />
-              <ProjectComp
-                image={XClone}
-                heading="X-Clone"
-                description="A full-stack CRUD web app for X-posts collection. Users can add, edit, delete, and view X-posts with details like texts and images in one place."
-                onImageClick={setPreviewImage}
-                techStack={["Nodejs", "Expressjs", "MongoDB", "ReactJs"]}
-                github="https://github.com/ankitsensei/Bill-Splitter-with-History"
-                liveLink="https://x-clone-phi-one.vercel.app/"
-              />
-              <ProjectComp
-                image={BookList}
-                heading="Book List"
-                description="A full-stack CRUD web app for managing a personal book collection. Users can add, edit, delete, and view books with details like title, author, publish year, and cover images in one place."
-                onImageClick={setPreviewImage}
-                techStack={["NodeJs", "ExpressJs", "MongoDB", "ReactJs"]}
-                github="https://github.com/ankitsensei/book-store"
-                liveLink="https://book-store-one-lac.vercel.app/"
-              />
-              <ProjectComp
-                image={FocusMode}
-                heading="Focus Mode"
-                description="A Chrome extension that helps improve productivity by blocking distracting websites. Users can add sites to a custom block list and stay focused on tasks without interruptions during work sessions."
-                onImageClick={setPreviewImage}
-                techStack={["HTML", "CSS", "JavaScript"]}
-                github="https://github.com/ankitsensei/Focus-Mode-Extension"
-                liveLink="https://github.com/ankitsensei/Focus-Mode-Extension"
-              />
-              <ProjectComp
-                image={BillSplitter}
-                heading="Bill Splitter"
-                description="A bill splitter web app that tracks shared expenses and keeps a history of transactions among friends. It includes settled and unsettled sections to clearly show who has paid or still owes money."
-                onImageClick={setPreviewImage}
-                techStack={["ReactJs", "TypeScript", "Supabase"]}
-                github="https://github.com/ankitsensei/Bill-Splitter-with-History"
-                liveLink="https://bill-splitter-with-history.vercel.app/"
-              />
-            </div>
-          )}
+          <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+            <ProjectComp
+              image={UrlShortener}
+              heading="url-shortener"
+              description="A URL shortener converts long web links into shorter, easy-to-share URLs while redirecting users to the original page."
+              onImageClick={setPreviewImage}
+              techStack={["Nodejs", "Expressjs", "MongoDB", "ReactJs"]}
+              github="https://github.com/ankitsensei/url-shortener"
+              // liveLink="https://x-clone-phi-one.vercel.app/"
+            />
+            <ProjectComp
+              image={XClone}
+              heading="X-Clone"
+              description="A full-stack CRUD web app for X-posts collection. Users can add, edit, delete, and view X-posts with details like texts and images in one place."
+              onImageClick={setPreviewImage}
+              techStack={["Nodejs", "Expressjs", "MongoDB", "ReactJs"]}
+              github="https://github.com/ankitsensei/Bill-Splitter-with-History"
+              liveLink="https://x-clone-phi-one.vercel.app/"
+            />
+            <ProjectComp
+              image={BookList}
+              heading="Book List"
+              description="A full-stack CRUD web app for managing a personal book collection. Users can add, edit, delete, and view books with details like title, author, publish year, and cover images in one place."
+              onImageClick={setPreviewImage}
+              techStack={["NodeJs", "ExpressJs", "MongoDB", "ReactJs"]}
+              github="https://github.com/ankitsensei/book-store"
+              liveLink="https://book-store-one-lac.vercel.app/"
+            />
+            <ProjectComp
+              image={FocusMode}
+              heading="Focus Mode"
+              description="A Chrome extension that helps improve productivity by blocking distracting websites. Users can add sites to a custom block list and stay focused on tasks without interruptions during work sessions."
+              onImageClick={setPreviewImage}
+              techStack={["HTML", "CSS", "JavaScript"]}
+              github="https://github.com/ankitsensei/Focus-Mode-Extension"
+              liveLink="https://github.com/ankitsensei/Focus-Mode-Extension"
+            />
+            <ProjectComp
+              image={BillSplitter}
+              heading="Bill Splitter"
+              description="A bill splitter web app that tracks shared expenses and keeps a history of transactions among friends. It includes settled and unsettled sections to clearly show who has paid or still owes money."
+              onImageClick={setPreviewImage}
+              techStack={["ReactJs", "TypeScript", "Supabase"]}
+              github="https://github.com/ankitsensei/Bill-Splitter-with-History"
+              liveLink="https://bill-splitter-with-history.vercel.app/"
+            />
+          </div>
         </motion.div>
 
         {/* Image Preview Popup */}
