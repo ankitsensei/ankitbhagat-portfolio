@@ -1,9 +1,9 @@
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 import { NavLink } from "react-router";
-import { GitHubCalendar } from 'react-github-calendar';
+import { GitHubCalendar } from "react-github-calendar";
 // import Connect from "./Connect"
 import SkillsComp from "./ui/SkillsComp";
-import DP from "../assets/ankit-dp.jpg"
+import DP from "../assets/ankit-dp.jpg";
 
 import { FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
@@ -21,44 +21,77 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion, TbBrandCpp, TbFileTypeSql } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
 
-
 const Intro: React.FC = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      transition={{ duration: 0.6, ease: "easeOut" }}>
-      <div className='flex flex-col gap-7'>
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <div className="flex flex-col gap-7">
         <div className="flex gap-3">
           <img src={DP} alt="dp" className="w-24 rounded-lg" />
           <div className="flex flex-col justify-center">
-            <p className='text-2xl font-semibold text-zinc-200 flex items-center'>Ankit Bhagat</p>
-            <p className='text-sm dark:text-zinc-600 text-black'>Frontend Developer</p>
-            <p className='text-sm dark:text-zinc-600 text-black'>From Jharkhand, India</p>
+            <p className="text-2xl font-semibold text-zinc-800 dark:text-zinc-200 flex items-center">
+              Ankit Bhagat
+            </p>
+            <p className="text-sm dark:text-zinc-600 text-zinc-400">
+              Frontend Developer
+            </p>
+            <p className="text-sm dark:text-zinc-600 text-zinc-400">
+              From Jharkhand, India
+            </p>
           </div>
         </div>
-        <div className="flex gap-6 text-xl text-zinc-400">
-          <a href="https://x.com/webdevankit" target="_blank"><FaXTwitter /></a>
-          <a href="https://github.com/ankitsensei" target="_blank"><FaGithub /></a>
-          <a href="https://www.linkedin.com/in/ankit-bhagat-139276241/" target="_blank"><BsLinkedin /></a>
+        <div className="flex gap-6 text-xl dark:text-zinc-400 text-zinc-600">
+          <a href="https://x.com/webdevankit" target="_blank">
+            <FaXTwitter />
+          </a>
+          <a href="https://github.com/ankitsensei" target="_blank">
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ankit-bhagat-139276241/"
+            target="_blank"
+          >
+            <BsLinkedin />
+          </a>
           {/* <a href="https://leetcode.com/u/ankitsensei/" target="_blank"><SiLeetcode /></a> */}
           {/* <a href="https://codeforces.com/profile/ankitsensei" target="_blank"><SiCodeforces /></a> */}
           {/* <a href="https://www.chess.com/member/devilking7112" target="_blank"><SiChessdotcom /></a> */}
-          <a href="https://discord.com/users/ankitsensei" target="_blank"><FaDiscord /></a>
+          <a href="https://discord.com/users/ankitsensei" target="_blank">
+            <FaDiscord />
+          </a>
         </div>
-        <div className="flex item-center gap-4 text-zinc-400">
-          <NavLink to="/resume" className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400 hover:rotate-3 transition duration-150"><HiOutlineDownload className="" /> Resume</NavLink>
-          <a href="mailto:ankitbhagat.dev@gmail.com" className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400 hover:rotate-3 transition duration-150">
+        <div className="flex item-center gap-4 dark:text-zinc-400 text-black">
+          <NavLink
+            to="/resume"
+            className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400 hover:rotate-3 transition duration-150"
+          >
+            <HiOutlineDownload className="" /> Resume
+          </NavLink>
+          <a
+            href="mailto:ankitbhagat.dev@gmail.com"
+            className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400 hover:rotate-3 transition duration-150"
+          >
             <CgMail /> Mail me
           </a>
         </div>
 
         <div className="flex flex-col gap-4 font-inter text-sm">
-          <p className="dark:text-zinc-400 text-zinc-500 text-md">2nd year B.Tech Student of Computer Science department. As a developer, I am more focused into backend web development right now</p>
-          <p className="dark:text-zinc-400 text-zinc-500 text-md">Apart from that, I enjoy video editing, cooking, maybe good at chess.</p>
+          <p className="dark:text-zinc-400 text-zinc-500 text-md">
+            2nd year B.Tech Student of Computer Science department. As a
+            developer, I am more focused into backend web development right now
+          </p>
+          <p className="dark:text-zinc-400 text-zinc-500 text-md">
+            Apart from that, I enjoy video editing, cooking, maybe good at
+            chess.
+          </p>
         </div>
         <div>
-          <h1 className="text-2xl mb-4">Skills</h1>
+          <h1 className="text-2xl mb-4 dark:text-zinc-400 text-zinc-600">
+            Skills
+          </h1>
           <div className="flex flex-wrap gap-2">
             <SkillsComp title="React" icon={<FaReact />} />
             <SkillsComp title="Express" icon={<SiExpress />} />
@@ -78,12 +111,14 @@ const Intro: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <h1 className="text-2xl">Github Contributions</h1>
+          <h1 className="text-2xl dark:text-zinc-400 text-zinc-600">
+            Github Contributions
+          </h1>
           <GitHubCalendar username="ankitsensei" />
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;
