@@ -36,7 +36,7 @@ const ProjectsComp = ({
       >
         <div className="h-full w-full flex flex-col mx-auto font-inter relative">
           <a href={liveLink} target="_blank" className="hover:cursor-pointer">
-            <p className="px-2 py-[1px] bg-green-500 w-fit rounded text-sm absolute right-3 top-3 flex gap-1 items-center text-white dark:text-zinc-800">
+            <p className="px-2 py-[1px] bg-green-500 w-fit rounded text-sm absolute right-3 top-3 flex gap-1 items-center text-white dark:text-white">
               <span className="blink_me"></span>Live
             </p>
           </a>
