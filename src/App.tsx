@@ -1,6 +1,5 @@
 import { ThemeProvider } from "./components/ThemeContext";
 import { motion } from "motion/react";
-
 import Home from "./pages/Home";
 
 const App = () => {

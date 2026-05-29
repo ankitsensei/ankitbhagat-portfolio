@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
+
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
@@ -20,6 +21,23 @@
 
 html {
   @apply bg-white dark:bg-zinc-950 text-black dark:text-white;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+body {
+  margin: 0;
 }
 
 /* Live blinking status */

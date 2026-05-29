@@ -8,19 +8,22 @@ import Resume from "./pages/Resume.tsx";
 import Contact from "./pages/Contact.tsx";
 import Blogs from "./components/Blogs.tsx";
 import { ThemeProvider } from "./components/ThemeContext.tsx";
+import SmoothScroll from "./components/SmoothScroll.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<App />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/blogs" element={<Blogs />} />
-        </Routes>
-      </BrowserRouter>
+      <SmoothScroll>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<App />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blogs" element={<Blogs />} />
+          </Routes>
+        </BrowserRouter>
+      </SmoothScroll>
     </ThemeProvider>
   </StrictMode>,
 );
