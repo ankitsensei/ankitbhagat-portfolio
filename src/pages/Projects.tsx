@@ -5,9 +5,9 @@ import ProjectComp from "../components/ProjectsComp";
 import Navbar from "../components/Navbar";
 import FocusMode from "../assets/imgs/focusModeExtension.png";
 import BillSplitter from "../assets/imgs/Bill-splitter.png";
-import BookList from "../assets/imgs/bookList.png";
-import XClone from "../assets/imgs/XClone.png";
-import UrlShortener from "../assets/imgs/UrlShortener.png";
+import BookList from "../assets/imgs/bookList.jpg";
+import XClone from "../assets/imgs/XClone.jpg";
+import UrlShortener from "../assets/imgs/UrlShortener.jpg";
 
 import Footer from "../components/Footer";
 
