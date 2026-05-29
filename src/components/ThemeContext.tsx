@@ -2,13 +2,17 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark" | "system";
 
+type ResolvedTheme = "light" | "dark";
+
 type ThemeContextType = {
   theme: Theme;
+  resolvedTheme: ResolvedTheme;
   setTheme: (theme: Theme) => void;
 };
 
 const ThemeContext = createContext<ThemeContextType>({
   theme: "system",
+  resolvedTheme: "light",
   setTheme: () => {},
 });
 
@@ -16,6 +20,8 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     return (localStorage.getItem("theme") as Theme) || "system";
   });
+
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>("light");
 
   useEffect(() => {
     const root = document.documentElement;
@@ -27,10 +33,12 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
         "(prefers-color-scheme: dark)",
       ).matches;
 
-      const resolvedTheme =
+      const finalTheme =
         theme === "system" ? (systemDark ? "dark" : "light") : theme;
 
-      root.dataset.theme = resolvedTheme;
+      setResolvedTheme(finalTheme);
+
+      root.dataset.theme = finalTheme;
     };
 
     applyTheme();
@@ -52,7 +60,13 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider
+      value={{
+        theme,
+        resolvedTheme,
+        setTheme,
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );

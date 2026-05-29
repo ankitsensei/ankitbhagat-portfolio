@@ -4,6 +4,7 @@ import { GitHubCalendar } from "react-github-calendar";
 // import Connect from "./Connect"
 import SkillsComp from "./ui/SkillsComp";
 import DP from "../assets/ankit-dp.jpg";
+import { useTheme } from "./ThemeContext";
 
 import { FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
@@ -22,6 +23,7 @@ import { TbBrandFramerMotion, TbBrandCpp, TbFileTypeSql } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
 
 const Intro: React.FC = () => {
+  const { resolvedTheme } = useTheme();
   return (
     <motion.div
       initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
@@ -114,7 +116,24 @@ const Intro: React.FC = () => {
           <h1 className="text-2xl dark:text-zinc-400 text-zinc-600">
             Github Contributions
           </h1>
-          <GitHubCalendar username="ankitsensei" />
+          <GitHubCalendar
+            username="ankitsensei"
+            colorScheme={resolvedTheme}
+            fontSize={13}
+            blockSize={12}
+            blockMargin={4}
+            showWeekdayLabels
+            theme={{
+              light: ["#ffffff", "#b7efc5", "#4ade80", "#22c55e", "#166534"],
+              dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+            }}
+            labels={{
+              totalCount: "{{count}} contributions in the last year",
+            }}
+            style={{
+              margin: "0 auto",
+            }}
+          />
         </div>
       </div>
     </motion.div>
