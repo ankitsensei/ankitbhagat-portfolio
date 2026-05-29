@@ -20,6 +20,8 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const root = document.documentElement;
 
+    root.classList.add("theme-transition");
+
     const applyTheme = () => {
       const systemDark = window.matchMedia(
         "(prefers-color-scheme: dark)",
@@ -39,8 +41,13 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
     mediaQuery.addEventListener("change", applyTheme);
 
+    const timeout = setTimeout(() => {
+      root.classList.remove("theme-transition");
+    }, 300);
+
     return () => {
       mediaQuery.removeEventListener("change", applyTheme);
+      clearTimeout(timeout);
     };
   }, [theme]);
 

@@ -38,6 +38,16 @@ html {
   }
 }
 
+.theme-transition,
+.theme-transition * {
+  transition:
+    background-color 400ms ease,
+    color 300ms ease,
+    border-color 300ms ease,
+    fill 300ms ease,
+    stroke 300ms ease !important;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
