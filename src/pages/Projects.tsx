@@ -8,6 +8,7 @@ import BillSplitter from "../assets/imgs/Bill-splitter.png";
 import BookList from "../assets/imgs/bookList.jpg";
 import XClone from "../assets/imgs/XClone.jpg";
 import UrlShortener from "../assets/imgs/UrlShortener.jpg";
+import Rhythm from "../assets/imgs/rhythm.png";
 
 import Footer from "../components/Footer";
 
@@ -37,6 +38,15 @@ const Projects = () => {
         >
           <h1 className="text-2xl">Projects 🚀</h1>
           <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+            <ProjectComp
+              image={Rhythm}
+              heading="rhythm"
+              description="A modern music player built with React, TypeScript, Tailwind CSS, and the YouTube Data API. Search songs, play music instantly, control playback with keyboard shortcuts, and enjoy a clean Spotify-inspired experience."
+              onImageClick={setPreviewImage}
+              techStack={["ReactJs", "tailwind css", "typescript"]}
+              github="https://github.com/ankitsensei/rhythm"
+              liveLink="https://rhythm-topaz.vercel.app/"
+            />
             <ProjectComp
               image={UrlShortener}
               heading="url-shortener"
