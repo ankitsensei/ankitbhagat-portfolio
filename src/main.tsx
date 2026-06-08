@@ -9,6 +9,7 @@ import Contact from "./pages/Contact.tsx";
 import Blogs from "./components/Blogs.tsx";
 import { ThemeProvider } from "./components/ThemeContext.tsx";
 import SmoothScroll from "./components/SmoothScroll.tsx";
+import NotFound from "./pages/NotFound.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </SmoothScroll>
