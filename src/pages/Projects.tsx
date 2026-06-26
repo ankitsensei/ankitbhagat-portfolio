@@ -9,6 +9,7 @@ import BookList from "../assets/imgs/bookList.jpg";
 import XClone from "../assets/imgs/XClone.jpg";
 import UrlShortener from "../assets/imgs/UrlShortener.jpg";
 import Rhythm from "../assets/imgs/rhythm.png";
+import theNorthFace from "../assets/imgs/theNorthFace.png";
 
 import Footer from "../components/Footer";
 
@@ -38,6 +39,16 @@ const Projects = () => {
         >
           <h1 className="text-2xl">Projects 🚀</h1>
           <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+            <ProjectComp
+              image={theNorthFace}
+              heading="theNorthFace"
+              description="A full-stack MERN e-commerce application with secure authentication, product management, shopping cart, Stripe payments, Cash on Delivery, order tracking, an admin dashboard.
+"
+              onImageClick={setPreviewImage}
+              techStack={["ReactJs", "Nodejs", "Expressjs", "MongoDB"]}
+              github="https://github.com/ankitsensei/theNorthFace"
+              liveLink="https://the-north-face-kappa.vercel.app/"
+            />
             <ProjectComp
               image={Rhythm}
               heading="rhythm"
