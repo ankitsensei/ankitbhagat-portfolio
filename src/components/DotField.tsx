@@ -85,7 +85,6 @@ const DotField = memo(
       const ctx = canvas.getContext("2d", { alpha: true });
       if (!ctx) return;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      let resizeTimer: ReturnType<typeof setTimeout>;
 
       function doResize() {
         const parent = canvas!.parentElement!;
@@ -279,7 +278,6 @@ const DotField = memo(
       return () => {
         if (rafRef.current) cancelAnimationFrame(rafRef.current);
         clearInterval(speedInterval);
-        clearTimeout(resizeTimer);
         observer.disconnect();
         window.removeEventListener("mousemove", onMouseMove);
       };
