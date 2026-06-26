@@ -12,13 +12,13 @@ const App = () => {
           dotSpacing={10}
           bulgeStrength={29}
           glowRadius={50}
-          sparkle={false}
+          sparkle
           waveAmplitude={2}
           cursorRadius={500}
           cursorForce={0}
           bulgeOnly
-          gradientFrom="#0d0d0d"
-          gradientTo="#535353"
+          gradientFrom="#1e1e1e"
+          gradientTo="#1e1e1e"
           glowColor="#120F17"
         />
         <div className="h-full flex flex-col w-full max-w-xl mx-auto font-geist">

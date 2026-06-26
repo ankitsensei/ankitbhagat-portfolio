@@ -288,7 +288,7 @@ const DotField = memo(
     }, [dotRadius, dotSpacing]);
 
     return (
-      <div className="w-full h-screen absolute left-0 top-0" {...rest}>
+      <div className="w-full min-h-full h-screen absolute left-0 top-0" {...rest}>
         <canvas
           ref={canvasRef}
           style={{
