@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import DotField from "../components/DotField";
 import ProjectComp from "../components/ProjectsComp";
 import Navbar from "../components/Navbar";
 import FocusMode from "../assets/imgs/focusModeExtension.png";
@@ -27,7 +28,21 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="h-full w-full flex flex-col justify-between mx-auto px-6 font-geist bg-white dark:bg-zinc-950 text-black dark:text-white">
+    <div className="h-full w-full flex flex-col justify-between mx-auto px-6 font-geist bg-white dark:bg-zinc-950 text-black dark:text-white relative">
+      <DotField
+        dotRadius={2.5}
+        dotSpacing={10}
+        bulgeStrength={29}
+        glowRadius={50}
+        sparkle
+        waveAmplitude={2}
+        cursorRadius={500}
+        cursorForce={0}
+        bulgeOnly
+        gradientFrom="#1e1e1e"
+        gradientTo="#1e1e1e"
+        glowColor="#120F17"
+      />
       <div className="max-w-4xl h-full flex flex-col justify-between mx-auto">
         <Navbar />
         <motion.div
