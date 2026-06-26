@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-
 import ProjectComp from "../components/ProjectsComp";
 import Navbar from "../components/Navbar";
 import FocusMode from "../assets/imgs/focusModeExtension.png";
