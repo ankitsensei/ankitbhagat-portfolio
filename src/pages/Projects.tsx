@@ -8,8 +8,8 @@ import BillSplitter from "../assets/imgs/Bill-splitter.png";
 import BookList from "../assets/imgs/bookList.jpg";
 import XClone from "../assets/imgs/XClone.jpg";
 import UrlShortener from "../assets/imgs/UrlShortener.jpg";
-import Rhythm from "../assets/imgs/rhythm.png";
-import theNorthFace from "../assets/imgs/theNorthFace.png";
+import Rhythm from "../assets/imgs/rhythm.jpg";
+import theNorthFace from "../assets/imgs/theNorthFace.jpg";
 
 import Footer from "../components/Footer";
 
