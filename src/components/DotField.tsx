@@ -87,20 +87,19 @@ const DotField = memo(
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       let resizeTimer: ReturnType<typeof setTimeout>;
 
-      function resize() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(doResize, 100);
-      }
-
       function doResize() {
-        const rect = canvas!.parentElement!.getBoundingClientRect();
+        const parent = canvas!.parentElement!;
+
+        const rect = parent.getBoundingClientRect();
+
         const w = rect.width;
-        const h = rect.height;
+        const h = Math.max(parent.scrollHeight, rect.height);
 
         canvas!.width = w * dpr;
         canvas!.height = h * dpr;
         canvas!.style.width = `${w}px`;
         canvas!.style.height = `${h}px`;
+
         ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
 
         sizeRef.current = {
@@ -264,7 +263,11 @@ const DotField = memo(
       }
 
       doResize();
-      window.addEventListener("resize", resize);
+      const observer = new ResizeObserver(() => {
+        doResize();
+      });
+
+      observer.observe(canvas.parentElement!);
       window.addEventListener("mousemove", onMouseMove, { passive: true });
       rafRef.current = requestAnimationFrame(tick);
 
@@ -277,7 +280,7 @@ const DotField = memo(
         if (rafRef.current) cancelAnimationFrame(rafRef.current);
         clearInterval(speedInterval);
         clearTimeout(resizeTimer);
-        window.removeEventListener("resize", resize);
+        observer.disconnect();
         window.removeEventListener("mousemove", onMouseMove);
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -288,10 +291,7 @@ const DotField = memo(
     }, [dotRadius, dotSpacing]);
 
     return (
-      <div
-        className="w-full min-h-full absolute left-0 top-0"
-        {...rest}
-      >
+      <div className="absolute inset-0 w-full h-full" {...rest}>
         <canvas
           ref={canvasRef}
           style={{
