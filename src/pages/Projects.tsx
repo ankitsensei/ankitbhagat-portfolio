@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import DotField from "../components/DotField";
+import { useTheme } from "../components/ThemeContext";
 import ProjectComp from "../components/ProjectsComp";
 import Navbar from "../components/Navbar";
 import FocusMode from "../assets/imgs/focusModeExtension.png";
@@ -14,6 +15,8 @@ import theNorthFace from "../assets/imgs/theNorthFace.jpg";
 import Footer from "../components/Footer";
 
 const Projects = () => {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -33,15 +36,15 @@ const Projects = () => {
         dotRadius={2.5}
         dotSpacing={10}
         bulgeStrength={29}
-        glowRadius={50}
+        glowRadius={0}
         sparkle
         waveAmplitude={2}
         cursorRadius={500}
         cursorForce={0}
         bulgeOnly
-        gradientFrom="#1e1e1e"
-        gradientTo="#1e1e1e"
-        glowColor="#120F17"
+        gradientFrom={isDark ? "#1e1e1e" : "#f0f0f0"}
+        gradientTo={isDark ? "#1e1e1e" : "#f0f0f0"}
+        glowColor={isDark ? "#120F17" : "#ffffff"}
       />
       <div className="max-w-4xl h-full flex flex-col justify-between mx-auto">
         <Navbar />

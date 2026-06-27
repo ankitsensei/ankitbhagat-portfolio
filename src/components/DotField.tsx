@@ -289,7 +289,7 @@ const DotField = memo(
     }, [dotRadius, dotSpacing]);
 
     return (
-      <div className="absolute inset-0 w-full h-full" {...rest}>
+      <div className="absolute inset-0 w-full h-full pointer-events-none" {...rest}>
         <canvas
           ref={canvasRef}
           style={{
