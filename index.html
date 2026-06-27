@@ -13,11 +13,14 @@
       const prefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)",
       ).matches;
-      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      } else if (savedTheme === "light") {
-        document.documentElement.setAttribute("data-theme", "light");
-      }
+      const isDark =
+        savedTheme === "dark" ||
+        savedTheme === "system" ||
+        (!savedTheme && prefersDark);
+      document.documentElement.setAttribute(
+        "data-theme",
+        isDark ? "dark" : "light",
+      );
     </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
