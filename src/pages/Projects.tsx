@@ -4,14 +4,7 @@ import DotField from "../components/DotField";
 import { useTheme } from "../components/ThemeContext";
 import ProjectComp from "../components/ProjectsComp";
 import Navbar from "../components/Navbar";
-import FocusMode from "../assets/imgs/focusModeExtension.png";
-import BillSplitter from "../assets/imgs/Bill-splitter.png";
-import BookList from "../assets/imgs/bookList.jpg";
-import XClone from "../assets/imgs/XClone.jpg";
-import UrlShortener from "../assets/imgs/UrlShortener.jpg";
-import Rhythm from "../assets/imgs/rhythm.jpg";
-import theNorthFace from "../assets/imgs/theNorthFace.jpg";
-
+import { ProjectData } from "../assets/ProjectsData";
 import Footer from "../components/Footer";
 
 const Projects = () => {
@@ -56,70 +49,13 @@ const Projects = () => {
         >
           <h1 className="text-2xl">Projects 🚀</h1>
           <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-            <ProjectComp
-              image={theNorthFace}
-              heading="theNorthFace"
-              description="A full-stack MERN e-commerce application with secure authentication, product management, shopping cart, Stripe payments, Cash on Delivery, order tracking, an admin dashboard.
-"
-              onImageClick={setPreviewImage}
-              techStack={["ReactJs", "Nodejs", "Expressjs", "MongoDB"]}
-              github="https://github.com/ankitsensei/theNorthFace"
-              liveLink="https://the-north-face-kappa.vercel.app/"
-            />
-            <ProjectComp
-              image={Rhythm}
-              heading="rhythm"
-              description="A modern music player built with React, TypeScript, Tailwind CSS, and the YouTube Data API. Search songs, play music instantly, control playback with keyboard shortcuts, and enjoy a clean Spotify-inspired experience."
-              onImageClick={setPreviewImage}
-              techStack={["ReactJs", "tailwind css", "typescript"]}
-              github="https://github.com/ankitsensei/rhythm"
-              liveLink="https://rhythm-topaz.vercel.app/"
-            />
-            <ProjectComp
-              image={UrlShortener}
-              heading="url-shortener"
-              description="A URL shortener converts long web links into shorter, easy-to-share URLs while redirecting users to the original page."
-              onImageClick={setPreviewImage}
-              techStack={["Nodejs", "Expressjs", "MongoDB", "ReactJs"]}
-              github="https://github.com/ankitsensei/url-shortener"
-              // liveLink="https://x-clone-phi-one.vercel.app/"
-            />
-            <ProjectComp
-              image={XClone}
-              heading="X-Clone"
-              description="A full-stack CRUD web app for X-posts collection. Users can add, edit, delete, and view X-posts with details like texts and images in one place."
-              onImageClick={setPreviewImage}
-              techStack={["Nodejs", "Expressjs", "MongoDB", "ReactJs"]}
-              github="https://github.com/ankitsensei/Bill-Splitter-with-History"
-              liveLink="https://x-clone-phi-one.vercel.app/"
-            />
-            <ProjectComp
-              image={BookList}
-              heading="Book List"
-              description="A full-stack CRUD web app for managing a personal book collection. Users can add, edit, delete, and view books with details like title, author, publish year, and cover images in one place."
-              onImageClick={setPreviewImage}
-              techStack={["NodeJs", "ExpressJs", "MongoDB", "ReactJs"]}
-              github="https://github.com/ankitsensei/book-store"
-              liveLink="https://book-store-one-lac.vercel.app/"
-            />
-            <ProjectComp
-              image={FocusMode}
-              heading="Focus Mode"
-              description="A Chrome extension that helps improve productivity by blocking distracting websites. Users can add sites to a custom block list and stay focused on tasks without interruptions during work sessions."
-              onImageClick={setPreviewImage}
-              techStack={["HTML", "CSS", "JavaScript"]}
-              github="https://github.com/ankitsensei/Focus-Mode-Extension"
-              liveLink="https://github.com/ankitsensei/Focus-Mode-Extension"
-            />
-            <ProjectComp
-              image={BillSplitter}
-              heading="Bill Splitter"
-              description="A bill splitter web app that tracks shared expenses and keeps a history of transactions among friends. It includes settled and unsettled sections to clearly show who has paid or still owes money."
-              onImageClick={setPreviewImage}
-              techStack={["ReactJs", "TypeScript", "Supabase"]}
-              github="https://github.com/ankitsensei/Bill-Splitter-with-History"
-              liveLink="https://bill-splitter-with-history.vercel.app/"
-            />
+            {ProjectData.map((project) => (
+              <ProjectComp
+                key={project.heading}
+                {...project}
+                onImageClick={setPreviewImage}
+              />
+            ))}
           </div>
         </motion.div>
 
