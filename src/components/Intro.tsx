@@ -17,7 +17,7 @@ import { HiOutlineDownload } from "react-icons/hi";
 import { CgMail } from "react-icons/cg";
 // Skills icons
 import { FaReact, FaNodeJs, FaPython, FaGitAlt, FaFigma } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiPostman, SiTypescript } from "react-icons/si";
+import { SiExpress, SiMongodb, SiPostman, SiTypescript, SiRust } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion, TbBrandCpp, TbFileTypeSql } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -106,6 +106,7 @@ const Intro: React.FC = () => {
             <SkillsComp title="TypeScript" icon={<SiTypescript />} />
             <SkillsComp title="Python" icon={<FaPython />} />
             <SkillsComp title="C/C++" icon={<TbBrandCpp />} />
+            <SkillsComp title="Rust" icon={<SiRust />} />
             <SkillsComp title="SQL" icon={<TbFileTypeSql />} />
             <SkillsComp title="Git" icon={<FaGitAlt />} />
             <SkillsComp title="Github" icon={<FaGithub />} />
