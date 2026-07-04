@@ -30,11 +30,11 @@ const Intro: React.FC = () => {
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="flex flex-col gap-7">
+      <div className="flex flex-col gap-5 md:gap-7">
         <div className="flex gap-3">
-          <img src={DP} alt="dp" className="w-24 rounded-lg" />
+          <img src={DP} alt="dp" className="w-20 md:w-24 rounded-lg" />
           <div className="flex flex-col justify-center">
-            <p className="text-2xl font-semibold text-zinc-800 dark:text-zinc-200 flex items-center">
+            <p className="text-xl md:text-2xl font-semibold text-zinc-800 dark:text-zinc-200 flex items-center">
               Ankit Bhagat
             </p>
             <p className="text-sm dark:text-zinc-600 text-zinc-400">
@@ -45,7 +45,7 @@ const Intro: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex gap-6 text-xl dark:text-zinc-400 text-zinc-600">
+        <div className="flex gap-5 md:gap-6 text-lg md:text-xl dark:text-zinc-400 text-zinc-600">
           <a href="https://x.com/webdevankit" target="_blank">
             <FaXTwitter />
           </a>
@@ -65,7 +65,7 @@ const Intro: React.FC = () => {
             <FaDiscord />
           </a>
         </div>
-        <div className="flex items-center gap-3 dark:text-zinc-400 text-black">
+        <div className="flex items-center gap-2 md:gap-3 dark:text-zinc-400 text-black">
           <NavLink
             to="/resume"
             className="flex items-center justify-center gap-2 px-5 h-9 border text-sm border-zinc-300 dark:border-zinc-700 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 transition-all duration-200"
@@ -80,7 +80,7 @@ const Intro: React.FC = () => {
           </a>
         </div>
 
-        <div className="flex flex-col gap-4 font-inter text-sm">
+        <div className="flex flex-col gap-2 md:gap-4 font-inter text-sm">
           <p className="dark:text-zinc-400 text-zinc-500 text-md">
             3rd year ✦ B.Tech CSE
           </p>
@@ -94,7 +94,7 @@ const Intro: React.FC = () => {
           </p>
         </div>
         <div>
-          <h1 className="text-2xl mb-4 dark:text-zinc-400 text-zinc-600">
+          <h1 className="text-xl md:text-2xl mb-3 md:mb-4 dark:text-zinc-400 text-zinc-600">
             Skills
           </h1>
           <div className="flex flex-wrap gap-2">
@@ -119,26 +119,28 @@ const Intro: React.FC = () => {
             <SkillsComp title="Figma" icon={<FaFigma />} />
           </div>
         </div>
-        <div className="flex flex-col gap-4">
-          <h1 className="text-2xl dark:text-zinc-400 text-zinc-600">Stats</h1>
-          <GitHubCalendar
-            username="ankitsensei"
-            colorScheme={resolvedTheme}
-            fontSize={13}
-            blockSize={12}
-            blockMargin={4}
-            showWeekdayLabels
-            theme={{
-              light: ["#ffffff", "#d4d4d4", "#a3a3a3", "#525252", "#000000"],
-              dark: ["#161b22", "#3a3a3a", "#6b6b6b", "#a3a3a3", "#ffffff"],
-            }}
-            labels={{
-              totalCount: "{{count}} contributions in the last year",
-            }}
-            style={{
-              margin: "0 auto",
-            }}
-          />
+        <div className="flex flex-col gap-3 md:gap-4">
+          <h1 className="text-xl md:text-2xl dark:text-zinc-400 text-zinc-600">Stats</h1>
+          <div className="overflow-x-auto pb-2">
+            <GitHubCalendar
+              username="ankitsensei"
+              colorScheme={resolvedTheme}
+              fontSize={13}
+              blockSize={12}
+              blockMargin={4}
+              showWeekdayLabels
+              theme={{
+                light: ["#ffffff", "#d4d4d4", "#a3a3a3", "#525252", "#000000"],
+                dark: ["#161b22", "#3a3a3a", "#6b6b6b", "#a3a3a3", "#ffffff"],
+              }}
+              labels={{
+                totalCount: "{{count}} contributions in the last year",
+              }}
+              style={{
+                margin: "0 auto",
+              }}
+            />
+          </div>
         </div>
       </div>
     </motion.div>

@@ -8,7 +8,7 @@ const AppContent = () => {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <motion.div className=" bg-white dark:bg-zinc-950 w-full h-max md:h-screen lg:h-full text-black dark:text-white px-6 relative">
+    <motion.div className=" bg-white dark:bg-zinc-950 w-full h-max md:h-screen lg:h-full text-black dark:text-white px-4 md:px-6 relative">
       <DotField
         dotRadius={2.5}
         dotSpacing={10}
