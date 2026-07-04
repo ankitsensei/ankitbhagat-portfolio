@@ -65,18 +65,18 @@ const Intro: React.FC = () => {
             <FaDiscord />
           </a>
         </div>
-        <div className="flex item-center gap-4 dark:text-zinc-400 text-black">
+        <div className="flex items-center gap-3 dark:text-zinc-400 text-black">
           <NavLink
             to="/resume"
-            className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400 hover:rotate-3 transition duration-150"
+            className="flex items-center justify-center gap-2 px-5 h-9 border text-sm border-zinc-300 dark:border-zinc-700 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 transition-all duration-200"
           >
-            <HiOutlineDownload className="" /> Resume
+            <HiOutlineDownload className="text-base" /> Resume
           </NavLink>
           <a
             href="mailto:ankitbhagat.dev@gmail.com"
-            className="flex items-center justify-center gap-2 w-30 h-10 border border-zinc-800 rounded-lg hover:border-zinc-400 hover:rotate-3 transition duration-150"
+            className="flex items-center justify-center gap-2 px-5 h-9 border text-sm border-zinc-300 dark:border-zinc-700 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 transition-all duration-200"
           >
-            <CgMail /> Mail me
+            <CgMail className="text-base" /> Mail me
           </a>
         </div>
 
