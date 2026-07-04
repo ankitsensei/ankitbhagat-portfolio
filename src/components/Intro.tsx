@@ -17,7 +17,16 @@ import { HiOutlineDownload } from "react-icons/hi";
 import { CgMail } from "react-icons/cg";
 // Skills icons
 import { FaReact, FaNodeJs, FaPython, FaGitAlt, FaFigma } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiPostman, SiTypescript, SiRust, SiVercel, SiSupabase, SiFirebase } from "react-icons/si";
+import {
+  SiExpress,
+  SiMongodb,
+  SiPostman,
+  SiTypescript,
+  SiRust,
+  SiVercel,
+  SiSupabase,
+  SiFirebase,
+} from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion, TbBrandCpp, TbFileTypeSql } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -30,54 +39,56 @@ const Intro: React.FC = () => {
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="flex flex-col gap-5 md:gap-7">
-        <div className="flex gap-3">
-          <img src={DP} alt="dp" className="w-20 md:w-24 rounded-lg" />
-          <div className="flex flex-col justify-center">
-            <p className="text-xl md:text-2xl font-semibold text-zinc-800 dark:text-zinc-200 flex items-center">
-              Ankit Bhagat
-            </p>
-            <p className="text-sm dark:text-zinc-600 text-zinc-400">
-              Frontend Developer
-            </p>
-            <p className="text-sm dark:text-zinc-600 text-zinc-400">
-              From Jharkhand, India
-            </p>
+      <div className="flex flex-col gap-10 md:gap-8">
+        <div className="flex flex-col gap-5">
+          <div className="flex gap-3">
+            <img src={DP} alt="dp" className="w-20 md:w-24 rounded-lg" />
+            <div className="flex flex-col justify-center">
+              <p className="text-xl md:text-2xl font-semibold text-zinc-800 dark:text-zinc-200 flex items-center">
+                Ankit Bhagat
+              </p>
+              <p className="text-sm dark:text-zinc-600 text-zinc-400">
+                Frontend Developer
+              </p>
+              <p className="text-sm dark:text-zinc-600 text-zinc-400">
+                From Jharkhand, India
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="flex gap-5 md:gap-6 text-lg md:text-xl dark:text-zinc-400 text-zinc-600">
-          <a href="https://x.com/webdevankit" target="_blank">
-            <FaXTwitter />
-          </a>
-          <a href="https://github.com/ankitsensei" target="_blank">
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ankit-bhagat-139276241/"
-            target="_blank"
-          >
-            <BsLinkedin />
-          </a>
-          {/* <a href="https://leetcode.com/u/ankitsensei/" target="_blank"><SiLeetcode /></a> */}
-          {/* <a href="https://codeforces.com/profile/ankitsensei" target="_blank"><SiCodeforces /></a> */}
-          {/* <a href="https://www.chess.com/member/devilking7112" target="_blank"><SiChessdotcom /></a> */}
-          <a href="https://discord.gg/u858VAsbzZ" target="_blank">
-            <FaDiscord />
-          </a>
-        </div>
-        <div className="flex items-center gap-2 md:gap-3 dark:text-zinc-400 text-black">
-          <NavLink
-            to="/resume"
-            className="flex items-center justify-center gap-2 px-5 h-9 border text-sm border-zinc-300 dark:border-zinc-700 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 transition-all duration-200"
-          >
-            <HiOutlineDownload className="text-base" /> Resume
-          </NavLink>
-          <a
-            href="mailto:ankitbhagat.dev@gmail.com"
-            className="flex items-center justify-center gap-2 px-5 h-9 border text-sm border-zinc-300 dark:border-zinc-700 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 transition-all duration-200"
-          >
-            <CgMail className="text-base" /> Mail me
-          </a>
+          <div className="flex gap-5 md:gap-6 text-lg md:text-xl dark:text-zinc-400 text-zinc-600">
+            <a href="https://x.com/webdevankit" target="_blank">
+              <FaXTwitter />
+            </a>
+            <a href="https://github.com/ankitsensei" target="_blank">
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ankit-bhagat-139276241/"
+              target="_blank"
+            >
+              <BsLinkedin />
+            </a>
+            {/* <a href="https://leetcode.com/u/ankitsensei/" target="_blank"><SiLeetcode /></a> */}
+            {/* <a href="https://codeforces.com/profile/ankitsensei" target="_blank"><SiCodeforces /></a> */}
+            {/* <a href="https://www.chess.com/member/devilking7112" target="_blank"><SiChessdotcom /></a> */}
+            <a href="https://discord.gg/u858VAsbzZ" target="_blank">
+              <FaDiscord />
+            </a>
+          </div>
+          <div className="flex items-center gap-2 md:gap-3 dark:text-zinc-400 text-black">
+            <NavLink
+              to="/resume"
+              className="flex items-center justify-center gap-2 px-5 h-9 border text-sm border-zinc-300 dark:border-zinc-700 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 transition-all duration-200"
+            >
+              <HiOutlineDownload className="text-base" /> Resume
+            </NavLink>
+            <a
+              href="mailto:ankitbhagat.dev@gmail.com"
+              className="flex items-center justify-center gap-2 px-5 h-9 border text-sm border-zinc-300 dark:border-zinc-700 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 transition-all duration-200"
+            >
+              <CgMail className="text-base" /> Mail me
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-col gap-2 md:gap-4 font-inter text-sm">
@@ -120,7 +131,9 @@ const Intro: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col gap-3 md:gap-4">
-          <h1 className="text-xl md:text-2xl dark:text-zinc-400 text-zinc-600">Stats</h1>
+          <h1 className="text-xl md:text-2xl dark:text-zinc-400 text-zinc-600">
+            Stats
+          </h1>
           <div className="overflow-x-auto pb-2">
             <GitHubCalendar
               username="ankitsensei"

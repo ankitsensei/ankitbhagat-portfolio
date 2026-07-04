@@ -3,7 +3,7 @@ import DP from "../assets/ankit-dp.jpg";
 
 const Navbar = () => {
   return (
-    <div className="sticky top-4 md:top-10 z-50 flex items-center justify-center mt-4 md:mt-6 w-full text-sm text-zinc-300 font-geist mb-8 md:mb-12">
+    <div className="sticky top-4 md:top-10 z-50 flex items-center justify-center mt-4 md:mt-6 w-full text-sm text-zinc-300 font-geist mb-10 md:mb-16">
       <ul
         className="flex items-center gap-4 md:gap-6 
   rounded-xl px-4 md:px-6 py-2 
