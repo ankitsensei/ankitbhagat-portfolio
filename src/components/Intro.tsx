@@ -67,7 +67,7 @@ const Intro: React.FC = () => {
           {/* <a href="https://leetcode.com/u/ankitsensei/" target="_blank"><SiLeetcode /></a> */}
           {/* <a href="https://codeforces.com/profile/ankitsensei" target="_blank"><SiCodeforces /></a> */}
           {/* <a href="https://www.chess.com/member/devilking7112" target="_blank"><SiChessdotcom /></a> */}
-          <a href="https://discord.com/users/ankitsensei" target="_blank">
+          <a href="https://discord.gg/u858VAsbzZ" target="_blank">
             <FaDiscord />
           </a>
         </div>
@@ -92,7 +92,7 @@ const Intro: React.FC = () => {
           </p>
           <p className="dark:text-zinc-400 text-zinc-500 text-md">
             As a developer, I am more focused into backend web development right
-            now
+            now.
           </p>
           <p className="dark:text-zinc-400 text-zinc-500 text-md">
             Apart from that, I enjoy video editing, cooking, maybe good at
@@ -120,6 +120,11 @@ const Intro: React.FC = () => {
             <SkillsComp title="Git" icon={<FaGitAlt />} />
             <SkillsComp title="Github" icon={<FaGithub />} />
             <SkillsComp title="Figma" icon={<FaFigma />} />
+            <SkillsComp title="Vercel" icon={<FaFigma />} />
+            <SkillsComp title="Postman" icon={<FaFigma />} />
+            <SkillsComp title="Supabase" icon={<FaFigma />} />
+            <SkillsComp title="Firebase" icon={<FaFigma />} />
+            <SkillsComp title="Firebase" icon={<FaFigma />} />
           </div>
         </div>
         <div className="flex flex-col gap-4">
