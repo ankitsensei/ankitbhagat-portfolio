@@ -17,13 +17,7 @@ import { HiOutlineDownload } from "react-icons/hi";
 import { CgMail } from "react-icons/cg";
 // Skills icons
 import { FaReact, FaNodeJs, FaPython, FaGitAlt, FaFigma } from "react-icons/fa";
-import {
-  SiExpress,
-  SiMongodb,
-  SiPostman,
-  SiTypescript,
-  SiRust,
-} from "react-icons/si";
+import { SiExpress, SiMongodb, SiPostman, SiTypescript, SiRust, SiVercel, SiSupabase, SiFirebase } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion, TbBrandCpp, TbFileTypeSql } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -105,26 +99,24 @@ const Intro: React.FC = () => {
           </h1>
           <div className="flex flex-wrap gap-2">
             <SkillsComp title="React" icon={<FaReact />} />
-            <SkillsComp title="Express" icon={<SiExpress />} />
-            <SkillsComp title="Node" icon={<FaNodeJs />} />
-            <SkillsComp title="MongoDB" icon={<SiMongodb />} />
-            <SkillsComp title="Postman" icon={<SiPostman />} />
-            <SkillsComp title="Tailwind" icon={<RiTailwindCssFill />} />
-            <SkillsComp title="Motion" icon={<TbBrandFramerMotion />} />
-            <SkillsComp title="JavaScript" icon={<IoLogoJavascript />} />
             <SkillsComp title="TypeScript" icon={<SiTypescript />} />
+            <SkillsComp title="JavaScript" icon={<IoLogoJavascript />} />
             <SkillsComp title="Python" icon={<FaPython />} />
             <SkillsComp title="C/C++" icon={<TbBrandCpp />} />
             <SkillsComp title="Rust" icon={<SiRust />} />
+            <SkillsComp title="Node" icon={<FaNodeJs />} />
+            <SkillsComp title="Express" icon={<SiExpress />} />
+            <SkillsComp title="MongoDB" icon={<SiMongodb />} />
             <SkillsComp title="SQL" icon={<TbFileTypeSql />} />
+            <SkillsComp title="Supabase" icon={<SiSupabase />} />
+            <SkillsComp title="Firebase" icon={<SiFirebase />} />
+            <SkillsComp title="Tailwind" icon={<RiTailwindCssFill />} />
+            <SkillsComp title="Motion" icon={<TbBrandFramerMotion />} />
+            <SkillsComp title="Postman" icon={<SiPostman />} />
+            <SkillsComp title="Vercel" icon={<SiVercel />} />
             <SkillsComp title="Git" icon={<FaGitAlt />} />
-            <SkillsComp title="Github" icon={<FaGithub />} />
+            <SkillsComp title="GitHub" icon={<FaGithub />} />
             <SkillsComp title="Figma" icon={<FaFigma />} />
-            <SkillsComp title="Vercel" icon={<FaFigma />} />
-            <SkillsComp title="Postman" icon={<FaFigma />} />
-            <SkillsComp title="Supabase" icon={<FaFigma />} />
-            <SkillsComp title="Firebase" icon={<FaFigma />} />
-            <SkillsComp title="Firebase" icon={<FaFigma />} />
           </div>
         </div>
         <div className="flex flex-col gap-4">
