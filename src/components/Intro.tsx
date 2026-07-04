@@ -17,7 +17,13 @@ import { HiOutlineDownload } from "react-icons/hi";
 import { CgMail } from "react-icons/cg";
 // Skills icons
 import { FaReact, FaNodeJs, FaPython, FaGitAlt, FaFigma } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiPostman, SiTypescript, SiRust } from "react-icons/si";
+import {
+  SiExpress,
+  SiMongodb,
+  SiPostman,
+  SiTypescript,
+  SiRust,
+} from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion, TbBrandCpp, TbFileTypeSql } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -82,8 +88,11 @@ const Intro: React.FC = () => {
 
         <div className="flex flex-col gap-4 font-inter text-sm">
           <p className="dark:text-zinc-400 text-zinc-500 text-md">
-            2nd year B.Tech Student of Computer Science department. As a
-            developer, I am more focused into backend web development right now
+            3rd year ✦ B.Tech CSE
+          </p>
+          <p className="dark:text-zinc-400 text-zinc-500 text-md">
+            As a developer, I am more focused into backend web development right
+            now
           </p>
           <p className="dark:text-zinc-400 text-zinc-500 text-md">
             Apart from that, I enjoy video editing, cooking, maybe good at
@@ -114,9 +123,7 @@ const Intro: React.FC = () => {
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <h1 className="text-2xl dark:text-zinc-400 text-zinc-600">
-            Github Contributions
-          </h1>
+          <h1 className="text-2xl dark:text-zinc-400 text-zinc-600">Stats</h1>
           <GitHubCalendar
             username="ankitsensei"
             colorScheme={resolvedTheme}
