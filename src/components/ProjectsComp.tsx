@@ -44,7 +44,7 @@ const ProjectsComp = ({
             <img
               src={image}
               alt={heading || "Project image"}
-              className="w-full h-full rounded-xl object-cover hover:cursor-zoom-in"
+              className="w-full h-52 rounded-xl object-cover hover:cursor-zoom-in"
               onClick={() => onImageClick && onImageClick(image)}
             />
             <div className="px-4 py-2 flex flex-col gap-3 justify-between h-full">
