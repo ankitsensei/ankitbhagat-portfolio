@@ -28,12 +28,8 @@ const Navbar = () => {
         >
           Projects
         </NavLink>
-        <NavLink
-          to="/resume"
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          Resume
-        </NavLink>
+
+        <a href="https://live-resume-preview-orcin.vercel.app/">Resume</a>
         {/* <NavLink
           to="/blogs"
           className={({ isActive }) =>

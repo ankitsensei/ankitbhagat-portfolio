@@ -76,12 +76,12 @@ const Intro: React.FC = () => {
             </a>
           </div>
           <div className="flex items-center gap-2 md:gap-3 dark:text-zinc-400 text-black">
-            <NavLink
-              to="/resume"
+            <a
+              href="https://live-resume-preview-orcin.vercel.app/"
               className="flex items-center justify-center gap-2 px-5 h-9 border text-sm border-zinc-300 dark:border-zinc-700 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 transition-all duration-200"
             >
               <HiOutlineDownload className="text-base" /> Resume
-            </NavLink>
+            </a>
             <a
               href="mailto:ankitbhagat.dev@gmail.com"
               className="flex items-center justify-center gap-2 px-5 h-9 border text-sm border-zinc-300 dark:border-zinc-700 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 transition-all duration-200"
