@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import DP from "../assets/ankit-dp.jpg";
+import DP from "../assets/android-chrome-192x192.jpg";
 
 const Navbar = () => {
   return (
