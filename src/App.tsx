@@ -12,9 +12,9 @@ const AppContent = () => {
       <DotField
         dotRadius={2.5}
         dotSpacing={10}
-        bulgeStrength={29}
+        bulgeStrength={40}
         glowRadius={0}
-        sparkle
+        // sparkle
         waveAmplitude={2}
         cursorRadius={500}
         cursorForce={0}
