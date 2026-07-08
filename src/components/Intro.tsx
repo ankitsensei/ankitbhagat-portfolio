@@ -142,8 +142,8 @@ const Intro: React.FC = () => {
               blockMargin={4}
               showWeekdayLabels
               theme={{
-                light: ["#ffffff", "#d4d4d4", "#a3a3a3", "#525252", "#000000"],
-                dark: ["#161b22", "#3a3a3a", "#6b6b6b", "#a3a3a3", "#ffffff"],
+                light: ["#ffffff", "#b7efc5", "#4ade80", "#22c55e", "#166534"],
+                dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
               }}
               labels={{
                 totalCount: "{{count}} contributions in the last year",
