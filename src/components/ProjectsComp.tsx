@@ -39,7 +39,7 @@ const ProjectsComp = ({
             <a
               href={liveLink}
               target="_blank"
-              className="absolute top-3 right-3 p-1.5 bg-black/50 backdrop-blur-sm rounded-lg text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/70"
+              className="absolute top-3 right-3 p-1.5 bg-black/10 backdrop-blur-sm rounded-lg text-white opacity-60 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/70"
             >
               <FiExternalLink className="text-sm" />
             </a>
