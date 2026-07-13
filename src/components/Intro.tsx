@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { GitHubCalendar } from "react-github-calendar";
 import SkillsComp from "./ui/SkillsComp";
 import DP from "../assets/android-chrome-512x512.jpg";
-import Banner from "../assets/banner.webp";
+import Banner from "../assets/banner2.jpeg";
 import { useTheme } from "./ThemeContext";
 
 import { FaXTwitter } from "react-icons/fa6";
