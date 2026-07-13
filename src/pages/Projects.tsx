@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import DotField from "../components/DotField";
-import { useTheme } from "../components/ThemeContext";
 import ProjectComp from "../components/ProjectsComp";
 import Navbar from "../components/Navbar";
 import { ProjectData } from "../assets/ProjectsData";
 import Footer from "../components/Footer";
 
 const Projects = () => {
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -25,20 +21,6 @@ const Projects = () => {
 
   return (
     <div className="h-full w-full flex flex-col justify-between mx-auto px-6 font-geist bg-white dark:bg-zinc-950 text-black dark:text-white relative">
-      <DotField
-        dotRadius={2.5}
-        dotSpacing={10}
-        bulgeStrength={29}
-        glowRadius={0}
-        sparkle
-        waveAmplitude={2}
-        cursorRadius={500}
-        cursorForce={0}
-        bulgeOnly
-        gradientFrom={isDark ? "#1e1e1e" : "#f0f0f0"}
-        gradientTo={isDark ? "#1e1e1e" : "#f0f0f0"}
-        glowColor={isDark ? "#120F17" : "#ffffff"}
-      />
       <div className="max-w-4xl h-full flex flex-col justify-between mx-auto">
         <Navbar />
         <motion.div
