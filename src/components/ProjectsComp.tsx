@@ -1,4 +1,6 @@
 import { motion } from "motion/react";
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
 type ProjectProps = {
   image: string;
@@ -21,47 +23,53 @@ const ProjectsComp = ({
 }: ProjectProps) => {
   return (
     <motion.div
-      whileHover={{
-        scale: 1.04,
-        transition: { duration: 0.3 },
-      }}
-      transition={{ duration: 0.3 }}
-      className="bg-zinc-50 dark:bg-zinc-900 w-full md:w-68 lg:w-68 pb-2 text-black dark:text-white border dark:border-zinc-800 border-zinc-300 rounded-xl"
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.2 }}
+      className="group bg-zinc-50 dark:bg-zinc-900 w-full border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-zinc-200 dark:hover:shadow-zinc-900 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300"
     >
-      <div className="h-full w-full flex flex-col mx-auto font-inter relative">
-        <a href={liveLink} target="_blank" className="hover:cursor-pointer">
-          <p className="px-2 py-[1px] bg-green-500 w-fit rounded text-sm absolute right-3 top-3 flex gap-1 items-center text-white dark:text-white">
-            <span className="blink_me"></span>Live
-          </p>
-        </a>
-        <div className="flex flex-col gap-4 w-full h-full">
+      <div className="flex flex-col h-full font-inter">
+        <div className="relative overflow-hidden">
           <img
             src={image}
             alt={heading || "Project image"}
-            className="w-full h-52 rounded-xl object-cover hover:cursor-zoom-in"
+            className="w-full h-48 object-cover hover:cursor-zoom-in transition-transform duration-500 group-hover:scale-105"
             onClick={() => onImageClick && onImageClick(image)}
           />
-          <div className="px-4 py-2 flex flex-col gap-3 justify-between h-full">
-            <div className="flex flex-col ">
-              <a href={github} target="_blank">
-                <h2 className="text-md dark:text-zinc-300 text-zinc-800">
-                  {heading}
-                </h2>
-              </a>
-              <p className="text-zinc-400 dark:text-zinc-500 text-[13px]">
-                {description}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-1 cursor-default">
-              {techStack?.map((element, index) => (
-                <li
-                  key={index}
-                  className="list-none px-2 py-0 border border-zinc-300 dark:border-zinc-700 dark:text-zinc-400 text-zinc-600 rounded-md text-[12px] font-light"
-                >
-                  {element}
-                </li>
-              ))}
-            </div>
+          {liveLink && (
+            <a
+              href={liveLink}
+              target="_blank"
+              className="absolute top-3 right-3 p-1.5 bg-black/50 backdrop-blur-sm rounded-lg text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/70"
+            >
+              <FiExternalLink className="text-sm" />
+            </a>
+          )}
+        </div>
+        <div className="px-4 py-3 flex flex-col gap-2.5 flex-1">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-medium dark:text-zinc-200 text-zinc-800 truncate">
+              {heading}
+            </h2>
+            <a
+              href={github}
+              target="_blank"
+              className="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors shrink-0"
+            >
+              <FaGithub className="text-base" />
+            </a>
+          </div>
+          <p className="text-zinc-500 dark:text-zinc-500 text-xs leading-relaxed line-clamp-2">
+            {description}
+          </p>
+          <div className="flex flex-wrap gap-1.5 mt-auto pt-1">
+            {techStack?.map((element, index) => (
+              <span
+                key={index}
+                className="px-2 py-0.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 rounded text-[11px]"
+              >
+                {element}
+              </span>
+            ))}
           </div>
         </div>
       </div>

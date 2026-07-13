@@ -4,6 +4,7 @@ import ProjectComp from "../components/ProjectsComp";
 import Navbar from "../components/Navbar";
 import { ProjectData } from "../assets/ProjectsData";
 import Footer from "../components/Footer";
+import SideStripes from "../components/ui/SideStripes";
 
 const Projects = () => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
@@ -20,23 +21,38 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="h-full w-full flex flex-col justify-between mx-auto px-6 font-geist bg-white dark:bg-zinc-950 text-black dark:text-white relative">
-      <div className="max-w-4xl h-full flex flex-col justify-between mx-auto">
+    <motion.div className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
+      <div className="relative mx-auto max-w-3xl px-4 md:px-6 font-geist">
+        <SideStripes />
         <Navbar />
         <motion.div
           initial={{ opacity: 0, y: 10, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="w-full h-full "
+          className="w-full h-full"
         >
-          <h1 className="text-2xl">Projects 🚀</h1>
-          <div className="mt-10 grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-            {ProjectData.map((project) => (
-              <ProjectComp
+          <div className="mb-8 md:mb-10">
+            <h1 className="text-xl md:text-2xl dark:text-zinc-400 text-zinc-600">
+              Projects
+            </h1>
+            <p className="text-sm dark:text-zinc-500 text-zinc-400 mt-1">
+              A collection of things I've built
+            </p>
+          </div>
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+            {ProjectData.map((project, index) => (
+              <motion.div
                 key={project.heading}
-                {...project}
-                onImageClick={setPreviewImage}
-              />
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.08,
+                  ease: "easeOut",
+                }}
+              >
+                <ProjectComp {...project} onImageClick={setPreviewImage} />
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -65,7 +81,7 @@ const Projects = () => {
         </AnimatePresence>
         <Footer />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { GitHubCalendar } from "react-github-calendar";
 import SkillsComp from "./ui/SkillsComp";
 import DP from "../assets/android-chrome-512x512.jpg";
+import Banner from "../assets/banner.webp";
 import { useTheme } from "./ThemeContext";
 
 import { FaXTwitter } from "react-icons/fa6";
@@ -38,11 +39,21 @@ const Intro: React.FC = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="flex flex-col gap-10 md:gap-8">
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 relative">
+          <img
+            src={Banner}
+            alt="banner"
+            className="h-30 md:h-50 object-cover border-2 rounded"
+          />
           <div className="flex gap-3">
-            <img src={DP} alt="dp" className="w-20 md:w-24 rounded-lg" />
+            <img
+              src={DP}
+              alt="dp"
+              className="w-20 md:w-30 rounded-lg absolute bottom-35 right-5 md:bottom-30 md:right-5"
+            />
             <div className="flex flex-col justify-center">
-              <p className="text-xl md:text-2xl font-semibold text-zinc-800 dark:text-zinc-200 flex items-center">
+              <p className="text-sm text-zinc-600">I am</p>
+              <p className="text-xl md:text-3xl font-thin text-zinc-800 dark:text-zinc-200 flex items-center">
                 Ankit Bhagat
               </p>
               <p className="text-sm dark:text-zinc-600 text-zinc-400">

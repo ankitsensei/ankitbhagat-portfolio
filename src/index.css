@@ -15,7 +15,7 @@
   --font-geist: "Geist Mono", monospace;
 
   --color-primary: #d51c39;
-  --color-primary-dark: #0d0d0d;
+  --color-primary-dark: #121212;
 }
 
 html {
@@ -203,4 +203,14 @@ body {
   /* background-color: red; */
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+.strip {
+  background-color: #151515;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0px,
+    transparent 44px,
+    #202020 44px,
+    #202020 48px
+  );
 }
