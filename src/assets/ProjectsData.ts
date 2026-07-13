@@ -6,6 +6,8 @@ import UrlShortener from "./imgs/UrlShortener.jpg";
 import Rhythm from "./imgs/rhythm.jpg";
 import theNorthFace from "./imgs/theNorthFace.jpg";
 
+export type Category = "Full-Stack" | "Frontend" | "Extensions";
+
 export interface Project {
   image: string;
   heading: string;
@@ -13,6 +15,7 @@ export interface Project {
   techStack: string[];
   github: string;
   liveLink: string;
+  category: Category;
 }
 
 export const ProjectData: Project[] = [
@@ -24,6 +27,7 @@ export const ProjectData: Project[] = [
     techStack: ["ReactJs", "Nodejs", "Expressjs", "MongoDB"],
     github: "https://github.com/ankitsensei/theNorthFace",
     liveLink: "https://the-north-face-kappa.vercel.app/",
+    category: "Full-Stack",
   },
   {
     image: Rhythm,
@@ -33,6 +37,7 @@ export const ProjectData: Project[] = [
     techStack: ["ReactJs", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/ankitsensei/rhythm",
     liveLink: "https://rhythm-topaz.vercel.app/",
+    category: "Frontend",
   },
   {
     image: UrlShortener,
@@ -42,6 +47,7 @@ export const ProjectData: Project[] = [
     techStack: ["Nodejs", "Expressjs", "MongoDB", "ReactJs"],
     github: "https://github.com/ankitsensei/url-shortener",
     liveLink: "",
+    category: "Full-Stack",
   },
   {
     image: XClone,
@@ -51,6 +57,7 @@ export const ProjectData: Project[] = [
     techStack: ["Nodejs", "Expressjs", "MongoDB", "ReactJs"],
     github: "https://github.com/ankitsensei/X-Clone",
     liveLink: "https://x-clone-phi-one.vercel.app/",
+    category: "Full-Stack",
   },
   {
     image: BookList,
@@ -60,6 +67,7 @@ export const ProjectData: Project[] = [
     techStack: ["NodeJs", "ExpressJs", "MongoDB", "ReactJs"],
     github: "https://github.com/ankitsensei/book-store",
     liveLink: "https://book-store-one-lac.vercel.app/",
+    category: "Full-Stack",
   },
   {
     image: FocusMode,
@@ -69,6 +77,7 @@ export const ProjectData: Project[] = [
     techStack: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/ankitsensei/Focus-Mode-Extension",
     liveLink: "https://github.com/ankitsensei/Focus-Mode-Extension",
+    category: "Extensions",
   },
   {
     image: BillSplitter,
@@ -78,5 +87,6 @@ export const ProjectData: Project[] = [
     techStack: ["ReactJs", "TypeScript", "Supabase"],
     github: "https://github.com/ankitsensei/Bill-Splitter-with-History",
     liveLink: "https://bill-splitter-with-history.vercel.app/",
+    category: "Frontend",
   },
 ];

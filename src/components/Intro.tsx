@@ -29,7 +29,7 @@ const Intro: React.FC = () => {
             <img
               src={DP}
               alt="dp"
-              className="w-20 md:w-30 rounded-lg absolute bottom-35 right-5 md:bottom-30 md:right-5"
+              className="w-20 md:w-30 rounded absolute bottom-35 right-5 border-2 md:bottom-30 md:right-5"
             />
             <div className="flex flex-col justify-center">
               <p className="text-xs md:text-sm text-zinc-600">I am</p>
