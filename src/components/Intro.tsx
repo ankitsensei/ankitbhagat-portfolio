@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { GitHubCalendar } from "react-github-calendar";
-// import Connect from "./Connect"
 import SkillsComp from "./ui/SkillsComp";
 import DP from "../assets/android-chrome-512x512.jpg";
 import { useTheme } from "./ThemeContext";

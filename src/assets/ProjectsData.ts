@@ -49,7 +49,7 @@ export const ProjectData: Project[] = [
     description:
       "A full-stack CRUD web app for X-posts collection. Users can add, edit, delete, and view X-posts with details like texts and images in one place.",
     techStack: ["Nodejs", "Expressjs", "MongoDB", "ReactJs"],
-    github: "https://github.com/ankitsensei/Bill-Splitter-with-History",
+    github: "https://github.com/ankitsensei/X-Clone",
     liveLink: "https://x-clone-phi-one.vercel.app/",
   },
   {
