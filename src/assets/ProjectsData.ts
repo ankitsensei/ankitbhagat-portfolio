@@ -5,7 +5,7 @@ import XClone from "./imgs/XClone.jpg";
 import UrlShortener from "./imgs/UrlShortener.jpg";
 import Rhythm from "./imgs/rhythm.jpg";
 import theNorthFace from "./imgs/theNorthFace.jpg";
-import graphite from "./imgs/graphite.png";
+import graphite from "./imgs/graphite.jpg";
 
 export type Category = "Full-Stack" | "Frontend" | "Extensions";
 
