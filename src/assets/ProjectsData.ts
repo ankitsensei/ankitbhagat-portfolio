@@ -5,6 +5,7 @@ import XClone from "./imgs/XClone.jpg";
 import UrlShortener from "./imgs/UrlShortener.jpg";
 import Rhythm from "./imgs/rhythm.jpg";
 import theNorthFace from "./imgs/theNorthFace.jpg";
+import graphite from "./imgs/graphite.png";
 
 export type Category = "Full-Stack" | "Frontend" | "Extensions";
 
@@ -19,6 +20,16 @@ export interface Project {
 }
 
 export const ProjectData: Project[] = [
+  {
+    image: graphite,
+    heading: "graphite",
+    description:
+      "Graphite is an open-source, lightweight note-taking application designed for developers and technical writers.",
+    techStack: ["ReactJs", "Typescript", "Tiptap", "Shiki"],
+    github: "https://github.com/ankitsensei/graphite",
+    liveLink: "https://graphite-five-plum.vercel.app/",
+    category: "Frontend",
+  },
   {
     image: theNorthFace,
     heading: "theNorthFace",
