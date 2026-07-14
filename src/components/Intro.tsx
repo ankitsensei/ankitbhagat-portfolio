@@ -29,16 +29,18 @@ const Intro: React.FC = () => {
             <img
               src={DP}
               alt="dp"
-              className="w-20 md:w-30 rounded absolute bottom-35 right-5 border-2 md:bottom-30 md:right-5"
+              className="w-20 md:w-30 rounded absolute bottom-40 right-5 border-2 md:bottom-30 md:right-5"
             />
-            <div className="flex flex-col justify-center">
-              <p className="text-xs md:text-sm text-zinc-600">I am</p>
+            <div className="flex flex-col gap-2 justify-center">
               <p className="text-lg md:text-3xl font-thin text-zinc-800 dark:text-zinc-200 flex items-center">
                 Ankit Bhagat
               </p>
-              <p className="text-xs md:text-sm dark:text-zinc-600 text-zinc-400">
-                Frontend Developer
-              </p>
+              <div className="text-xs md:text-sm dark:text-zinc-600 text-zinc-400">
+                <p>Full-Stack Developer (In Progress)</p>
+                <p>
+                  Currently learning backend engineering with Node.js & Express.
+                </p>
+              </div>
               <p className="text-xs md:text-sm dark:text-zinc-600 text-zinc-400">
                 From Jharkhand, India
               </p>
@@ -80,17 +82,17 @@ const Intro: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-1.5 md:gap-4 font-inter text-xs md:text-sm">
+        <div className="flex flex-col gap-1.5 md:gap-2 font-inter text-xs md:text-sm">
           <p className="dark:text-zinc-400 text-zinc-500">
-            3rd year ✦ B.Tech CSE
+            3rd Year B.Tech Computer Science
           </p>
           <p className="dark:text-zinc-400 text-zinc-500">
-            As a developer, I am more focused into backend web development right
-            now.
+            I'm currently focused on learning backend development and building
+            scalable full-stack applications.
           </p>
           <p className="dark:text-zinc-400 text-zinc-500">
-            Apart from that, I enjoy video editing, cooking, maybe good at
-            chess.
+            When I'm away from my keyboard, you'll usually find me editing
+            videos, experimenting in the kitchen, or playing chess.
           </p>
         </div>
         <Skills />
