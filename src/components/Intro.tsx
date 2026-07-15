@@ -62,7 +62,7 @@ const Intro: React.FC = () => {
             {/* <a href="https://leetcode.com/u/ankitsensei/" target="_blank"><SiLeetcode /></a> */}
             {/* <a href="https://codeforces.com/profile/ankitsensei" target="_blank"><SiCodeforces /></a> */}
             {/* <a href="https://www.chess.com/member/devilking7112" target="_blank"><SiChessdotcom /></a> */}
-            <a href="https://discord.gg/u858VAsbzZ" target="_blank">
+            <a href="https://discord.com/users/679624561880203279" target="_blank">
               <FaDiscord />
             </a>
           </div>
