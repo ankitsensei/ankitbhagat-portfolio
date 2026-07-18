@@ -1,15 +1,14 @@
 import { NavLink } from "react-router";
 import DP from "../assets/android-chrome-192x192.jpg";
-import { faSun, faMoon, faDesktop } from "@fortawesome/free-solid-svg-icons";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "./ThemeContext";
 
-const themeOrder = ["light", "dark", "system"] as const;
+const themeOrder = ["light", "dark"] as const;
 
 const themeIcon = {
   light: faSun,
   dark: faMoon,
-  system: faDesktop,
 } as const;
 
 const Navbar = () => {

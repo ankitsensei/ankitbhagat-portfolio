@@ -2,7 +2,7 @@ import { GitHubCalendar } from "react-github-calendar";
 import { useTheme } from "./ThemeContext";
 
 const Stats = () => {
-  const { resolvedTheme } = useTheme();
+  const { theme } = useTheme();
   return (
     <div className="flex flex-col gap-2 md:gap-4">
       <h1 className="text-lg md:text-2xl dark:text-zinc-400 text-zinc-600">
@@ -11,7 +11,7 @@ const Stats = () => {
       <div className="overflow-x-auto pb-2">
         <GitHubCalendar
           username="ankitsensei"
-          colorScheme={resolvedTheme}
+          colorScheme={theme}
           fontSize={13}
           blockSize={12}
           blockMargin={4}
