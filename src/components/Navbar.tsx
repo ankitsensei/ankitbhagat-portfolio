@@ -4,6 +4,14 @@ import { faSun, faMoon, faDesktop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "./ThemeContext";
 
+const themeOrder = ["light", "dark", "system"] as const;
+
+const themeIcon = {
+  light: faSun,
+  dark: faMoon,
+  system: faDesktop,
+} as const;
+
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
 
@@ -36,26 +44,12 @@ const Navbar = () => {
 
         <a href="https://live-resume-preview-orcin.vercel.app/">Resume</a>
 
-        <div className="flex gap-2 ml-2 pl-2 border-l border-white/20">
-          <button
-            onClick={() => setTheme("light")}
-            className={`transition ${theme === "light" ? "text-white" : "text-zinc-500 hover:text-zinc-300"}`}
-          >
-            <FontAwesomeIcon icon={faSun} />
-          </button>
-          <button
-            onClick={() => setTheme("dark")}
-            className={`transition ${theme === "dark" ? "text-white" : "text-zinc-500 hover:text-zinc-300"}`}
-          >
-            <FontAwesomeIcon icon={faMoon} />
-          </button>
-          <button
-            onClick={() => setTheme("system")}
-            className={`transition ${theme === "system" ? "text-white" : "text-zinc-500 hover:text-zinc-300"}`}
-          >
-            <FontAwesomeIcon icon={faDesktop} />
-          </button>
-        </div>
+        <button
+          onClick={() => setTheme(themeOrder[(themeOrder.indexOf(theme) + 1) % themeOrder.length])}
+          className="ml-2 pl-4 border-l border-white/20 text-zinc-400 hover:text-white transition"
+        >
+          <FontAwesomeIcon icon={themeIcon[theme]} />
+        </button>
       </ul>
     </div>
   );
