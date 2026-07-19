@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { NavLink } from "react-router";
 import DP from "../assets/android-chrome-192x192.jpg";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
@@ -18,12 +17,6 @@ audio.volume = 0.5;
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    audio.currentTime = 0;
-    audio.play();
-  }, [value]);
 
   return (
     <div className="sticky top-4 md:top-6 z-50 flex items-center justify-center w-full text-xs md:text-sm text-zinc-300 font-geist mb-6 md:mb-12 lg:mb-12">
@@ -53,7 +46,8 @@ const Navbar = () => {
             setTheme(
               themeOrder[(themeOrder.indexOf(theme) + 1) % themeOrder.length],
             );
-            setValue(value + 1);
+            audio.currentTime = 0;
+            audio.play();
           }}
           className="w-6 px-5 border-l border-white/20 text-zinc-400"
         >
