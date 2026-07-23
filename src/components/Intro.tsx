@@ -53,7 +53,10 @@ const Intro: React.FC = () => {
             <a href="https://github.com/ankitsensei" target="_blank">
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/ankitsensei/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/ankit-bhagat-dev/"
+              target="_blank"
+            >
               <BsLinkedin />
             </a>
             {/* <a href="https://leetcode.com/u/ankitsensei/" target="_blank"><SiLeetcode /></a> */}
