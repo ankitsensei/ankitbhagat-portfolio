@@ -54,7 +54,7 @@ const Intro: React.FC = () => {
               <FaGithub />
             </a>
             <a
-              href="https://www.linkedin.com/in/ankit-bhagat-dev/"
+              href="https://www.linkedin.com/in/ankitbhagat-dev/"
               target="_blank"
             >
               <BsLinkedin />
