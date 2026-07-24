@@ -7,12 +7,13 @@ import {
   FaFigma,
   FaGithub,
 } from "react-icons/fa";
+
 import {
   SiExpress,
   SiMongodb,
   SiPostman,
   SiTypescript,
-  SiRust,
+  SiPostgresql,
   SiVercel,
   SiSupabase,
   SiFirebase,
@@ -33,11 +34,11 @@ const Skills = () => {
         <SkillsComp title="JavaScript" icon={<IoLogoJavascript />} />
         <SkillsComp title="Python" icon={<FaPython />} />
         <SkillsComp title="C/C++" icon={<TbBrandCpp />} />
-        <SkillsComp title="Rust" icon={<SiRust />} />
         <SkillsComp title="Node" icon={<FaNodeJs />} />
         <SkillsComp title="Express" icon={<SiExpress />} />
-        <SkillsComp title="MongoDB" icon={<SiMongodb />} />
         <SkillsComp title="SQL" icon={<TbFileTypeSql />} />
+        <SkillsComp title="MongoDB" icon={<SiMongodb />} />
+        <SkillsComp title="PostgreSQL" icon={<SiPostgresql />} />
         <SkillsComp title="Supabase" icon={<SiSupabase />} />
         <SkillsComp title="Firebase" icon={<SiFirebase />} />
         <SkillsComp title="Tailwind" icon={<RiTailwindCssFill />} />
