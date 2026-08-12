@@ -6,6 +6,7 @@ import UrlShortener from "./imgs/UrlShortener.jpg";
 import Rhythm from "./imgs/rhythm.jpg";
 import theNorthFace from "./imgs/theNorthFace.jpg";
 import graphite from "./imgs/graphite.jpg";
+import findit from "./imgs/findit.png";
 
 export type Category = "Full-Stack" | "Frontend" | "Extensions";
 
@@ -21,6 +22,16 @@ export interface Project {
 
 export const ProjectData: Project[] = [
   {
+    image: findit,
+    heading: "findIt",
+    description:
+      "A community-powered lost & found platform. Report what you lost or what you found, pin it on a map, and reconnect with the rightful owner.",
+    techStack: ["ReactJs", "Typescript", "Node", "Express", "postgresql"],
+    github: "https://github.com/ankitsensei/findIt",
+    liveLink: "https://find-it-rho.vercel.app/",
+    category: "Full-Stack",
+  },
+  {
     image: graphite,
     heading: "graphite",
     description:
@@ -35,7 +46,7 @@ export const ProjectData: Project[] = [
     heading: "theNorthFace",
     description:
       "A full-stack MERN e-commerce application with secure authentication, product management, shopping cart, Stripe payments, Cash on Delivery, order tracking, an admin dashboard.",
-    techStack: ["ReactJs", "Nodejs", "Expressjs", "MongoDB"],
+    techStack: ["ReactJs", "Nodejs", "Express", "MongoDB"],
     github: "https://github.com/ankitsensei/theNorthFace",
     liveLink: "https://the-north-face-kappa.vercel.app/",
     category: "Full-Stack",
