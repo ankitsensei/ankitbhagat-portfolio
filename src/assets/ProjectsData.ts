@@ -7,6 +7,7 @@ import Rhythm from "./imgs/rhythm.jpg";
 import theNorthFace from "./imgs/theNorthFace.jpg";
 import graphite from "./imgs/graphite.jpg";
 import findit from "./imgs/findit.png";
+import aiChatBot from "./imgs/aiChatBot.png";
 
 export type Category = "Full-Stack" | "Frontend" | "Extensions";
 
@@ -21,6 +22,16 @@ export interface Project {
 }
 
 export const ProjectData: Project[] = [
+  {
+    image: aiChatBot,
+    heading: "mini-chatbot",
+    description:
+      "A lightweight AI chat interface built with Next.js (App Router) and the Gemini API. Ask anything — powered by gemini-3.6-flash with a clean, responsive UI.",
+    techStack: ["Nextjs"],
+    github: "https://github.com/ankitsensei/mini-chatbot",
+    liveLink: "https://chat-bot-tau-taupe.vercel.app/",
+    category: "Full-Stack",
+  },
   {
     image: findit,
     heading: "findIt",
