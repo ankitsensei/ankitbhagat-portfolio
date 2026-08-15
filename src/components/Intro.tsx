@@ -86,14 +86,14 @@ const Intro: React.FC = () => {
         </div>
 
         <div className="flex flex-col gap-1.5 md:gap-2 font-inter text-xs md:text-sm">
-          <p className="dark:text-zinc-400 text-zinc-500">
+          <p className="dark:text-zinc-500 text-zinc-500">
             3rd Year B.Tech Computer Science
           </p>
-          <p className="dark:text-zinc-400 text-zinc-500">
+          <p className="dark:text-zinc-600 text-zinc-500">
             I'm currently focused on learning backend development and building
             scalable full-stack applications.
           </p>
-          <p className="dark:text-zinc-400 text-zinc-500">
+          <p className="dark:text-zinc-600 text-zinc-500">
             When I'm away from my keyboard, you'll usually find me editing
             videos, experimenting in the kitchen, or playing chess.
           </p>
