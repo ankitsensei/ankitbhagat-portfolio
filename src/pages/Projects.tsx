@@ -34,7 +34,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <motion.div className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
+    <motion.div className="min-h-screen bg-white dark:bg-[#121212] text-black dark:text-white">
       <div className="relative mx-auto max-w-3xl px-4 md:px-6 font-geist">
         <SideStripes />
         <Navbar />
