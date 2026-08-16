@@ -94,8 +94,7 @@ const Intro: React.FC = () => {
             scalable full-stack applications.
           </p>
           <p className="dark:text-zinc-600 text-zinc-500">
-            When I'm away from my keyboard, you'll usually find me editing
-            videos, experimenting in the kitchen, or playing chess.
+            Beyond coding, you'll usually find me watching anime, playing weird games and having fun in kitchen...
           </p>
         </div>
         <Skills />
