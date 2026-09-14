@@ -57,31 +57,31 @@ export const SocialLinks: React.FC = () => {
           You can check these <span className="font-medium text-white">links</span> if you wish to
         </span>
 
-        {/* 3 media links per line */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+        {/* 2 media links per line on mobile, 3 on larger screens */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5">
           {socials.map((s, idx) => (
             <a
               key={idx}
               target="_blank"
               rel="noopener noreferrer"
               href={s.href}
-              className="group relative flex items-center justify-between rounded-lg border border-[#232426] bg-[#141517]/70 hover:bg-[#1A1B1E] px-3 py-2.5 transition-all duration-200 hover:border-white/20 hover:scale-[1.01] shadow-[0px_2px_4px_rgba(0,0,0,0.4),inset_0px_1px_0px_rgba(255,255,255,0.06)]"
+              className="group relative flex items-center justify-between rounded-lg border border-[#232426] bg-[#141517]/70 hover:bg-[#1A1B1E] px-2.5 py-2 sm:px-3 sm:py-2.5 transition-all duration-200 hover:border-white/20 hover:scale-[1.01] shadow-[0px_2px_4px_rgba(0,0,0,0.4),inset_0px_1px_0px_rgba(255,255,255,0.06)]"
             >
-              <div className="flex items-center gap-2.5 overflow-hidden">
-                <div className="h-7 w-7 shrink-0 rounded-md border border-[#2D2E2F] bg-[#1E1F22] flex items-center justify-center text-white/80 group-hover:text-white group-hover:border-white/30 transition-colors">
+              <div className="flex items-center gap-2 sm:gap-2.5 min-w-0 overflow-hidden">
+                <div className="h-6 w-6 sm:h-7 sm:w-7 shrink-0 rounded-md border border-[#2D2E2F] bg-[#1E1F22] flex items-center justify-center text-white/80 group-hover:text-white group-hover:border-white/30 transition-colors">
                   {s.icon}
                 </div>
-                <div className="flex flex-col overflow-hidden">
-                  <span className="text-xs font-semibold text-white/90 group-hover:text-white transition-colors truncate">
+                <div className="flex flex-col min-w-0 overflow-hidden">
+                  <span className="text-[11px] sm:text-xs font-semibold text-white/90 group-hover:text-white transition-colors truncate">
                     {s.name}
                   </span>
-                  <span className="jetbrains-mono text-[9px] text-[#8B8D91] group-hover:text-[#A1A1AA] transition-colors truncate">
+                  <span className="jetbrains-mono text-[8.5px] sm:text-[9px] text-[#8B8D91] group-hover:text-[#A1A1AA] transition-colors truncate">
                     {s.handle}
                   </span>
                 </div>
               </div>
 
-              <FiArrowUpRight className="text-xs shrink-0 text-[#71717A] group-hover:text-white transition-colors ml-1" />
+              <FiArrowUpRight className="text-[10px] sm:text-xs shrink-0 text-[#71717A] group-hover:text-white transition-colors ml-0.5" />
             </a>
           ))}
         </div>

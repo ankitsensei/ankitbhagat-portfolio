@@ -11,8 +11,7 @@ export const Footer: React.FC = () => {
 
         <div className="flex flex-col gap-1 text-xs">
           <span>
-            Designed & Made with{" "}
-            <span className="text-red-500">❤️</span>
+            Designed & Made with 🖤
           </span>
           <span className="text-[#71717A]">
             © 2026 Ankit Bhagat. All rights reserved.

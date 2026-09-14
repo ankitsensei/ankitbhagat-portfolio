@@ -1,43 +1,35 @@
 import React from "react";
 import DP from "../assets/android-chrome-512x512.jpg";
-import Banner from "../assets/banner2.jpeg";
 import { HiOutlineDocumentText } from "react-icons/hi2";
+import { FiMail } from "react-icons/fi";
 
 export const Hero: React.FC = () => {
   return (
     <div id="hero-section" className="page-col relative">
-      {/* Banner & Avatar Container */}
-      <div className="relative w-full mb-2">
-        <div className="w-full h-36 sm:h-48 overflow-hidden rounded-xl border border-[#232426] bg-[#121314]">
-          <img
-            src={Banner}
-            alt="Banner"
-            className="w-full h-full object-cover object-center opacity-85"
-          />
-        </div>
-
-        {/* Profile Avatar */}
-        <div className="absolute -bottom-7 left-5 sm:left-6 flex items-end">
-          <div className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden rounded-2xl border-2 border-[#232426] bg-[#121314] shadow-2xl ring-4 ring-[#0A0B0C]">
+      {/* Top Profile & Status Section without banner */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        {/* Avatar with sleek ring and glow */}
+        <div className="relative group w-fit">
+          <div className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden rounded-2xl border border-[#2D2E2F] bg-[#121314] shadow-2xl ring-1 ring-white/10 transition-all duration-300 group-hover:border-white/30 group-hover:shadow-[0_0_25px_rgba(255,255,255,0.06)]">
             <img
               src={DP}
               alt="Ankit Bhagat"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </div>
         </div>
-      </div>
 
-      <div className="pt-8">
         {/* Availability Badge */}
-        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-400 text-[11px] font-mono mb-3 w-fit">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-400 text-xs font-mono w-fit shadow-[0_0_15px_rgba(16,185,129,0.12)]">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
           <span>Available for freelancing & projects</span>
         </div>
+      </div>
 
+      <div className="pt-2">
         {/* Hey it's me tag */}
         <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[#8B8D91]/70 mb-1.5">
           <span>Hey It's me</span>
@@ -60,7 +52,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Title */}
-        <h1 className="doto-font text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-baseline gap-2">
+        <h1 className="doto-font text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-baseline gap-2 flex-wrap">
           <span>ANKIT BHAGAT</span>
           <a
             className="group"
@@ -83,14 +75,14 @@ export const Hero: React.FC = () => {
           I'm a <span className="font-medium text-white">Full Stack Web Developer</span> building fast, scalable applications and modern web experiences. Specializing in <span className="font-medium text-white">React / Next.js</span> on the frontend and <span className="font-medium text-white">Node.js, Express & PostgreSQL / MongoDB</span> on the backend.
         </p>
 
-        {/* Action Buttons: Twitter DM and Resume */}
-        <div className="mt-5 flex items-center gap-2.5">
+        {/* Action Buttons: Twitter DM, Resume, Email */}
+        <div className="mt-5 flex items-center gap-2.5 flex-wrap">
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://x.com/webdevankit"
           >
-            <button className="btn-pill-3d">
+            <button className="btn-pill-3d cursor-pointer">
               <svg height="14px" width="14px" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.25 1.5H16.88L11.13 8.07L17.89 17H12.6L8.45 11.58L3.71 17H1.08L7.23 9.97L0.77 1.5H6.19L9.94 6.46L14.25 1.5ZM13.33 15.42H14.78L5.39 3H3.83L13.33 15.42Z" fill="currentColor" />
               </svg>
@@ -105,9 +97,18 @@ export const Hero: React.FC = () => {
             rel="noopener noreferrer"
             href="https://live-resume-preview-orcin.vercel.app/"
           >
-            <button className="btn-pill-3d">
+            <button className="btn-pill-3d cursor-pointer">
               <HiOutlineDocumentText className="text-sm" />
               <span>Resume</span>
+            </button>
+          </a>
+
+          <a
+            href="mailto:ankitbhagat.dev@gmail.com"
+          >
+            <button className="btn-pill-3d cursor-pointer">
+              <FiMail className="text-sm" />
+              <span>Email</span>
             </button>
           </a>
         </div>
