@@ -1,8 +1,2 @@
-
-const Blogs = () => {
-  return (
-    <div className="bg-black">Blogs</div>
-  )
-}
-
-export default Blogs
+import BlogsPage from "../pages/BlogsPage";
+export default BlogsPage;
