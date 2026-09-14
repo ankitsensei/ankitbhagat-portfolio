@@ -2,7 +2,6 @@ import React from "react";
 import Hero from "../components/Hero";
 import ActivityCalendar from "../components/ActivityCalendar";
 import ExperienceTimeline from "../components/ExperienceTimeline";
-import TimelineSection from "../components/TimelineSection";
 import SocialLinks from "../components/SocialLinks";
 import FeaturedProjects from "../components/FeaturedProjects";
 import Footer from "../components/Footer";
@@ -15,7 +14,6 @@ export const Home: React.FC = () => {
         <Hero />
         <ActivityCalendar />
         <ExperienceTimeline />
-        <TimelineSection />
         <SocialLinks />
         <FeaturedProjects />
         <Footer />

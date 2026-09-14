@@ -45,15 +45,16 @@ export const ActivityCalendar: React.FC = () => {
           </a>
         </div>
 
-        <div className="overflow-x-auto pb-1 pt-1 flex justify-center scrollbar-thin">
+        {/* Full Year Display on Desktop & Tablet; Scrollable on mobile screens */}
+        <div className="w-full overflow-x-auto sm:overflow-visible pb-1 pt-1 flex justify-start sm:justify-center scrollbar-none">
           <GitHubCalendar
             username="ankitsensei"
-            blockSize={10.5}
-            blockMargin={2.8}
-            fontSize={12}
+            blockSize={9.5}
+            blockMargin={2.2}
+            fontSize={11}
             theme={{
               dark: [
-                "#1C1D1F",
+                "#18191B",
                 "#3F3F46",
                 "#71717A",
                 "#D4D4D8",

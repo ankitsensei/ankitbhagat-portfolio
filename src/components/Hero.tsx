@@ -1,6 +1,7 @@
 import React from "react";
 import DP from "../assets/android-chrome-512x512.jpg";
 import Banner from "../assets/banner2.jpeg";
+import { HiOutlineDocumentText } from "react-icons/hi2";
 
 export const Hero: React.FC = () => {
   return (
@@ -28,7 +29,16 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="pt-8">
-        {/* Hey it's me badge */}
+        {/* Availability Badge */}
+        <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-400 text-[11px] font-mono mb-3 w-fit">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Available for freelancing & projects</span>
+        </div>
+
+        {/* Hey it's me tag */}
         <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[#8B8D91]/70 mb-1.5">
           <span>Hey It's me</span>
           <svg
@@ -67,24 +77,13 @@ export const Hero: React.FC = () => {
         </h1>
       </div>
 
-      {/* Bio Paragraph 1 */}
-      <div>
-        <p className="text-sm leading-relaxed text-[#8B8D91]">
-          Yup! I'm a <span className="font-medium text-white">Full Stack Developer</span>. Big deal, right? But wait — there's more! I build scalable{" "}
-          <span className="font-medium text-white">Full Stack Web Apps</span>. And if that wasn't enough, guess what?
-          <br className="hidden sm:inline" /> maybe{" "}
-          <span className="font-medium text-white">Freelancer & OSS Builder? </span> Oh yeah, I've got that badge too!
-        </p>
-      </div>
-
-      {/* Bio Paragraph 2 & Action Buttons */}
-      <div className="z-20 max-w-lg">
-        <p className="text-sm leading-relaxed text-[#8B8D91]">
-          I love both <span className="font-medium text-white">Frontend Craft</span> &{" "}
-          <span className="font-medium text-white">Backend Architecture</span>. That means I can create fast, intuitive, and robust web applications from scratch. I'm always looking for new opportunities to learn and build impactful things.
+      {/* Clean, Straightforward Bio */}
+      <div className="max-w-xl">
+        <p className="text-sm leading-relaxed text-[#A1A1AA]">
+          I'm a <span className="font-medium text-white">Full Stack Web Developer</span> building fast, scalable applications and modern web experiences. Specializing in <span className="font-medium text-white">React / Next.js</span> on the frontend and <span className="font-medium text-white">Node.js, Express & PostgreSQL / MongoDB</span> on the backend.
         </p>
 
-        {/* Action Buttons */}
+        {/* Action Buttons: Twitter DM and Resume */}
         <div className="mt-5 flex items-center gap-2.5">
           <a
             target="_blank"
@@ -101,19 +100,14 @@ export const Hero: React.FC = () => {
 
           <span className="text-[10px] text-[#8B8D91]/60 font-medium">OR</span>
 
-          <a href="mailto:ankitbhagat.dev@gmail.com">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://live-resume-preview-orcin.vercel.app/"
+          >
             <button className="btn-pill-3d">
-              <svg height="14px" width="14px" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                <g fill="#A1A1AA">
-                  <path
-                    d="M14.75 6H3.25C2.836 6 2.5 6.336 2.5 6.75V13.25C2.5 14.767 3.733 16 5.25 16H12.75C14.267 16 15.5 14.767 15.5 13.25V6.75C15.5 6.336 15.164 6 14.75 6Z"
-                    opacity="0.4"
-                  />
-                  <path d="M2.588 6.862C1.738 6.862 0.99 6.239 0.859 5.374L0.634 3.891C0.49 2.936 1.149 2.043 2.103 1.898L14.462 0.029C15.424 -0.111 16.31 0.544 16.455 1.498L16.679 2.98C16.823 3.935 16.164 4.828 15.21 4.973L2.851 6.842C2.763 6.855 2.675 6.862 2.588 6.862Z" />
-                  <path d="M11.78 11.03L9.53 13.28C9.384 13.427 9.192 13.5 9 13.5C8.808 13.5 8.616 13.427 8.47 13.28L6.22 11.03C5.927 10.737 5.927 10.263 6.22 9.97C6.513 9.677 6.987 9.677 7.28 9.97L8.25 10.94V8.25C8.25 7.836 8.586 7.5 9 7.5C9.414 7.5 9.75 7.836 9.75 8.25V10.94L10.72 9.97C11.013 9.677 11.487 9.677 11.78 9.97C12.073 10.263 12.073 10.737 11.78 11.03Z" />
-                </g>
-              </svg>
-              <span>Email Me</span>
+              <HiOutlineDocumentText className="text-sm" />
+              <span>Resume</span>
             </button>
           </a>
         </div>
