@@ -51,7 +51,9 @@ export const Hero: React.FC = () => {
           {/* Availability Badge directly under name - Fully Responsive */}
           <div className="mt-1.5 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 text-[10.5px] sm:text-xs font-mono w-fit max-w-full animate-pulse-glow-badge">
             <span className="shrink-0 h-2 w-2 rounded-full bg-emerald-500 animate-pulse-glow" />
-            <span className="truncate sm:whitespace-normal">Available for freelancing & projects</span>
+            <span className="truncate sm:whitespace-normal">
+              Available for freelancing & projects
+            </span>
           </div>
         </div>
 
@@ -75,7 +77,20 @@ export const Hero: React.FC = () => {
       {/* Clean, Straightforward Bio */}
       <div className="max-w-xl">
         <p className="text-sm leading-relaxed text-[var(--text-muted)]">
-          I'm a <span className="font-medium text-[var(--text-primary)]">Full Stack Web Developer</span> building fast, scalable applications and modern web experiences. Specializing in <span className="font-medium text-[var(--text-primary)]">React / Next.js</span> on the frontend and <span className="font-medium text-[var(--text-primary)]">Node.js, Express & PostgreSQL / MongoDB</span> on the backend.
+          I'm a{" "}
+          <span className="font-medium text-[var(--text-primary)]">
+            Full Stack Web Developer
+          </span>{" "}
+          building fast, scalable applications and modern web experiences.
+          Specializing in{" "}
+          <span className="font-medium text-[var(--text-primary)]">
+            React / Next.js
+          </span>{" "}
+          on the frontend and{" "}
+          <span className="font-medium text-[var(--text-primary)]">
+            Node.js, Express & PostgreSQL / MongoDB
+          </span>{" "}
+          on the backend.
         </p>
 
         {/* Action Buttons: Twitter DM, Resume, Email */}
@@ -86,14 +101,25 @@ export const Hero: React.FC = () => {
             href="https://x.com/webdevankit"
           >
             <button className="btn-pill-3d cursor-pointer">
-              <svg height="14px" width="14px" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.25 1.5H16.88L11.13 8.07L17.89 17H12.6L8.45 11.58L3.71 17H1.08L7.23 9.97L0.77 1.5H6.19L9.94 6.46L14.25 1.5ZM13.33 15.42H14.78L5.39 3H3.83L13.33 15.42Z" fill="currentColor" />
+              <svg
+                height="14px"
+                width="14px"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.25 1.5H16.88L11.13 8.07L17.89 17H12.6L8.45 11.58L3.71 17H1.08L7.23 9.97L0.77 1.5H6.19L9.94 6.46L14.25 1.5ZM13.33 15.42H14.78L5.39 3H3.83L13.33 15.42Z"
+                  fill="currentColor"
+                />
               </svg>
               <span>Twitter DM</span>
             </button>
           </a>
 
-          <span className="text-[10px] text-[var(--text-subtle)] font-medium">OR</span>
+          <span className="text-[10px] text-[var(--text-subtle)] font-medium">
+            OR
+          </span>
 
           <a
             target="_blank"
@@ -106,9 +132,7 @@ export const Hero: React.FC = () => {
             </button>
           </a>
 
-          <a
-            href="mailto:ankitbhagat.dev@gmail.com"
-          >
+          <a href="mailto:ankitbhagat.dev@gmail.com">
             <button className="btn-pill-3d cursor-pointer">
               <FiMail className="text-sm" />
               <span>Email</span>

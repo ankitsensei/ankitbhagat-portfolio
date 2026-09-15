@@ -49,52 +49,52 @@ const navItems: NavItem[] = [
       </svg>
     ),
   },
-  {
-    name: "Work",
-    href: "/work",
-    icon: (active) => (
-      <svg
-        height="18px"
-        width="18px"
-        viewBox="0 0 18 18"
-        xmlns="http://www.w3.org/2000/svg"
-        className={`mb-0.5 transition-opacity duration-200 ${active ? "opacity-100" : "opacity-40"}`}
-      >
-        <g fill="currentColor">
-          <path
-            d="M9.458 2.361L15.79 5.621C16.403 5.937 16.403 6.813 15.79 7.129L9.458 10.389C9.17 10.537 8.829 10.537 8.542 10.389L2.21 7.129C1.597 6.813 1.597 5.937 2.21 5.621L8.542 2.361C8.83 2.213 9.171 2.213 9.458 2.361Z"
-            fill="currentColor"
-            fillOpacity={active ? "0.35" : "0.2"}
-            stroke="none"
-          />
-          <path
-            d="M9.458 2.361L15.79 5.621C16.403 5.937 16.403 6.813 15.79 7.129L9.458 10.389C9.17 10.537 8.829 10.537 8.542 10.389L2.21 7.129C1.597 6.813 1.597 5.937 2.21 5.621L8.542 2.361C8.83 2.213 9.171 2.213 9.458 2.361Z"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.2"
-          />
-          <path
-            d="M16.25 6.375C16.079 7.115 15.932 8.097 15.969 9.25C15.996 10.084 16.113 10.812 16.25 11.406"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.2"
-          />
-          <path
-            d="M4.25 10.75V14C4.25 15.104 6.377 16 9 16C11.623 16 13.75 15.104 13.75 14V10.75"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.2"
-          />
-        </g>
-      </svg>
-    ),
-  },
+  // {
+  //   name: "Work",
+  //   href: "/work",
+  //   icon: (active) => (
+  //     <svg
+  //       height="18px"
+  //       width="18px"
+  //       viewBox="0 0 18 18"
+  //       xmlns="http://www.w3.org/2000/svg"
+  //       className={`mb-0.5 transition-opacity duration-200 ${active ? "opacity-100" : "opacity-40"}`}
+  //     >
+  //       <g fill="currentColor">
+  //         <path
+  //           d="M9.458 2.361L15.79 5.621C16.403 5.937 16.403 6.813 15.79 7.129L9.458 10.389C9.17 10.537 8.829 10.537 8.542 10.389L2.21 7.129C1.597 6.813 1.597 5.937 2.21 5.621L8.542 2.361C8.83 2.213 9.171 2.213 9.458 2.361Z"
+  //           fill="currentColor"
+  //           fillOpacity={active ? "0.35" : "0.2"}
+  //           stroke="none"
+  //         />
+  //         <path
+  //           d="M9.458 2.361L15.79 5.621C16.403 5.937 16.403 6.813 15.79 7.129L9.458 10.389C9.17 10.537 8.829 10.537 8.542 10.389L2.21 7.129C1.597 6.813 1.597 5.937 2.21 5.621L8.542 2.361C8.83 2.213 9.171 2.213 9.458 2.361Z"
+  //           fill="none"
+  //           stroke="currentColor"
+  //           strokeLinecap="round"
+  //           strokeLinejoin="round"
+  //           strokeWidth="1.2"
+  //         />
+  //         <path
+  //           d="M16.25 6.375C16.079 7.115 15.932 8.097 15.969 9.25C15.996 10.084 16.113 10.812 16.25 11.406"
+  //           fill="none"
+  //           stroke="currentColor"
+  //           strokeLinecap="round"
+  //           strokeLinejoin="round"
+  //           strokeWidth="1.2"
+  //         />
+  //         <path
+  //           d="M4.25 10.75V14C4.25 15.104 6.377 16 9 16C11.623 16 13.75 15.104 13.75 14V10.75"
+  //           fill="none"
+  //           stroke="currentColor"
+  //           strokeLinecap="round"
+  //           strokeLinejoin="round"
+  //           strokeWidth="1.2"
+  //         />
+  //       </g>
+  //     </svg>
+  //   ),
+  // },
   {
     name: "Projects",
     href: "/projects",
