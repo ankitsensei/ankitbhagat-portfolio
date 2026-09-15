@@ -91,29 +91,29 @@
   min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  padding: 3rem 1rem 9rem 1rem;
+  padding: 2rem 1rem 7rem 1rem;
 }
 
 @media (min-width: 640px) {
   .page {
-    padding: 4rem 1.5rem 10rem 1.5rem;
+    padding: 2.5rem 1.5rem 8rem 1.5rem;
   }
 }
 
 .page-col {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.75rem;
 }
 
 .page-row {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .box {
-  margin-top: 2.75rem;
+  margin-top: 1.5rem;
 }
 
 /* Progressive blur overlay at page bottom */
@@ -194,6 +194,21 @@ html.light .btn-pill-3d {
   color: var(--text-primary);
   border: 1px solid var(--border-color);
   backdrop-filter: blur(10px);
+}
+
+/* Match calendar SVG background to page background */
+.react-activity-calendar__svg {
+  background: transparent !important;
+}
+
+.react-activity-calendar rect[fill] {
+  outline: none;
+}
+
+/* Ensure all card backgrounds match page in dark mode */
+html.dark .react-activity-calendar,
+html.dark .react-activity-calendar__legend {
+  background: transparent;
 }
 
 /* Custom subtle scrollbar */

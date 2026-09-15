@@ -10,10 +10,10 @@ export const FeaturedProjects: React.FC = () => {
   const featured = ProjectData.slice(0, 4);
 
   return (
-    <div className="box flex flex-col gap-5">
+    <div className="box flex flex-col gap-3">
       <div className="flex items-center justify-between">
         <span className="text-sm text-[var(--text-muted)]">
-          still not sure? Check out my <span className="font-medium text-[var(--text-primary)]">Projects</span>
+          Featured <span className="font-medium text-[var(--text-primary)]">Projects</span>
         </span>
         <Link
           to="/projects"
@@ -23,7 +23,7 @@ export const FeaturedProjects: React.FC = () => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {featured.map((project, idx) => (
           <motion.div
             key={idx}

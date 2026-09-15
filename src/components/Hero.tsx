@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
         {/* Left Side: Name, Tag, Availability */}
         <div className="flex flex-col min-w-0 flex-1">
           {/* Hey it's me tag */}
-          <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[var(--text-muted)] mb-1.5">
+          <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[var(--text-muted)] mb-0.5">
             <span>Hey It's me</span>
             <svg
               height="1em"
@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* Availability Badge directly under name - Fully Responsive */}
-          <div className="mt-2.5 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 text-[10.5px] sm:text-xs font-mono w-fit max-w-full animate-pulse-glow-badge">
+          <div className="mt-1.5 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 text-[10.5px] sm:text-xs font-mono w-fit max-w-full animate-pulse-glow-badge">
             <span className="shrink-0 h-2 w-2 rounded-full bg-emerald-500 animate-pulse-glow" />
             <span className="truncate sm:whitespace-normal">Available for freelancing & projects</span>
           </div>
@@ -73,13 +73,13 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Clean, Straightforward Bio */}
-      <div className="max-w-xl mt-1">
+      <div className="max-w-xl">
         <p className="text-sm leading-relaxed text-[var(--text-muted)]">
           I'm a <span className="font-medium text-[var(--text-primary)]">Full Stack Web Developer</span> building fast, scalable applications and modern web experiences. Specializing in <span className="font-medium text-[var(--text-primary)]">React / Next.js</span> on the frontend and <span className="font-medium text-[var(--text-primary)]">Node.js, Express & PostgreSQL / MongoDB</span> on the backend.
         </p>
 
         {/* Action Buttons: Twitter DM, Resume, Email */}
-        <div className="mt-5 flex items-center gap-2.5 flex-wrap">
+        <div className="mt-3 flex items-center gap-2.5 flex-wrap">
           <a
             target="_blank"
             rel="noopener noreferrer"

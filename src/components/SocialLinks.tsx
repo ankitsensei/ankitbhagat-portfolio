@@ -53,9 +53,9 @@ const socials: SocialItem[] = [
 export const SocialLinks: React.FC = () => {
   return (
     <div className="box">
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2">
         <span className="text-sm text-[var(--text-muted)]">
-          You can check these <span className="font-medium text-[var(--text-primary)]">links</span> if you wish to
+          <span className="font-medium text-[var(--text-primary)]">Links</span>
         </span>
 
         {/* 2 media links per line on mobile, 3 on larger screens */}

@@ -53,22 +53,16 @@ export const Projects: React.FC = () => {
     <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased">
       <main className="page">
         {/* Page Header */}
-        <div className="page-col mb-8">
+        <div className="page-col mb-5">
           <div>
-            <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[var(--text-muted)] mb-1.5">
-              <span>Selected Works</span>
-            </div>
             <h1 className="doto-font text-3xl font-bold tracking-tight text-[var(--text-primary)]">
               Projects
             </h1>
-            <p className="text-sm text-[var(--text-muted)] mt-1.5">
-              A curated collection of full-stack web applications, tools, and extensions I've built.
-            </p>
           </div>
         </div>
 
         {/* Filter Controls: Category Pills & Search Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
           {/* Category Filters */}
           <div className="flex flex-wrap gap-1 p-1 rounded-lg bg-[var(--pill-bg)] border border-[var(--border-color)] w-fit max-w-full overflow-hidden">
             {categories.map((cat) => {
@@ -130,33 +124,16 @@ export const Projects: React.FC = () => {
           </div>
         </div>
 
-        {/* Results Counter if search query is present */}
-        {searchQuery && (
-          <div className="text-xs text-[var(--text-muted)] mb-4 flex items-center justify-between">
-            <span>
-              Found <span className="text-[var(--text-primary)] font-medium">{filteredProjects.length}</span> project{filteredProjects.length !== 1 ? "s" : ""} matching "<span className="text-[var(--text-primary)]">{searchQuery}</span>"
-            </span>
-            <button
-              onClick={() => setSearchQuery("")}
-              className="text-emerald-500 hover:underline cursor-pointer"
-            >
-              Clear search
-            </button>
-          </div>
-        )}
-
-        {/* Rock-solid, stable Projects Grid (Prevents layout shift when only 1 item like Extensions is selected) */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 items-start" style={{ minHeight: filteredProjects.length <= 2 ? '420px' : 'auto' }}>
-          <AnimatePresence mode="sync" initial={false}>
+        {/* Projects Grid */}
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <AnimatePresence mode="popLayout" initial={false}>
             {filteredProjects.map((project, idx) => (
               <motion.div
                 key={project.heading}
-                layout
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.25, ease: "easeOut", delay: idx * 0.04 }}
-                whileHover={{ y: -3 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.15 } }}
+                transition={{ duration: 0.2, delay: idx * 0.03 }}
                 className="group relative flex flex-col rounded-lg border border-dashed border-[var(--border-dashed)] hover:border-[var(--text-muted)] bg-[var(--card-bg)] p-2.5 transition-colors duration-200 shadow-sm"
               >
                 {/* Corner hover crosshairs */}
@@ -238,26 +215,20 @@ export const Projects: React.FC = () => {
           </AnimatePresence>
         </div>
 
-        {/* Empty State when no project matches */}
+        {/* Empty State */}
         {filteredProjects.length === 0 && (
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="py-16 flex flex-col items-center justify-center text-center border border-dashed border-[var(--border-dashed)] rounded-xl bg-[var(--card-bg)] p-6 my-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="py-12 flex flex-col items-center justify-center text-center border border-dashed border-[var(--border-dashed)] rounded-xl bg-[var(--card-bg)] p-6 my-2"
           >
-            <div className="h-10 w-10 rounded-full bg-[var(--badge-subtle-bg)] border border-[var(--badge-subtle-border)] flex items-center justify-center text-[var(--text-muted)] mb-3">
-              <FiSearch className="text-base" />
-            </div>
-            <p className="text-sm text-[var(--text-primary)] font-medium">No projects found</p>
-            <p className="text-xs text-[var(--text-muted)] mt-1 max-w-sm">
-              We couldn't find any project matching "{searchQuery}". Try searching with different keywords or reset the category.
-            </p>
+            <p className="text-sm text-[var(--text-muted)]">No projects found</p>
             <button
               onClick={() => {
                 setSearchQuery("");
                 setActiveCategory("All");
               }}
-              className="mt-4 px-3.5 py-1.5 text-xs rounded-md bg-[var(--badge-subtle-bg)] hover:bg-[var(--border-color)] text-[var(--text-primary)] border border-[var(--border-color)] transition-colors cursor-pointer"
+              className="mt-3 px-3 py-1 text-xs rounded-md bg-[var(--badge-subtle-bg)] hover:bg-[var(--border-color)] text-[var(--text-primary)] border border-[var(--border-color)] transition-colors cursor-pointer"
             >
               Reset filters
             </button>

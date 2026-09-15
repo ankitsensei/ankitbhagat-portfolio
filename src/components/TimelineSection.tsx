@@ -18,7 +18,14 @@ const milestones: Milestone[] = [
     badge: "DEV",
     description:
       "Architecting end-to-end web applications with Next.js, React, Node.js, Express, and PostgreSQL/MongoDB. Focusing on scalable API design, JWT authentication, and responsive UI performance.",
-    tags: ["React", "Next.js", "Node.js", "Express", "PostgreSQL", "TailwindCSS"],
+    tags: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "TailwindCSS",
+    ],
   },
   {
     period: "2023 - Present",

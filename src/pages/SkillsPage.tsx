@@ -96,80 +96,65 @@ export const SkillsPage: React.FC = () => {
     <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased">
       <main className="page">
         {/* Page Header */}
-        <div className="page-col mb-8">
+        <div className="page-col mb-5">
           <div>
-            <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[var(--text-muted)] mb-1.5">
-              <span>Stack & Tooling</span>
-            </div>
-            <h1 className="doto-font text-3xl font-bold tracking-tight text-[var(--text-primary)] flex items-baseline gap-2 flex-wrap">
-              <span>Skills</span>
-              <span className="jetbrains-mono text-xs font-light text-[var(--text-muted)]">
-                Which I use? See below
-              </span>
+            <h1 className="doto-font text-3xl font-bold tracking-tight text-[var(--text-primary)]">
+              Skills
             </h1>
           </div>
         </div>
 
-        {/* Gurbinder.dev-style narrative paragraph with inline pill buttons */}
-        <div className="rounded-xl border border-[var(--border-color)] bg-[var(--card-bg)] p-5 sm:p-6 mb-10 text-sm text-[var(--text-muted)] leading-relaxed shadow-sm">
-          <p className="flex flex-wrap items-center gap-y-2">
+        {/* Narrative paragraph with inline pill buttons */}
+        <div className="rounded-lg p-3 sm:p-4 mb-4 text-sm text-[var(--text-muted)] leading-relaxed">
+          <p className="flex flex-wrap items-center gap-y-1.5">
             <span>My main Tech stack is</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <SiNextdotjs className="text-sm" /> Next.js
-            </span>
-            <span>framework with</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <RiTailwindCssFill className="text-cyan-400 text-sm" /> TailwindCSS
-            </span>
-            <span>as a styling library. On the backend, I engineer scalable APIs with</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <FaNodeJs className="text-green-500 text-sm" /> Node.js
-            </span>
-            <span>and</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <SiExpress className="text-sm" /> Express
-            </span>
-            <span>in</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <SiTypescript className="text-blue-400 text-sm" /> TypeScript
-            </span>
-            <span>. For databases I use</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <SiPostgresql className="text-blue-400 text-sm" /> PostgreSQL
-            </span>
-            <span>and</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <SiMongodb className="text-emerald-500 text-sm" /> MongoDB
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
+              <SiNextdotjs className="text-xs" /> Next.js
             </span>
             <span>with</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <SiPrisma className="text-teal-400 text-sm" /> Prisma
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
+              <RiTailwindCssFill className="text-cyan-400 text-xs" /> TailwindCSS
             </span>
-            <span>/</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <SiSupabase className="text-emerald-400 text-sm" /> Supabase
-            </span>
-            <span>, deployed and maintained on</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <SiVercel className="text-sm" /> Vercel
+            <span>. Backend with</span>
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
+              <FaNodeJs className="text-green-500 text-xs" /> Node.js
             </span>
             <span>&</span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 mx-1 rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] text-xs text-[var(--text-primary)] font-medium shadow-xs">
-              <SiCloudflare className="text-amber-500 text-sm" /> Cloudflare
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
+              <SiExpress className="text-xs" /> Express
             </span>
-            <span>.</span>
+            <span>in</span>
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
+              <SiTypescript className="text-blue-400 text-xs" /> TypeScript
+            </span>
+            <span>. Databases:</span>
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
+              <SiPostgresql className="text-blue-400 text-xs" /> PostgreSQL
+            </span>
+            <span>&</span>
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
+              <SiMongodb className="text-emerald-500 text-xs" /> MongoDB
+            </span>
+            <span>. Deployed on</span>
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
+              <SiVercel className="text-xs" /> Vercel
+            </span>
+            <span>&</span>
+            <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
+              <SiCloudflare className="text-amber-500 text-xs" /> Cloudflare
+            </span>
           </p>
         </div>
 
         {/* Categorized Skills Section */}
-        <div className="flex flex-col gap-6 sm:gap-7">
+        <div className="flex flex-col gap-4 sm:gap-5">
           {skillCategories.map((cat, idx) => (
-            <div key={idx} className="flex flex-col gap-2.5">
+            <div key={idx} className="flex flex-col gap-1.5">
               <div className="jetbrains-mono text-xs font-semibold text-[var(--text-muted)] tracking-wider">
                 {cat.tag}
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {cat.skills.map((skill, sIdx) => (
                   <div
                     key={sIdx}
