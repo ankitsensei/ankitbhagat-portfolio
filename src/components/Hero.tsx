@@ -6,10 +6,60 @@ import { FiMail } from "react-icons/fi";
 export const Hero: React.FC = () => {
   return (
     <div id="hero-section" className="page-col relative">
-      {/* Top Profile & Status Section without banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        {/* Avatar with sleek ring and glow */}
-        <div className="relative group w-fit">
+      {/* Top Header: Left Info (Hey it's me, Name, Availability) & Right Profile Picture */}
+      <div className="flex items-start justify-between gap-4 sm:gap-6">
+        {/* Left Side: Name, Tag, Availability */}
+        <div className="flex flex-col min-w-0">
+          {/* Hey it's me tag */}
+          <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[#8B8D91]/70 mb-1.5">
+            <span>Hey It's me</span>
+            <svg
+              height="1em"
+              width="1em"
+              className="opacity-70"
+              viewBox="0 0 18 18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>heart hand</title>
+              <g fill="#A1A1AA">
+                <path d="M6.074 10.969L5.549 9.84899C5.143 8.98099 5.14 7.98499 5.539 7.11499C5.937 6.24599 6.698 5.59799 7.624 5.33799C7.898 5.26099 8.181 5.22199 8.465 5.22199C9.598 5.22199 10.657 5.83499 11.271 6.80899C11.71 5.98999 12.001 5.058 12.001 4.008C12.008 2.085 10.447 0.510993 8.508 0.498993C7.668 0.509993 6.871 0.818996 6.251 1.355C5.63 0.818996 4.83 0.508993 3.98 0.498993C2.055 0.510993 0.494 2.08499 0.501 4.00499C0.501 7.87899 4.379 10.202 5.567 10.822C5.727 10.905 5.9 10.948 6.074 10.969Z" />
+                <path
+                  d="M16.554 10.604C15.565 9.84798 13.332 9.68199 11.231 10.181L10.12 7.81799C9.74901 7.02899 8.86801 6.54698 8.02901 6.78298C6.96101 7.08298 6.45701 8.24998 6.90701 9.21298L9.05401 13.789L7.38401 13.482C6.65501 13.348 5.87201 13.631 5.49601 14.27C5.19701 14.779 5.17101 15.373 5.41301 15.89C5.60801 16.308 5.95601 16.624 6.39301 16.782L8.50201 17.525C9.39701 17.84 10.339 18.001 11.288 18.001H13.905C16.54 18.001 17.827 15.642 17.696 13.721C17.585 12.083 17.201 11.1 16.552 10.605L16.554 10.604Z"
+                  opacity="0.5"
+                />
+              </g>
+            </svg>
+          </div>
+
+          {/* Title */}
+          <h1 className="doto-font text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-baseline gap-2 flex-wrap">
+            <span>ANKIT BHAGAT</span>
+            <a
+              className="group"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://x.com/webdevankit"
+            >
+              <span className="jetbrains-mono text-xs font-normal tracking-tight text-[#8B8D91]/70 transition-colors duration-200 group-hover:text-white">
+                <span>/ </span>
+                <span className="text-[10px]">@</span>
+                <span>webdevankit</span>
+              </span>
+            </a>
+          </h1>
+
+          {/* Availability Badge directly under name */}
+          <div className="mt-2.5 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-400 text-xs font-mono w-fit shadow-[0_0_15px_rgba(16,185,129,0.12)]">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>Available for freelancing & projects</span>
+          </div>
+        </div>
+
+        {/* Avatar on Right side with live green dot at right bottom corner */}
+        <div className="relative shrink-0 group">
           <div className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden rounded-2xl border border-[#2D2E2F] bg-[#121314] shadow-2xl ring-1 ring-white/10 transition-all duration-300 group-hover:border-white/30 group-hover:shadow-[0_0_25px_rgba(255,255,255,0.06)]">
             <img
               src={DP}
@@ -17,60 +67,17 @@ export const Hero: React.FC = () => {
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </div>
-        </div>
 
-        {/* Availability Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-400 text-xs font-mono w-fit shadow-[0_0_15px_rgba(16,185,129,0.12)]">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span>Available for freelancing & projects</span>
+          {/* Live green dot at right bottom corner of the picture */}
+          <div className="absolute -bottom-1 -right-1 flex h-4 w-4 sm:h-4.5 sm:w-4.5 items-center justify-center pointer-events-none">
+            <span className="animate-ping absolute inline-flex h-3.5 w-3.5 rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-3 w-3 sm:h-3.5 sm:w-3.5 rounded-full bg-emerald-500 border-2 border-[#0A0B0C] shadow-[0_0_10px_rgba(16,185,129,0.9)]" />
+          </div>
         </div>
-      </div>
-
-      <div className="pt-2">
-        {/* Hey it's me tag */}
-        <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[#8B8D91]/70 mb-1.5">
-          <span>Hey It's me</span>
-          <svg
-            height="1em"
-            width="1em"
-            className="opacity-70"
-            viewBox="0 0 18 18"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>heart hand</title>
-            <g fill="#A1A1AA">
-              <path d="M6.074 10.969L5.549 9.84899C5.143 8.98099 5.14 7.98499 5.539 7.11499C5.937 6.24599 6.698 5.59799 7.624 5.33799C7.898 5.26099 8.181 5.22199 8.465 5.22199C9.598 5.22199 10.657 5.83499 11.271 6.80899C11.71 5.98999 12.001 5.058 12.001 4.008C12.008 2.085 10.447 0.510993 8.508 0.498993C7.668 0.509993 6.871 0.818996 6.251 1.355C5.63 0.818996 4.83 0.508993 3.98 0.498993C2.055 0.510993 0.494 2.08499 0.501 4.00499C0.501 7.87899 4.379 10.202 5.567 10.822C5.727 10.905 5.9 10.948 6.074 10.969Z" />
-              <path
-                d="M16.554 10.604C15.565 9.84798 13.332 9.68199 11.231 10.181L10.12 7.81799C9.74901 7.02899 8.86801 6.54698 8.02901 6.78298C6.96101 7.08298 6.45701 8.24998 6.90701 9.21298L9.05401 13.789L7.38401 13.482C6.65501 13.348 5.87201 13.631 5.49601 14.27C5.19701 14.779 5.17101 15.373 5.41301 15.89C5.60801 16.308 5.95601 16.624 6.39301 16.782L8.50201 17.525C9.39701 17.84 10.339 18.001 11.288 18.001H13.905C16.54 18.001 17.827 15.642 17.696 13.721C17.585 12.083 17.201 11.1 16.552 10.605L16.554 10.604Z"
-                opacity="0.5"
-              />
-            </g>
-          </svg>
-        </div>
-
-        {/* Title */}
-        <h1 className="doto-font text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-baseline gap-2 flex-wrap">
-          <span>ANKIT BHAGAT</span>
-          <a
-            className="group"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://x.com/webdevankit"
-          >
-            <span className="jetbrains-mono text-xs font-normal tracking-tight text-[#8B8D91]/70 transition-colors duration-200 group-hover:text-white">
-              <span>/ </span>
-              <span className="text-[10px]">@</span>
-              <span>webdevankit</span>
-            </span>
-          </a>
-        </h1>
       </div>
 
       {/* Clean, Straightforward Bio */}
-      <div className="max-w-xl">
+      <div className="max-w-xl mt-1">
         <p className="text-sm leading-relaxed text-[#A1A1AA]">
           I'm a <span className="font-medium text-white">Full Stack Web Developer</span> building fast, scalable applications and modern web experiences. Specializing in <span className="font-medium text-white">React / Next.js</span> on the frontend and <span className="font-medium text-white">Node.js, Express & PostgreSQL / MongoDB</span> on the backend.
         </p>
@@ -118,3 +125,4 @@ export const Hero: React.FC = () => {
 };
 
 export default Hero;
+

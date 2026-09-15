@@ -66,8 +66,11 @@ export const ExperienceTimeline: React.FC = () => {
 
         {/* Connected Horizontal Timeline (Always 1 single line on all screens) */}
         <div className="relative pt-2 pb-1">
-          {/* Horizontal connecting line */}
-          <div className="absolute top-[13px] left-3 right-3 sm:left-4 sm:right-4 h-[1px] bg-[#2D2E2F] border-t border-dashed border-[#3D3E42]" />
+          {/* Base horizontal connecting line */}
+          <div className="absolute top-[13px] left-3 right-3 sm:left-4 sm:right-4 h-[1.5px] bg-[#232426]" />
+
+          {/* Present segment highlighted in green (only the line) */}
+          <div className="absolute top-[13px] left-[50%] right-3 sm:right-4 h-[1.5px] bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.7)]" />
 
           {/* 4-column grid that stays in the same line even on mobile */}
           <div className="relative grid grid-cols-4 gap-1.5 sm:gap-3">
