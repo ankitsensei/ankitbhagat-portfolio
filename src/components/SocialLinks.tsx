@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { FaXTwitter, FaGithub, FaLinkedinIn, FaDiscord } from "react-icons/fa6";
 import { HiOutlineDocumentText } from "react-icons/hi2";
 import { FiMail, FiArrowUpRight } from "react-icons/fi";
@@ -60,11 +61,16 @@ export const SocialLinks: React.FC = () => {
         {/* 2 media links per line on mobile, 3 on larger screens */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5">
           {socials.map((s, idx) => (
-            <a
+            <motion.a
               key={idx}
               target="_blank"
               rel="noopener noreferrer"
               href={s.href}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ delay: idx * 0.06, duration: 0.35, ease: "easeOut" }}
+              whileHover={{ y: -2 }}
               className="group relative flex items-center justify-between rounded-lg border border-[var(--border-color)] bg-[var(--card-bg)] hover:bg-[var(--card-hover)] px-2.5 py-2 sm:px-3 sm:py-2.5 transition-all duration-200 hover:border-[var(--text-muted)] hover:scale-[1.01] shadow-sm"
             >
               <div className="flex items-center gap-2 sm:gap-2.5 min-w-0 overflow-hidden">
@@ -82,7 +88,7 @@ export const SocialLinks: React.FC = () => {
               </div>
 
               <FiArrowUpRight className="text-[10px] sm:text-xs shrink-0 text-[var(--text-subtle)] group-hover:text-[var(--text-primary)] transition-colors ml-0.5" />
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>

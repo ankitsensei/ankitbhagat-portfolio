@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { Link } from "react-router";
 import { ProjectData } from "../assets/ProjectsData";
 import { FaGithub } from "react-icons/fa";
@@ -24,8 +25,13 @@ export const FeaturedProjects: React.FC = () => {
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {featured.map((project, idx) => (
-          <div
+          <motion.div
             key={idx}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ delay: idx * 0.08, duration: 0.4, ease: "easeOut" }}
+            whileHover={{ y: -3 }}
             className="group relative flex flex-col rounded-lg border border-dashed border-[var(--border-dashed)] hover:border-[var(--text-muted)] bg-[var(--card-bg)] p-2.5 transition-all duration-300 shadow-sm"
           >
             {/* Corner hover crosshairs */}
@@ -96,7 +102,7 @@ export const FeaturedProjects: React.FC = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

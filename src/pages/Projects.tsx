@@ -70,7 +70,7 @@ export const Projects: React.FC = () => {
         {/* Filter Controls: Category Pills & Search Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
           {/* Category Filters */}
-          <div className="flex flex-wrap gap-1 p-1 rounded-lg bg-[var(--pill-bg)] border border-[var(--border-color)] w-fit max-w-full">
+          <div className="flex flex-wrap gap-1 p-1 rounded-lg bg-[var(--pill-bg)] border border-[var(--border-color)] w-fit max-w-full overflow-hidden">
             {categories.map((cat) => {
               const isActive = activeCategory === cat;
               const count =
@@ -146,15 +146,17 @@ export const Projects: React.FC = () => {
         )}
 
         {/* Rock-solid, stable Projects Grid (Prevents layout shift when only 1 item like Extensions is selected) */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 items-start min-h-[360px]">
-          <AnimatePresence mode="popLayout" initial={false}>
-            {filteredProjects.map((project) => (
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 items-start" style={{ minHeight: filteredProjects.length <= 2 ? '420px' : 'auto' }}>
+          <AnimatePresence mode="sync" initial={false}>
+            {filteredProjects.map((project, idx) => (
               <motion.div
                 key={project.heading}
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
+                layout
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.18, ease: "easeOut" }}
+                transition={{ duration: 0.25, ease: "easeOut", delay: idx * 0.04 }}
+                whileHover={{ y: -3 }}
                 className="group relative flex flex-col rounded-lg border border-dashed border-[var(--border-dashed)] hover:border-[var(--text-muted)] bg-[var(--card-bg)] p-2.5 transition-colors duration-200 shadow-sm"
               >
                 {/* Corner hover crosshairs */}

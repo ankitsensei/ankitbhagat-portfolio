@@ -49,8 +49,8 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* Availability Badge directly under name - Fully Responsive */}
-          <div className="mt-2.5 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 text-[10.5px] sm:text-xs font-mono w-fit max-w-full shadow-[0_0_15px_rgba(16,185,129,0.12)]">
-            <span className="shrink-0 h-2 w-2 rounded-full bg-emerald-500" />
+          <div className="mt-2.5 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 text-[10.5px] sm:text-xs font-mono w-fit max-w-full animate-pulse-glow-badge">
+            <span className="shrink-0 h-2 w-2 rounded-full bg-emerald-500 animate-pulse-glow" />
             <span className="truncate sm:whitespace-normal">Available for freelancing & projects</span>
           </div>
         </div>
@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
 
           {/* Static live green dot at right bottom corner */}
           <div className="absolute -bottom-1 -right-1 flex h-3.5 w-3.5 sm:h-4 sm:w-4 items-center justify-center pointer-events-none">
-            <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500 border-2 border-[var(--bg-page)] shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+            <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500 border-2 border-[var(--bg-page)] animate-pulse-glow" />
           </div>
         </div>
       </div>

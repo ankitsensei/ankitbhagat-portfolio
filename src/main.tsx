@@ -8,12 +8,10 @@ import Projects from "./pages/Projects";
 import SkillsPage from "./pages/SkillsPage";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./context/ThemeContext";
-import ScrollProgressBar from "./components/ScrollProgressBar";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
-      <ScrollProgressBar />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
