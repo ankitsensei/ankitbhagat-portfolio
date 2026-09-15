@@ -50,27 +50,27 @@ export const Projects: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#0A0B0C] text-[#EDEDED] antialiased">
+    <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased">
       <main className="page">
         {/* Page Header */}
         <div className="page-col mb-8">
           <div>
-            <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[#8B8D91]/70 mb-1.5">
+            <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[var(--text-muted)] mb-1.5">
               <span>Selected Works</span>
             </div>
-            <h1 className="doto-font text-3xl font-bold tracking-tight text-white">
+            <h1 className="doto-font text-3xl font-bold tracking-tight text-[var(--text-primary)]">
               Projects
             </h1>
-            <p className="text-sm text-[#8B8D91] mt-1.5">
+            <p className="text-sm text-[var(--text-muted)] mt-1.5">
               A curated collection of full-stack web applications, tools, and extensions I've built.
             </p>
           </div>
         </div>
 
         {/* Filter Controls: Category Pills & Search Bar */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-8">
-          {/* Category Filters with Smooth Floating Indicator */}
-          <div className="flex flex-wrap gap-1.5 p-1 rounded-lg bg-[#121314] border border-[#232426] w-fit">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
+          {/* Category Filters */}
+          <div className="flex flex-wrap gap-1 p-1 rounded-lg bg-[var(--pill-bg)] border border-[var(--border-color)] w-fit max-w-full">
             {categories.map((cat) => {
               const isActive = activeCategory === cat;
               const count =
@@ -82,23 +82,23 @@ export const Projects: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`relative jetbrains-mono text-xs px-3 py-1.5 rounded-md transition-colors duration-200 cursor-pointer flex items-center gap-1.5 ${
+                  className={`relative jetbrains-mono text-xs px-2.5 sm:px-3 py-1.5 rounded-md transition-colors duration-200 cursor-pointer flex items-center gap-1.5 ${
                     isActive
-                      ? "text-black font-semibold"
-                      : "text-[#8B8D91] hover:text-white"
+                      ? "text-[var(--bg-page)] font-semibold"
+                      : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeProjectCategory"
-                      className="absolute inset-0 bg-white rounded-md shadow-sm"
-                      transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                      className="absolute inset-0 bg-[var(--text-primary)] rounded-md shadow-sm"
+                      transition={{ type: "spring", stiffness: 500, damping: 35 }}
                     />
                   )}
                   <span className="relative z-10">{cat}</span>
                   <span
                     className={`relative z-10 text-[10px] ${
-                      isActive ? "text-black/60 font-mono" : "text-[#71717A]"
+                      isActive ? "text-[var(--bg-page)] opacity-80 font-mono" : "text-[var(--text-subtle)]"
                     }`}
                   >
                     {count}
@@ -108,20 +108,20 @@ export const Projects: React.FC = () => {
             })}
           </div>
 
-          {/* Search Input with Clear Button */}
-          <div className="relative w-full md:w-64">
-            <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-[#71717A] pointer-events-none" />
+          {/* Search Input */}
+          <div className="relative w-full sm:w-60">
+            <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-[var(--text-subtle)] pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search projects..."
-              className="w-full pl-8 pr-8 py-1.5 text-xs bg-[#121314] border border-[#232426] focus:border-white/40 rounded-lg text-white placeholder-[#71717A] focus:outline-none transition-all duration-200 shadow-sm"
+              className="w-full pl-8 pr-8 py-1.5 text-xs bg-[var(--input-bg)] border border-[var(--border-color)] focus:border-[var(--text-muted)] rounded-lg text-[var(--text-primary)] placeholder-[var(--text-subtle)] focus:outline-none transition-all duration-200 shadow-sm"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-[#8B8D91] hover:text-white cursor-pointer"
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-[var(--text-muted)] hover:text-[var(--text-primary)] cursor-pointer"
                 title="Clear search"
               >
                 <FiX />
@@ -132,52 +132,48 @@ export const Projects: React.FC = () => {
 
         {/* Results Counter if search query is present */}
         {searchQuery && (
-          <div className="text-xs text-[#8B8D91] mb-4 flex items-center justify-between">
+          <div className="text-xs text-[var(--text-muted)] mb-4 flex items-center justify-between">
             <span>
-              Found <span className="text-white font-medium">{filteredProjects.length}</span> project{filteredProjects.length !== 1 ? "s" : ""} matching "<span className="text-white">{searchQuery}</span>"
+              Found <span className="text-[var(--text-primary)] font-medium">{filteredProjects.length}</span> project{filteredProjects.length !== 1 ? "s" : ""} matching "<span className="text-[var(--text-primary)]">{searchQuery}</span>"
             </span>
             <button
               onClick={() => setSearchQuery("")}
-              className="text-emerald-400 hover:underline cursor-pointer"
+              className="text-emerald-500 hover:underline cursor-pointer"
             >
               Clear search
             </button>
           </div>
         )}
 
-        {/* Projects Grid with Smooth Layout and Enter/Exit Animations */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-h-[300px]"
-        >
-          <AnimatePresence mode="popLayout">
+        {/* Rock-solid, stable Projects Grid (Prevents layout shift when only 1 item like Extensions is selected) */}
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 items-start min-h-[360px]">
+          <AnimatePresence mode="popLayout" initial={false}>
             {filteredProjects.map((project) => (
               <motion.div
-                layout
                 key={project.heading}
-                initial={{ opacity: 0, scale: 0.94, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.94, y: -10 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-                className="group relative flex flex-col rounded-lg border border-dashed border-[#2D2E2F] hover:border-white/30 bg-[#121314]/40 hover:bg-[#151618]/70 p-2.5 transition-colors duration-200"
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.18, ease: "easeOut" }}
+                className="group relative flex flex-col rounded-lg border border-dashed border-[var(--border-dashed)] hover:border-[var(--text-muted)] bg-[var(--card-bg)] p-2.5 transition-colors duration-200 shadow-sm"
               >
                 {/* Corner hover crosshairs */}
                 <div className="pointer-events-none absolute inset-0 z-10 -m-px opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <div className="absolute -left-px -top-px h-2 w-2 border-l border-t border-white/90" />
-                  <div className="absolute -right-px -top-px h-2 w-2 border-r border-t border-white/90" />
-                  <div className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-white/90" />
-                  <div className="absolute -bottom-px -left-px h-2 w-2 border-b border-l border-white/90" />
+                  <div className="absolute -left-px -top-px h-2 w-2 border-l border-t border-[var(--text-primary)]" />
+                  <div className="absolute -right-px -top-px h-2 w-2 border-r border-t border-[var(--text-primary)]" />
+                  <div className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-[var(--text-primary)]" />
+                  <div className="absolute -bottom-px -left-px h-2 w-2 border-b border-l border-[var(--text-primary)]" />
                 </div>
 
                 {/* Project Image Preview */}
                 <div
                   onClick={() => setPreviewImage(project.image)}
-                  className="z-10 h-44 min-h-44 overflow-hidden rounded-md border border-[#232426] bg-[#0E0F10] relative cursor-zoom-in"
+                  className="z-10 h-44 min-h-44 overflow-hidden rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] relative cursor-zoom-in"
                 >
                   <img
                     src={project.image}
                     alt={project.heading}
-                    className="h-full w-full object-cover object-top opacity-60 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
+                    className="h-full w-full object-cover object-top opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
                   />
                   {project.liveLink && (
                     <a
@@ -185,7 +181,7 @@ export const Projects: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="absolute top-2.5 right-2.5 p-1.5 rounded-md bg-black/60 backdrop-blur-md text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-white hover:bg-black/90"
+                      className="absolute top-2.5 right-2.5 p-1.5 rounded-md bg-black/70 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-white hover:bg-black"
                     >
                       <FiExternalLink className="text-xs" />
                     </a>
@@ -196,39 +192,39 @@ export const Projects: React.FC = () => {
                 <div className="mt-3 flex flex-col gap-1.5 flex-1 justify-between">
                   <div>
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-sm font-semibold text-white/90 group-hover:text-white transition-colors">
+                      <span className="text-sm font-semibold text-[var(--text-primary)] transition-colors">
                         {project.heading}
                       </span>
 
-                      <div className="flex items-center gap-2 text-[#8B8D91]">
+                      <div className="flex items-center gap-2 text-[var(--text-muted)]">
                         {project.github && (
                           <a
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-white transition-colors"
+                            className="hover:text-[var(--text-primary)] transition-colors"
                             title="View Source on GitHub"
                           >
                             <FaGithub className="text-xs" />
                           </a>
                         )}
-                        <span className="jetbrains-mono text-[10px] rounded px-1.5 py-0.5 bg-[#1C1D1F] text-[#8B8D91] border border-[#2D2E2F]">
+                        <span className="jetbrains-mono text-[10px] rounded px-1.5 py-0.5 bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]">
                           {project.category}
                         </span>
                       </div>
                     </div>
 
-                    <p className="jetbrains-mono line-clamp-2 text-xs tracking-tight text-[#8B8D91] leading-relaxed mt-1">
+                    <p className="jetbrains-mono line-clamp-2 text-xs tracking-tight text-[var(--text-muted)] leading-relaxed mt-1">
                       {project.description}
                     </p>
                   </div>
 
                   {/* Tech Stack Badges */}
-                  <div className="flex flex-wrap gap-1 mt-3 pt-2 border-t border-[#232426]/40">
+                  <div className="flex flex-wrap gap-1 mt-3 pt-2 border-t border-[var(--border-color)]">
                     {project.techStack?.map((tech, i) => (
                       <span
                         key={i}
-                        className="jetbrains-mono text-[9px] px-1.5 py-0.5 rounded bg-[#18191B] text-[#A1A1AA] border border-[#232426]"
+                        className="jetbrains-mono text-[9px] px-1.5 py-0.5 rounded bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]"
                       >
                         {tech}
                       </span>
@@ -238,20 +234,20 @@ export const Projects: React.FC = () => {
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {/* Empty State when no project matches */}
         {filteredProjects.length === 0 && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="py-16 flex flex-col items-center justify-center text-center border border-dashed border-[#232426] rounded-xl bg-[#121314]/30 p-6 my-4"
+            className="py-16 flex flex-col items-center justify-center text-center border border-dashed border-[var(--border-dashed)] rounded-xl bg-[var(--card-bg)] p-6 my-4"
           >
-            <div className="h-10 w-10 rounded-full bg-[#1C1D1F] border border-[#2D2E2F] flex items-center justify-center text-[#8B8D91] mb-3">
+            <div className="h-10 w-10 rounded-full bg-[var(--badge-subtle-bg)] border border-[var(--badge-subtle-border)] flex items-center justify-center text-[var(--text-muted)] mb-3">
               <FiSearch className="text-base" />
             </div>
-            <p className="text-sm text-white font-medium">No projects found</p>
-            <p className="text-xs text-[#8B8D91] mt-1 max-w-sm">
+            <p className="text-sm text-[var(--text-primary)] font-medium">No projects found</p>
+            <p className="text-xs text-[var(--text-muted)] mt-1 max-w-sm">
               We couldn't find any project matching "{searchQuery}". Try searching with different keywords or reset the category.
             </p>
             <button
@@ -259,7 +255,7 @@ export const Projects: React.FC = () => {
                 setSearchQuery("");
                 setActiveCategory("All");
               }}
-              className="mt-4 px-3.5 py-1.5 text-xs rounded-md bg-[#1F2023] hover:bg-[#2A2B2F] text-white border border-[#2D2E2F] transition-colors cursor-pointer"
+              className="mt-4 px-3.5 py-1.5 text-xs rounded-md bg-[var(--badge-subtle-bg)] hover:bg-[var(--border-color)] text-[var(--text-primary)] border border-[var(--border-color)] transition-colors cursor-pointer"
             >
               Reset filters
             </button>

@@ -60,18 +60,18 @@ const workData: WorkExperience[] = [
 
 export const Work: React.FC = () => {
   return (
-    <div className="relative min-h-screen bg-[#0A0B0C] text-[#EDEDED] antialiased">
+    <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased">
       <main className="page">
         {/* Page Header */}
         <div className="page-col mb-10">
           <div>
-            <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[#8B8D91]/70 mb-1.5">
+            <div className="jetbrains-mono flex items-center gap-1.5 text-xs tracking-tighter text-[var(--text-muted)] mb-1.5">
               <span>Career & Journey</span>
             </div>
-            <h1 className="doto-font text-3xl font-bold tracking-tight text-white">
+            <h1 className="doto-font text-3xl font-bold tracking-tight text-[var(--text-primary)]">
               Work
             </h1>
-            <p className="text-sm text-[#8B8D91] mt-1.5">
+            <p className="text-sm text-[var(--text-muted)] mt-1.5">
               Here is my work experience and journey as a full stack developer!
             </p>
           </div>
@@ -87,11 +87,10 @@ export const Work: React.FC = () => {
                 <div className="relative z-10 flex items-center justify-center mt-5">
                   {item.isCurrent ? (
                     <div className="relative flex items-center justify-center">
-                      <span className="animate-ping absolute inline-flex h-3.5 w-3.5 rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative z-10 h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500 ring-4 ring-[#0A0B0C] shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
+                      <span className="relative z-10 h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500 ring-4 ring-[var(--bg-page)] shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
                     </div>
                   ) : (
-                    <span className="relative z-10 h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[#52525B] ring-4 ring-[#0A0B0C]" />
+                    <span className="relative z-10 h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[var(--text-subtle)] ring-4 ring-[var(--bg-page)]" />
                   )}
                 </div>
 
@@ -101,7 +100,7 @@ export const Work: React.FC = () => {
                     className={`w-[2px] flex-1 my-1 transition-colors duration-300 ${
                       item.isCurrent
                         ? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
-                        : "bg-[#232426]"
+                        : "bg-[var(--border-color)]"
                     }`}
                   />
                 )}
@@ -109,38 +108,38 @@ export const Work: React.FC = () => {
 
               {/* Work Card */}
               <div className="flex-1 pb-6 min-w-0">
-                <div className="relative flex flex-col rounded-xl border border-[#232426] bg-[#121314]/60 p-4 sm:p-6 transition-all duration-300 hover:border-white/20 hover:bg-[#141517] shadow-lg">
+                <div className="relative flex flex-col rounded-xl border border-[var(--border-color)] bg-[var(--card-bg)] p-4 sm:p-6 transition-all duration-300 hover:border-[var(--text-muted)] hover:bg-[var(--card-hover)] shadow-md">
                   {/* Card Header */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#232426]/60">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[var(--border-color)]">
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <h2 className="text-base font-semibold text-white">
+                        <h2 className="text-base font-semibold text-[var(--text-primary)]">
                           {item.company}
                         </h2>
-                        <span className="jetbrains-mono text-[10px] font-medium px-2 py-0.5 rounded-full bg-[#1F2023] text-[#A1A1AA] border border-[#2D2E2F]">
+                        <span className="jetbrains-mono text-[10px] font-medium px-2 py-0.5 rounded-full bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]">
                           {item.type}
                         </span>
                       </div>
-                      <p className="text-xs font-medium text-white/80 mt-0.5">
+                      <p className="text-xs font-medium text-[var(--text-primary)] opacity-80 mt-0.5">
                         {item.role}
                       </p>
                     </div>
 
                     <div className="flex flex-col sm:items-end">
-                      <span className={`jetbrains-mono text-xs ${item.isCurrent ? "text-emerald-400 font-medium" : "text-[#8B8D91]"}`}>
+                      <span className={`jetbrains-mono text-xs ${item.isCurrent ? "text-emerald-500 dark:text-emerald-400 font-medium" : "text-[var(--text-muted)]"}`}>
                         {item.period}
                       </span>
-                      <span className="text-[11px] text-[#71717A]">
+                      <span className="text-[11px] text-[var(--text-subtle)]">
                         {item.location}
                       </span>
                     </div>
                   </div>
 
                   {/* Bullet Points */}
-                  <ul className="mt-4 flex flex-col gap-2.5 text-xs text-[#8B8D91] leading-relaxed">
+                  <ul className="mt-4 flex flex-col gap-2.5 text-xs text-[var(--text-muted)] leading-relaxed">
                     {item.description.map((desc, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-white/40 select-none mt-0.5">▹</span>
+                        <span className="text-[var(--text-subtle)] select-none mt-0.5">▹</span>
                         <span>{desc}</span>
                       </li>
                     ))}
@@ -148,11 +147,11 @@ export const Work: React.FC = () => {
 
                   {/* Skills Tags */}
                   {item.skills && (
-                    <div className="mt-4 pt-3 border-t border-[#232426]/40 flex flex-wrap gap-1.5">
+                    <div className="mt-4 pt-3 border-t border-[var(--border-color)] flex flex-wrap gap-1.5">
                       {item.skills.map((skill, sIdx) => (
                         <span
                           key={sIdx}
-                          className="jetbrains-mono text-[10px] px-2 py-0.5 rounded bg-[#18191B] text-[#A1A1AA] border border-[#232426]"
+                          className="jetbrains-mono text-[10px] px-2 py-0.5 rounded bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]"
                         >
                           {skill}
                         </span>

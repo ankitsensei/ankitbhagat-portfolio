@@ -35,15 +35,15 @@ const timelineNodes: TimelineNode[] = [
 export const ExperienceTimeline: React.FC = () => {
   return (
     <div className="box">
-      <div className="relative rounded-xl border border-[#232426] bg-[#121314]/70 p-3.5 sm:p-5 backdrop-blur-sm shadow-xl overflow-hidden">
+      <div className="relative rounded-xl border border-[var(--border-color)] bg-[var(--card-bg)] p-3.5 sm:p-5 backdrop-blur-sm shadow-md overflow-hidden transition-colors">
         {/* Header with ALL link */}
         <div className="flex items-center justify-between mb-4 sm:mb-5">
-          <span className="text-xs text-[#8B8D91] font-medium">
+          <span className="text-xs text-[var(--text-muted)] font-medium">
             Experience & Journey
           </span>
           <Link
             to="/work"
-            className="jetbrains-mono flex items-center gap-1 text-xs text-[#8B8D91] hover:text-white transition-colors duration-200"
+            className="jetbrains-mono flex items-center gap-1 text-xs text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-200"
           >
             <span>ALL</span>
             <svg
@@ -67,7 +67,7 @@ export const ExperienceTimeline: React.FC = () => {
         {/* Connected Horizontal Timeline (Always 1 single line on all screens) */}
         <div className="relative pt-2 pb-1">
           {/* Base horizontal connecting line */}
-          <div className="absolute top-[13px] left-3 right-3 sm:left-4 sm:right-4 h-[1.5px] bg-[#232426]" />
+          <div className="absolute top-[13px] left-3 right-3 sm:left-4 sm:right-4 h-[1.5px] bg-[var(--border-color)]" />
 
           {/* Present segment highlighted in green (only the line) */}
           <div className="absolute top-[13px] left-[50%] right-3 sm:right-4 h-[1.5px] bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.7)]" />
@@ -80,11 +80,10 @@ export const ExperienceTimeline: React.FC = () => {
                 <div className="relative z-10 mb-2 flex items-center justify-center pl-1">
                   {item.isCurrent ? (
                     <div className="relative flex items-center justify-center">
-                      <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative z-10 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-400 ring-2 sm:ring-4 ring-[#121314]" />
+                      <span className="relative z-10 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-400 ring-2 sm:ring-4 ring-[var(--card-bg)] shadow-[0_0_6px_rgba(16,185,129,0.8)]" />
                     </div>
                   ) : (
-                    <span className="relative z-10 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-[#71717A] ring-2 sm:ring-4 ring-[#121314]" />
+                    <span className="relative z-10 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-[var(--text-subtle)] ring-2 sm:ring-4 ring-[var(--card-bg)]" />
                   )}
                 </div>
 
@@ -92,16 +91,20 @@ export const ExperienceTimeline: React.FC = () => {
                 <div className="flex flex-col gap-1 w-full min-w-0">
                   <div className="flex items-center gap-1 sm:gap-1.5 min-w-0">
                     <span
-                      className={`h-4.5 sm:h-5 px-1 sm:px-1.5 rounded text-[8.5px] sm:text-[10px] font-mono font-semibold flex items-center justify-center border shrink-0 ${item.isCurrent
-                        ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-400"
-                        : "border-[#2D2E2F] bg-[#1A1B1C] text-white/80"
-                        }`}
+                      className={`h-4.5 sm:h-5 px-1 sm:px-1.5 rounded text-[8.5px] sm:text-[10px] font-mono font-semibold flex items-center justify-center border shrink-0 ${
+                        item.isCurrent
+                          ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-500 dark:text-emerald-400"
+                          : "border-[var(--border-color)] bg-[var(--badge-subtle-bg)] text-[var(--text-primary)]"
+                      }`}
                     >
                       {item.badge}
                     </span>
                     <span
-                      className={`text-[10px] sm:text-xs font-semibold leading-tight truncate ${item.isCurrent ? "text-emerald-300" : "text-white/90"
-                        }`}
+                      className={`text-[10px] sm:text-xs font-semibold leading-tight truncate ${
+                        item.isCurrent
+                          ? "text-emerald-600 dark:text-emerald-300"
+                          : "text-[var(--text-primary)]"
+                      }`}
                       title={item.title}
                     >
                       {item.title}
@@ -109,8 +112,11 @@ export const ExperienceTimeline: React.FC = () => {
                   </div>
 
                   <span
-                    className={`jetbrains-mono text-[8.5px] sm:text-[10px] leading-tight truncate ${item.isCurrent ? "text-emerald-400/80" : "text-[#8B8D91]"
-                      }`}
+                    className={`jetbrains-mono text-[8.5px] sm:text-[10px] leading-tight truncate ${
+                      item.isCurrent
+                        ? "text-emerald-600/90 dark:text-emerald-400/80"
+                        : "text-[var(--text-muted)]"
+                    }`}
                   >
                     {item.period}
                   </span>

@@ -9,7 +9,7 @@ import DockNavbar from "../components/DockNavbar";
 
 export const Home: React.FC = () => {
   return (
-    <div className="relative min-h-screen bg-[#0A0B0C] text-[#EDEDED] antialiased">
+    <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased">
       <main className="page">
         <Hero />
         <ActivityCalendar />

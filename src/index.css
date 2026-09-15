@@ -7,25 +7,67 @@
     --font-doto: 'Doto', monospace;
     --font-inter: 'Inter', sans-serif;
 
-    --brand-color: #ffffff;
-    --background: 200 10% 5%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: #8B8D91;
-    --border: #232426;
-    --card-color: #1A1B1C;
-    --card-color-foreground: #222325;
+    /* Light Mode Tokens (Default) */
+    --bg-page: #FAFAFA;
+    --text-primary: #09090B;
+    --text-muted: #71717A;
+    --text-subtle: #A1A1AA;
+    --border-color: #E4E4E7;
+    --border-dashed: #D4D4D8;
+    --card-bg: #FFFFFF;
+    --card-hover: #F4F4F5;
+    --dock-bg: rgba(255, 255, 255, 0.88);
+    --dock-border: rgba(228, 228, 231, 0.9);
+    --pill-bg: #F4F4F5;
+    --pill-border: #E4E4E7;
+    --pill-text: #09090B;
+    --btn-3d-bg: #FFFFFF;
+    --btn-3d-text: #09090B;
+    --btn-3d-border: #E4E4E7;
+    --timeline-bg: #E4E4E7;
+    --input-bg: #FFFFFF;
+    --badge-subtle-bg: #F4F4F5;
+    --badge-subtle-text: #52525B;
+    --badge-subtle-border: #E4E4E7;
+  }
+
+  html.dark, body.dark {
+    /* Dark Mode Tokens */
+    --bg-page: #0A0B0C;
+    --text-primary: #EDEDED;
+    --text-muted: #8B8D91;
+    --text-subtle: #71717A;
+    --border-color: #232426;
+    --border-dashed: #2D2E2F;
+    --card-bg: #121314;
+    --card-hover: #151618;
+    --dock-bg: rgba(26, 27, 28, 0.88);
+    --dock-border: rgba(45, 46, 47, 0.7);
+    --pill-bg: #1A1B1C;
+    --pill-border: #2D2E2F;
+    --pill-text: #EDEDED;
+    --btn-3d-bg: #1A1B1C;
+    --btn-3d-text: #FFFFFF;
+    --btn-3d-border: #000000;
+    --timeline-bg: #232426;
+    --input-bg: #121314;
+    --badge-subtle-bg: #1C1D1F;
+    --badge-subtle-text: #8B8D91;
+    --badge-subtle-border: #2D2E2F;
+  }
+
+  html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
   }
 
   body {
-    background-color: #0A0B0C;
-    color: #EDEDED;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
     font-family: var(--font-figtree);
     overflow-x: hidden;
+    min-height: 100vh;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 }
 
@@ -101,24 +143,31 @@
   font-size: 0.75rem;
   height: 1.75rem;
   padding: 0 0.75rem;
-  background-color: #1A1B1C;
-  color: #FFFFFF;
+  background-color: var(--btn-3d-bg);
+  color: var(--btn-3d-text);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow:
-    0px 32px 64px -16px #0000004c,
-    0px 16px 32px -8px #0000004c,
-    0px 8px 16px -4px #0000003d,
-    0px 4px 8px -2px #0000003d,
-    0px -8px 16px -1px #00000029,
-    0px 2px 4px -1px #0000003d,
-    0px 0px 0px 1px #000000,
-    inset 0px 0px 0px 1px #ffffff14,
-    inset 0px 1px 0px #ffffff33;
+    0px 32px 64px -16px rgba(0, 0, 0, 0.3),
+    0px 16px 32px -8px rgba(0, 0, 0, 0.3),
+    0px 8px 16px -4px rgba(0, 0, 0, 0.2),
+    0px 4px 8px -2px rgba(0, 0, 0, 0.2),
+    0px -8px 16px -1px rgba(0, 0, 0, 0.15),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 1px var(--btn-3d-border),
+    inset 0px 0px 0px 1px rgba(255, 255, 255, 0.08),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+
+html.light .btn-pill-3d {
+  box-shadow:
+    0px 2px 4px rgba(0, 0, 0, 0.05),
+    0px 1px 2px rgba(0, 0, 0, 0.03),
+    0px 0px 0px 1px rgba(0, 0, 0, 0.08),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.8);
 }
 
 .btn-pill-3d:hover {
-  background-color: #242527;
-  color: #FFFFFF;
+  filter: brightness(1.08);
   transform: translateY(-1px);
 }
 
@@ -134,16 +183,16 @@
   flex-direction: column;
   gap: 8px;
   font-size: 13px;
-  color: #71717A;
+  color: var(--text-muted);
 }
 
 .react-activity-calendar__tooltip {
   border-radius: 6px;
   padding: 6px 10px;
   font-size: 11px;
-  background-color: #18181B;
-  color: #FFFFFF;
-  border: 1px solid #27272A;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
   backdrop-filter: blur(10px);
 }
 
@@ -158,10 +207,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #232426;
+  background: var(--border-dashed);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333438;
+  background: var(--text-muted);
 }
