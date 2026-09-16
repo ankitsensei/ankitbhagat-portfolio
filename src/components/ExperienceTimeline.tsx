@@ -27,26 +27,75 @@ const timelineNodes: TimelineNode[] = [
   },
   {
     title: "Open Source",
-    period: "2025 - Present",
+    period: "2026 - Present",
     badge: "04",
     isCurrent: true,
   },
 ];
 
-// Exact percentage positions for 4 equally spaced nodes (0%, 33.33%, 66.67%, 100%)
-const positions = ["20%", "45%", "70%", "100%"];
+const positions = ["5%", "36%", "68%", "100%"];
+const GAP_OFFSET = 10;
 
 export const ExperienceTimeline: React.FC = () => {
+  const segments = timelineNodes.slice(0, -1).map((_, idx) => {
+    const startPct = parseFloat(positions[idx]);
+    const endPct = parseFloat(positions[idx + 1]);
+    const isHighlighted =
+      timelineNodes[idx].isCurrent || timelineNodes[idx + 1].isCurrent;
+    return { startPct, endPct, isHighlighted };
+  });
+
+  const highlightedIndices = segments
+    .map((s, i) => (s.isHighlighted ? i : -1))
+    .filter((i) => i >= 0);
+  const firstHighlighted = highlightedIndices[0];
+  const lastHighlighted = highlightedIndices[highlightedIndices.length - 1];
+
   return (
     <div className="box">
-      <div className="relative w-full min-h-[64px] sm:min-h-[70px]">
-        {/* Base horizontal line running from center of dot 0 to center of dot 3 */}
-        <div className="absolute top-[6px] left-[6px] right-[6px] h-[1.5px] bg-[var(--border-color)] pointer-events-none" />
+      <div className="relative w-full h-[70px]">
+        {segments.map((seg, idx) => {
+          const width = `calc(${seg.endPct - seg.startPct}% - ${GAP_OFFSET * 2}px)`;
+          const isFirst = idx === firstHighlighted;
+          const isLast = idx === lastHighlighted;
 
-        {/* Present segment highlighted in green (distance from node 2 to node 3) */}
-        <div className="absolute top-[6px] left-[43%] right-[6px] h-[1.5px] bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.7)] pointer-events-none" />
+          let highlightBg: string;
+          if (isFirst && isLast) {
+            highlightBg =
+              "linear-gradient(to right, transparent, var(--text-primary) 20%, var(--text-primary) 80%, transparent)";
+          } else if (isFirst) {
+            highlightBg =
+              "linear-gradient(to right, transparent, var(--text-primary) 20%)";
+          } else if (isLast) {
+            highlightBg =
+              "linear-gradient(to right, var(--text-primary) 80%, transparent)";
+          } else {
+            highlightBg = "var(--text-primary)";
+          }
 
-        {/* Timeline Nodes & Labels with exact equal distance */}
+          return (
+            <React.Fragment key={idx}>
+              <div
+                className="absolute top-[7px] h-[1.5px] bg-[var(--border-color)]"
+                style={{
+                  left: `calc(${seg.startPct}% + ${GAP_OFFSET}px)`,
+                  width,
+                }}
+              />
+              {seg.isHighlighted && (
+                <div
+                  className="absolute top-[7px] h-[1.5px]"
+                  style={{
+                    left: `calc(${seg.startPct}% + ${GAP_OFFSET}px)`,
+                    width,
+                    background: highlightBg,
+                  }}
+                />
+              )}
+            </React.Fragment>
+          );
+        })}
+
         {timelineNodes.map((item, idx) => {
           const isFirst = idx === 0;
           const isLast = idx === timelineNodes.length - 1;
@@ -54,21 +103,19 @@ export const ExperienceTimeline: React.FC = () => {
 
           return (
             <React.Fragment key={idx}>
-              {/* Node Dot - Exactly centered on the line */}
               <div
-                className="absolute top-[6px] -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center pointer-events-none"
+                className="absolute top-[7px] -translate-x-1/2 -translate-y-1/2 z-10"
                 style={{ left: dotPos }}
               >
                 {item.isCurrent ? (
-                  <span className="h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-emerald-500 ring-4 ring-[var(--bg-page)] shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+                  <span className="block h-2.5 w-2.5 rounded-full bg-[var(--text-primary)] ring-[3px] ring-[var(--bg-page)] animate-pulse-glow" />
                 ) : (
-                  <span className="h-2 w-2 sm:h-2 sm:w-2 rounded-full bg-[var(--text-subtle)] ring-4 ring-[var(--bg-page)]" />
+                  <span className="block h-2 w-2 rounded-full bg-[var(--text-subtle)] ring-[3px] ring-[var(--bg-page)]" />
                 )}
               </div>
 
-              {/* Node Label & Badge - Positioned under the dot */}
               <div
-                className={`absolute top-[18px] flex flex-col gap-0.5 ${
+                className={`absolute top-[20px] flex flex-col gap-px ${
                   isFirst
                     ? "left-0 items-start text-left"
                     : isLast
@@ -78,24 +125,24 @@ export const ExperienceTimeline: React.FC = () => {
                 style={!isFirst && !isLast ? { left: dotPos } : undefined}
               >
                 <div
-                  className={`flex items-center gap-1 ${
+                  className={`flex items-center gap-0.5 ${
                     isLast ? "flex-row-reverse" : "flex-row"
                   }`}
                 >
                   <span
-                    className={`px-1 py-0.2 rounded text-[7.5px] sm:text-[9px] font-mono font-semibold flex items-center justify-center border shrink-0 ${
+                    className={`px-1 py-px bg-emerald-400/20 border-emerald-600/20 rounded text-[7px] sm:text-sm font-mono font-semibold border leading-none ${
                       item.isCurrent
-                        ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-500 dark:text-emerald-400"
+                        ? "border-[var(--text-primary)]/30 bg-[var(--text-primary)]/10 text-[var(--text-primary)]"
                         : "border-[var(--border-color)] bg-[var(--badge-subtle-bg)] text-[var(--text-primary)]"
                     }`}
                   >
                     {item.badge}
                   </span>
                   <span
-                    className={`text-[9.5px] sm:text-xs font-semibold leading-tight whitespace-nowrap ${
+                    className={`text-[8px] sm:text-[12px] font-semibold leading-tight whitespace-nowrap ${
                       item.isCurrent
-                        ? "text-emerald-500 dark:text-emerald-400"
-                        : "text-[var(--text-primary)]"
+                        ? "text-[var(--text-primary)] text-emerald-400"
+                        : "text-[var(--text-muted)]"
                     }`}
                   >
                     {item.title}
@@ -103,10 +150,10 @@ export const ExperienceTimeline: React.FC = () => {
                 </div>
 
                 <span
-                  className={`jetbrains-mono text-[8px] sm:text-[9.5px] leading-tight ${
+                  className={`jetbrains-mono text-[7px] sm:text-[10px] leading-tight ${
                     item.isCurrent
-                      ? "text-emerald-500/80 dark:text-emerald-400/80 font-medium"
-                      : "text-[var(--text-muted)]"
+                      ? "text-[var(--text-muted)] text-emerald-400"
+                      : "text-[var(--text-subtle)]"
                   }`}
                 >
                   {item.period}

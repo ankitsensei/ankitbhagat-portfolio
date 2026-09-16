@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* Availability Badge directly under name - Fully Responsive */}
-          <div className="mt-1.5 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 text-[10.5px] sm:text-xs font-mono w-fit max-w-full animate-pulse-glow-badge">
+          <div className="mt-1.5 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 dark:text-emerald-400 text-[10px] sm:text-xxs font-mono w-fit max-w-full animate-pulse-glow-badge">
             <span className="shrink-0 h-2 w-2 rounded-full bg-emerald-500 animate-pulse-glow" />
             <span className="truncate sm:whitespace-normal">
               Available for freelancing & projects

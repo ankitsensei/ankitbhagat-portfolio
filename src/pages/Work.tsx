@@ -87,15 +87,44 @@ export const Work: React.FC = () => {
                 </div>
 
                 {/* Connecting Vertical Line */}
-                {index < workData.length - 1 && (
-                  <div
-                    className={`w-[1.5px] flex-1 my-0.5 transition-colors duration-300 ${
-                      item.isCurrent
-                        ? "bg-emerald-500 shadow-[0_0_5px_rgba(16,185,129,0.4)]"
-                        : "bg-[var(--border-color)]"
-                    }`}
-                  />
-                )}
+                {index < workData.length - 1 && (() => {
+                  const isFirst = index === 0;
+                  const isLast = index === workData.length - 2;
+                  const bothEnds = isFirst && isLast;
+
+                  let gradientStyle: React.CSSProperties | undefined;
+                  if (item.isCurrent) {
+                    if (bothEnds) {
+                      gradientStyle = {
+                        background:
+                          "linear-gradient(to bottom, transparent, #10b981 20%, #10b981 80%, transparent)",
+                      };
+                    } else if (isFirst) {
+                      gradientStyle = {
+                        background:
+                          "linear-gradient(to bottom, transparent, #10b981 20%)",
+                      };
+                    } else if (isLast) {
+                      gradientStyle = {
+                        background:
+                          "linear-gradient(to bottom, #10b981 80%, transparent)",
+                      };
+                    } else {
+                      gradientStyle = { background: "#10b981" };
+                    }
+                  }
+
+                  return (
+                    <div
+                      className={`w-[1.5px] flex-1 my-[3px] transition-colors duration-300 ${
+                        item.isCurrent
+                          ? "shadow-[0_0_5px_rgba(16,185,129,0.4)]"
+                          : "bg-[var(--border-color)]"
+                      }`}
+                      style={gradientStyle}
+                    />
+                  );
+                })()}
               </div>
 
               {/* Work Card */}
