@@ -5,6 +5,7 @@ import DockNavbar from "../components/DockNavbar";
 import Footer from "../components/Footer";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink, FiSearch, FiX } from "react-icons/fi";
+import { Skeleton } from "../components/Skeleton";
 
 const categories: ("All" | Category)[] = [
   "All",
@@ -13,7 +14,55 @@ const categories: ("All" | Category)[] = [
   "Extensions",
 ];
 
+const ProjectCardSkeleton: React.FC = () => (
+  <div className="flex flex-col rounded-lg border border-dashed border-[var(--border-dashed)] bg-[var(--card-bg)] p-2.5 shadow-sm">
+    <Skeleton className="h-44 min-h-44 rounded-md" />
+    <div className="mt-3 flex flex-col gap-1.5 flex-1 justify-between">
+      <div>
+        <div className="flex items-center justify-between gap-2">
+          <Skeleton className="h-4 w-28" />
+          <Skeleton className="h-4 w-16" />
+        </div>
+        <Skeleton className="h-3 w-full mt-1" />
+        <Skeleton className="h-3 w-3/4 mt-0.5" />
+      </div>
+      <div className="flex flex-wrap gap-1 mt-3 pt-2 border-t border-[var(--border-color)]">
+        <Skeleton className="h-4 w-12 rounded" />
+        <Skeleton className="h-4 w-14 rounded" />
+        <Skeleton className="h-4 w-10 rounded" />
+      </div>
+    </div>
+  </div>
+);
+
+const ProjectsSkeleton: React.FC = () => (
+  <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased">
+    <main className="page">
+      <div className="page-col mb-5">
+        <Skeleton className="h-8 w-32" />
+      </div>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+        <div className="flex gap-1 p-1 rounded-lg bg-[var(--pill-bg)] border border-[var(--border-color)] w-fit">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <Skeleton key={i} className="h-8 w-16 rounded-md" />
+          ))}
+        </div>
+        <Skeleton className="h-8 w-60 rounded-lg" />
+      </div>
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <ProjectCardSkeleton key={i} />
+        ))}
+      </div>
+      <Footer />
+    </main>
+    <DockNavbar />
+    <div className="bottom-progressive-blur" />
+  </div>
+);
+
 export const Projects: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<"All" | Category>("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -48,6 +97,14 @@ export const Projects: React.FC = () => {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <ProjectsSkeleton />;
+  }
 
   return (
     <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased">

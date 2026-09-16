@@ -25,19 +25,44 @@ export const Home: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased">
       <main className="page">
-        <motion.div custom={0} initial="hidden" animate="visible" variants={sectionVariants}>
+        <motion.div
+          custom={0}
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+        >
           <Hero />
         </motion.div>
-        <motion.div custom={1} initial="hidden" animate="visible" variants={sectionVariants}>
+        <motion.div
+          custom={1}
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+        >
           <ActivityCalendar />
         </motion.div>
-        <motion.div custom={2} initial="hidden" animate="visible" variants={sectionVariants}>
+        <motion.div
+          custom={2}
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+        >
           <ExperienceTimeline />
         </motion.div>
-        <motion.div custom={3} initial="hidden" animate="visible" variants={sectionVariants}>
+        <motion.div
+          custom={3}
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+        >
           <SocialLinks />
         </motion.div>
-        <motion.div custom={4} initial="hidden" animate="visible" variants={sectionVariants}>
+        <motion.div
+          custom={4}
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+        >
           <FeaturedProjects />
         </motion.div>
         <Footer />
