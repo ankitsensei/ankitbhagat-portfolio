@@ -80,7 +80,7 @@ export const Projects: React.FC = () => {
       const titleMatch = p.heading.toLowerCase().includes(query);
       const descMatch = p.description.toLowerCase().includes(query);
       const techMatch = p.techStack.some((tech) =>
-        tech.toLowerCase().includes(query)
+        tech.toLowerCase().includes(query),
       );
       const catMatch = p.category.toLowerCase().includes(query);
 
@@ -119,9 +119,9 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Filter Controls: Category Pills & Search Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-5">
           {/* Category Filters */}
-          <div className="flex flex-wrap gap-1 p-1 rounded-lg bg-[var(--pill-bg)] border border-[var(--border-color)] w-fit max-w-full overflow-hidden">
+          <div className="flex flex-wrap gap-1 p-1 rounded-lg bg-[var(--pill-bg)] border border-[var(--border-color)] w-fit max-w-full overflow-hidden shrink-0">
             {categories.map((cat) => {
               const isActive = activeCategory === cat;
               const count =
@@ -143,13 +143,19 @@ export const Projects: React.FC = () => {
                     <motion.div
                       layoutId="activeProjectCategory"
                       className="absolute inset-0 bg-[var(--text-primary)] rounded-md shadow-sm"
-                      transition={{ type: "spring", stiffness: 500, damping: 35 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 35,
+                      }}
                     />
                   )}
                   <span className="relative z-10">{cat}</span>
                   <span
                     className={`relative z-10 text-[10px] ${
-                      isActive ? "text-[var(--bg-page)] opacity-80 font-mono" : "text-[var(--text-subtle)]"
+                      isActive
+                        ? "text-[var(--bg-page)] opacity-80 font-mono"
+                        : "text-[var(--text-subtle)]"
                     }`}
                   >
                     {count}
@@ -160,7 +166,7 @@ export const Projects: React.FC = () => {
           </div>
 
           {/* Search Input */}
-          <div className="relative w-full sm:w-60">
+          <div className="relative w-full sm:w-60 sm:ml-auto shrink-0">
             <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-[var(--text-subtle)] pointer-events-none" />
             <input
               type="text"
@@ -183,93 +189,87 @@ export const Projects: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <AnimatePresence mode="popLayout" initial={false}>
-            {filteredProjects.map((project, idx) => (
-              <motion.div
-                key={project.heading}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0, scale: 0.97, transition: { duration: 0.15 } }}
-                transition={{ duration: 0.2, delay: idx * 0.03 }}
-                className="group relative flex flex-col rounded-lg border border-dashed border-[var(--border-dashed)] hover:border-[var(--text-muted)] bg-[var(--card-bg)] p-2.5 transition-colors duration-200 shadow-sm"
+          {filteredProjects.map((project) => (
+            <div
+              key={project.heading}
+              className="group relative flex flex-col rounded-lg border border-dashed border-[var(--border-dashed)] hover:border-[var(--text-muted)] bg-[var(--card-bg)] p-2.5 transition-colors duration-200 shadow-sm"
+            >
+              {/* Corner hover crosshairs */}
+              <div className="pointer-events-none absolute inset-0 z-10 -m-px opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <div className="absolute -left-px -top-px h-2 w-2 border-l border-t border-[var(--text-primary)]" />
+                <div className="absolute -right-px -top-px h-2 w-2 border-r border-t border-[var(--text-primary)]" />
+                <div className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-[var(--text-primary)]" />
+                <div className="absolute -bottom-px -left-px h-2 w-2 border-b border-l border-[var(--text-primary)]" />
+              </div>
+
+              {/* Project Image Preview */}
+              <div
+                onClick={() => setPreviewImage(project.image)}
+                className="z-10 h-44 min-h-44 overflow-hidden rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] relative cursor-zoom-in"
               >
-                {/* Corner hover crosshairs */}
-                <div className="pointer-events-none absolute inset-0 z-10 -m-px opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <div className="absolute -left-px -top-px h-2 w-2 border-l border-t border-[var(--text-primary)]" />
-                  <div className="absolute -right-px -top-px h-2 w-2 border-r border-t border-[var(--text-primary)]" />
-                  <div className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-[var(--text-primary)]" />
-                  <div className="absolute -bottom-px -left-px h-2 w-2 border-b border-l border-[var(--text-primary)]" />
-                </div>
+                <img
+                  src={project.image}
+                  alt={project.heading}
+                  className="h-full w-full object-cover object-top opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
+                />
+                {project.liveLink && (
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="absolute top-2.5 right-2.5 p-1.5 rounded-md bg-black/70 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-white hover:bg-black"
+                  >
+                    <FiExternalLink className="text-xs" />
+                  </a>
+                )}
+              </div>
 
-                {/* Project Image Preview */}
-                <div
-                  onClick={() => setPreviewImage(project.image)}
-                  className="z-10 h-44 min-h-44 overflow-hidden rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] relative cursor-zoom-in"
-                >
-                  <img
-                    src={project.image}
-                    alt={project.heading}
-                    className="h-full w-full object-cover object-top opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
-                  />
-                  {project.liveLink && (
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="absolute top-2.5 right-2.5 p-1.5 rounded-md bg-black/70 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-white hover:bg-black"
-                    >
-                      <FiExternalLink className="text-xs" />
-                    </a>
-                  )}
-                </div>
+              {/* Project Meta */}
+              <div className="mt-3 flex flex-col gap-1.5 flex-1 justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-sm font-semibold text-[var(--text-primary)] transition-colors">
+                      {project.heading}
+                    </span>
 
-                {/* Project Meta */}
-                <div className="mt-3 flex flex-col gap-1.5 flex-1 justify-between">
-                  <div>
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-sm font-semibold text-[var(--text-primary)] transition-colors">
-                        {project.heading}
+                    <div className="flex items-center gap-2 text-[var(--text-muted)]">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-[var(--text-primary)] transition-colors"
+                          title="View Source on GitHub"
+                        >
+                          <FaGithub className="text-xs" />
+                        </a>
+                      )}
+                      <span className="jetbrains-mono text-[10px] rounded px-1.5 py-0.5 bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]">
+                        {project.category}
                       </span>
-
-                      <div className="flex items-center gap-2 text-[var(--text-muted)]">
-                        {project.github && (
-                          <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[var(--text-primary)] transition-colors"
-                            title="View Source on GitHub"
-                          >
-                            <FaGithub className="text-xs" />
-                          </a>
-                        )}
-                        <span className="jetbrains-mono text-[10px] rounded px-1.5 py-0.5 bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]">
-                          {project.category}
-                        </span>
-                      </div>
                     </div>
-
-                    <p className="jetbrains-mono line-clamp-2 text-xs tracking-tight text-[var(--text-muted)] leading-relaxed mt-1">
-                      {project.description}
-                    </p>
                   </div>
 
-                  {/* Tech Stack Badges */}
-                  <div className="flex flex-wrap gap-1 mt-3 pt-2 border-t border-[var(--border-color)]">
-                    {project.techStack?.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="jetbrains-mono text-[9px] px-1.5 py-0.5 rounded bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="jetbrains-mono line-clamp-2 text-xs tracking-tight text-[var(--text-muted)] leading-relaxed mt-1">
+                    {project.description}
+                  </p>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+
+                {/* Tech Stack Badges */}
+                <div className="flex flex-wrap gap-1 mt-3 pt-2 border-t border-[var(--border-color)]">
+                  {project.techStack?.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="jetbrains-mono text-[9px] px-1.5 py-0.5 rounded bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Empty State */}
@@ -279,7 +279,9 @@ export const Projects: React.FC = () => {
             animate={{ opacity: 1 }}
             className="py-12 flex flex-col items-center justify-center text-center border border-dashed border-[var(--border-dashed)] rounded-xl bg-[var(--card-bg)] p-6 my-2"
           >
-            <p className="text-sm text-[var(--text-muted)]">No projects found</p>
+            <p className="text-sm text-[var(--text-muted)]">
+              No projects found
+            </p>
             <button
               onClick={() => {
                 setSearchQuery("");
