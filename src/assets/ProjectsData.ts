@@ -8,6 +8,8 @@ import theNorthFace from "./imgs/theNorthFace.jpg";
 import graphite from "./imgs/graphite.jpg";
 import findit from "./imgs/findit.png";
 import aiChatBot from "./imgs/aiChatBot.png";
+import playmate from "./imgs/playmate.png";
+import gmeet from "./imgs/gmeet.png";
 
 export type Category = "Full-Stack" | "Frontend" | "Extensions";
 
@@ -23,13 +25,32 @@ export interface Project {
 
 export const ProjectData: Project[] = [
   {
+    image: gmeet,
+    heading: "gmeet",
+    description:
+      "Video meetings made simple. A Google Meet-style video conferencing app built with Next.js, ZegoCloud, and MongoDB.",
+    techStack: ["Nextjs", "TypeScript", "MongoDB"],
+    github: "https://github.com/ankitsensei/gmeet",
+    liveLink: "https://gmeet-three.vercel.app",
+    category: "Full-Stack",
+  },
+  {
+    image: playmate,
+    heading: "playmate",
+    description: "A social platform for finding gaming meetups and events.",
+    techStack: ["Nextjs", "TypeScript", "Firebase"],
+    github: "https://github.com/ankitsensei/playmate",
+    liveLink: "https://playmate-iota.vercel.app",
+    category: "Full-Stack",
+  },
+  {
     image: aiChatBot,
     heading: "mini-chatbot",
     description:
       "A lightweight AI chat interface built with Next.js (App Router) and the Gemini API. Ask anything — powered by gemini-3.6-flash with a clean, responsive UI.",
-    techStack: ["Nextjs"],
+    techStack: ["Nextjs", "TypeScript"],
     github: "https://github.com/ankitsensei/mini-chatbot",
-    liveLink: "https://chat-bot-tau-taupe.vercel.app/",
+    liveLink: "https://chat-bot-tau-taupe.vercel.app",
     category: "Full-Stack",
   },
   {
@@ -39,7 +60,7 @@ export const ProjectData: Project[] = [
       "A community-powered lost & found platform. Report what you lost or what you found, pin it on a map, and reconnect with the rightful owner.",
     techStack: ["ReactJs", "Typescript", "Node", "Express", "postgresql"],
     github: "https://github.com/ankitsensei/findIt",
-    liveLink: "https://find-it-rho.vercel.app/",
+    liveLink: "https://find-it-rho.vercel.app",
     category: "Full-Stack",
   },
   {
@@ -49,7 +70,7 @@ export const ProjectData: Project[] = [
       "Graphite is an open-source, lightweight note-taking application designed for developers and technical writers.",
     techStack: ["ReactJs", "Typescript", "Tiptap", "Shiki"],
     github: "https://github.com/ankitsensei/graphite",
-    liveLink: "https://graphite-five-plum.vercel.app/",
+    liveLink: "https://graphite-five-plum.vercel.app",
     category: "Frontend",
   },
   {
@@ -59,7 +80,7 @@ export const ProjectData: Project[] = [
       "A full-stack MERN e-commerce application with secure authentication, product management, shopping cart, Stripe payments, Cash on Delivery, order tracking, an admin dashboard.",
     techStack: ["ReactJs", "Nodejs", "Express", "MongoDB"],
     github: "https://github.com/ankitsensei/theNorthFace",
-    liveLink: "https://the-north-face-kappa.vercel.app/",
+    liveLink: "https://the-north-face-kappa.vercel.app",
     category: "Full-Stack",
   },
   {
@@ -69,7 +90,7 @@ export const ProjectData: Project[] = [
       "A modern music player built with React, TypeScript, Tailwind CSS, and the YouTube Data API. Search songs, play music instantly, control playback with keyboard shortcuts, and enjoy a clean Spotify-inspired experience.",
     techStack: ["ReactJs", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/ankitsensei/rhythm",
-    liveLink: "https://rhythm-topaz.vercel.app/",
+    liveLink: "https://rhythm-topaz.vercel.app",
     category: "Frontend",
   },
   {
@@ -89,7 +110,7 @@ export const ProjectData: Project[] = [
       "A full-stack CRUD web app for X-posts collection. Users can add, edit, delete, and view X-posts with details like texts and images in one place.",
     techStack: ["Nodejs", "Expressjs", "MongoDB", "ReactJs"],
     github: "https://github.com/ankitsensei/X-Clone",
-    liveLink: "https://x-clone-phi-one.vercel.app/",
+    liveLink: "https://x-clone-phi-one.vercel.app",
     category: "Full-Stack",
   },
   {
@@ -99,7 +120,7 @@ export const ProjectData: Project[] = [
       "A full-stack CRUD web app for managing a personal book collection. Users can add, edit, delete, and view books with details like title, author, publish year, and cover images in one place.",
     techStack: ["NodeJs", "ExpressJs", "MongoDB", "ReactJs"],
     github: "https://github.com/ankitsensei/book-store",
-    liveLink: "https://book-store-one-lac.vercel.app/",
+    liveLink: "https://book-store-one-lac.vercel.app",
     category: "Full-Stack",
   },
   {
@@ -119,7 +140,7 @@ export const ProjectData: Project[] = [
       "A bill splitter web app that tracks shared expenses and keeps a history of transactions among friends. It includes settled and unsettled sections to clearly show who has paid or still owes money.",
     techStack: ["ReactJs", "TypeScript", "Supabase"],
     github: "https://github.com/ankitsensei/Bill-Splitter-with-History",
-    liveLink: "https://bill-splitter-with-history.vercel.app/",
+    liveLink: "https://bill-splitter-with-history.vercel.app",
     category: "Frontend",
   },
 ];
