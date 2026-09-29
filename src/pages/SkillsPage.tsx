@@ -26,6 +26,7 @@ import {
   SiVite,
   SiDocker,
   SiRedis,
+  SiApachekafka,
 } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion, TbBrandCpp, TbFileTypeSql } from "react-icons/tb";
@@ -45,7 +46,10 @@ const skillCategories: SkillCategory[] = [
   {
     tag: "<core/>",
     skills: [
-      { name: "JavaScript", icon: <IoLogoJavascript className="text-yellow-400" /> },
+      {
+        name: "JavaScript",
+        icon: <IoLogoJavascript className="text-yellow-400" />,
+      },
       { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
       { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
       { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
@@ -57,12 +61,24 @@ const skillCategories: SkillCategory[] = [
   {
     tag: "<frameworks & libs/>",
     skills: [
-      { name: "Next.js", icon: <SiNextdotjs className="text-[var(--text-primary)]" /> },
+      {
+        name: "Next.js",
+        icon: <SiNextdotjs className="text-[var(--text-primary)]" />,
+      },
       { name: "React", icon: <FaReact className="text-cyan-400" /> },
       { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-      { name: "Express.js", icon: <SiExpress className="text-[var(--text-primary)] opacity-80" /> },
-      { name: "TailwindCSS", icon: <RiTailwindCssFill className="text-cyan-400" /> },
-      { name: "Framer Motion", icon: <TbBrandFramerMotion className="text-fuchsia-400" /> },
+      {
+        name: "Express.js",
+        icon: <SiExpress className="text-[var(--text-primary)] opacity-80" />,
+      },
+      {
+        name: "TailwindCSS",
+        icon: <RiTailwindCssFill className="text-cyan-400" />,
+      },
+      {
+        name: "Framer Motion",
+        icon: <TbBrandFramerMotion className="text-fuchsia-400" />,
+      },
     ],
   },
   {
@@ -74,15 +90,25 @@ const skillCategories: SkillCategory[] = [
       { name: "Supabase", icon: <SiSupabase className="text-emerald-400" /> },
       { name: "Firebase", icon: <SiFirebase className="text-amber-400" /> },
       { name: "Redis", icon: <SiRedis className="text-red-500" /> },
+      {
+        name: "Apache Kafka",
+        icon: <SiApachekafka className="text-zinc-500" />,
+      },
     ],
   },
   {
     tag: "<tools & devops/>",
     skills: [
       { name: "Git", icon: <FaGitAlt className="text-orange-500" /> },
-      { name: "GitHub", icon: <FaGithub className="text-[var(--text-primary)]" /> },
+      {
+        name: "GitHub",
+        icon: <FaGithub className="text-[var(--text-primary)]" />,
+      },
       { name: "Postman", icon: <SiPostman className="text-orange-400" /> },
-      { name: "Vercel", icon: <SiVercel className="text-[var(--text-primary)]" /> },
+      {
+        name: "Vercel",
+        icon: <SiVercel className="text-[var(--text-primary)]" />,
+      },
       { name: "Cloudflare", icon: <SiCloudflare className="text-amber-500" /> },
       { name: "Docker", icon: <SiDocker className="text-blue-400" /> },
       { name: "Linux", icon: <FaLinux className="text-yellow-400" /> },
@@ -113,7 +139,8 @@ export const SkillsPage: React.FC = () => {
             </span>
             <span>with</span>
             <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
-              <RiTailwindCssFill className="text-cyan-400 text-xs" /> TailwindCSS
+              <RiTailwindCssFill className="text-cyan-400 text-xs" />{" "}
+              TailwindCSS
             </span>
             <span>. Backend with</span>
             <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-[var(--border-color)] bg-[var(--pill-bg)] text-[11px] text-[var(--text-primary)] font-medium">
