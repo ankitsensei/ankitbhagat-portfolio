@@ -33,7 +33,7 @@ const socials: SocialItem[] = [
   {
     name: "Resume",
     handle: "Preview & PDF",
-    href: "https://live-resume-preview-orcin.vercel.app/",
+    href: "https://resume.ankitbhagat.site/",
     icon: <HiOutlineDocumentText className="text-sm" />,
   },
   {

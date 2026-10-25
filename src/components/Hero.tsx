@@ -124,7 +124,7 @@ export const Hero: React.FC = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://live-resume-preview-orcin.vercel.app/"
+            href="https://resume.ankitbhagat.site/"
           >
             <button className="btn-pill-3d cursor-pointer">
               <HiOutlineDocumentText className="text-sm" />
