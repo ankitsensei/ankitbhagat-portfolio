@@ -35,15 +35,6 @@ export const ProjectData: Project[] = [
     category: "Full-Stack",
   },
   {
-    image: playmate,
-    heading: "playmate",
-    description: "A social platform for finding gaming meetups and events.",
-    techStack: ["Nextjs", "TypeScript", "Firebase"],
-    github: "https://github.com/ankitsensei/playmate",
-    liveLink: "https://playmate-iota.vercel.app",
-    category: "Full-Stack",
-  },
-  {
     image: aiChatBot,
     heading: "mini-chatbot",
     description:
