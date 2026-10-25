@@ -8,7 +8,6 @@ import theNorthFace from "./imgs/theNorthFace.jpg";
 import graphite from "./imgs/graphite.jpg";
 import findit from "./imgs/findit.png";
 import aiChatBot from "./imgs/aiChatBot.png";
-import playmate from "./imgs/playmate.png";
 import gmeet from "./imgs/gmeet.png";
 
 export type Category = "Full-Stack" | "Frontend" | "Extensions";
