@@ -6,6 +6,7 @@ import App from "./App";
 import Work from "./pages/Work";
 import Projects from "./pages/Projects";
 import SkillsPage from "./pages/SkillsPage";
+import Blogs from "./pages/Blogs";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./context/ThemeContext";
 
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/work" element={<Work />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<SkillsPage />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
