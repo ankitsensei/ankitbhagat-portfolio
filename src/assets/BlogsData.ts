@@ -11,29 +11,24 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: "1",
-    title: "Getting Started with React",
-    excerpt: "A comprehensive guide to learning React fundamentals and building your first components.",
-    hashnodeUrl: "https://ankitbhagat.hashnode.dev/getting-started-with-react",
-    date: "Mar 15, 2024",
-    readingTime: "8 min read",
-    tags: ["React", "JavaScript", "Frontend"],
+    title: "Docker Notes - From Basics to Advanced",
+    excerpt:
+      "A practical guide to learning Docker, from running your first container to networking, persistent storage, Compose, and multi-stage builds.",
+    hashnodeUrl:
+      "https://webdevankit.hashnode.dev/docker-notes-from-basics-to-advanced?utm_source=hashnode&utm_medium=feed",
+    date: "Oct 27, 2026",
+    readingTime: "21 min read",
+    tags: ["docker", "nodejs"],
   },
   {
     id: "2",
-    title: "TypeScript Best Practices",
-    excerpt: "Essential TypeScript patterns and types to make your code more robust and maintainable.",
-    hashnodeUrl: "https://ankitbhagat.hashnode.dev/typescript-best-practices",
-    date: "Feb 20, 2024",
-    readingTime: "6 min read",
-    tags: ["TypeScript", "Best Practices", "Programming"],
-  },
-  {
-    id: "3",
-    title: "CSS Grid vs Flexbox",
-    excerpt: "When to use CSS Grid vs Flexbox for layout design, with practical examples.",
-    hashnodeUrl: "https://ankitbhagat.hashnode.dev/css-grid-vs-flexbox",
-    date: "Jan 10, 2024",
-    readingTime: "5 min read",
-    tags: ["CSS", "Layout", "Frontend"],
+    title: "L1-Introduction to System Design (LLD & HLD)",
+    excerpt:
+      "Welcome to the notes for Lecture 1: Introduction to System Design from the Low-Level Design (LLD).",
+    hashnodeUrl:
+      "https://webdevankit.hashnode.dev/l1-introduction-to-system-design-lld-hld",
+    date: "Oct 27, 2026",
+    readingTime: "3 min read",
+    tags: ["lld", "hld", "System Design"],
   },
 ];
