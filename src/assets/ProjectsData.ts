@@ -80,17 +80,6 @@ export const ProjectData: Project[] = [
     year:"2026",
   },
   {
-    image: Rhythm,
-    heading: "rhythm",
-    description:
-      "A modern music player built with React, TypeScript, Tailwind CSS, and the YouTube Data API. Search songs, play music instantly, control playback with keyboard shortcuts, and enjoy a clean Spotify-inspired experience.",
-    techStack: ["ReactJs", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/ankitsensei/rhythm",
-    liveLink: "https://rhythm-topaz.vercel.app",
-    category: "Frontend",
-    year:"2026",
-  },
-  {
     image: UrlShortener,
     heading: "url-shortener",
     description:
@@ -121,6 +110,17 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/book-store",
     liveLink: "https://book-store-one-lac.vercel.app",
     category: "Full-Stack",
+    year:"2025",
+  },
+  {
+    image: Rhythm,
+    heading: "rhythm",
+    description:
+      "A modern music player built with React, TypeScript, Tailwind CSS, and the YouTube Data API. Search songs, play music instantly, control playback with keyboard shortcuts, and enjoy a clean Spotify-inspired experience.",
+    techStack: ["ReactJs", "Tailwind CSS", "TypeScript"],
+    github: "https://github.com/ankitsensei/rhythm",
+    liveLink: "https://rhythm-topaz.vercel.app",
+    category: "Frontend",
     year:"2025",
   },
   {
