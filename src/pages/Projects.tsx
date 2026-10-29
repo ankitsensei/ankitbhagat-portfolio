@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ProjectData, type Category } from "../assets/ProjectsData";
+import { ProjectData, type Category, type Project } from "../assets/ProjectsData";
 import DockNavbar from "../components/DockNavbar";
 import Footer from "../components/Footer";
 import { FaGithub } from "react-icons/fa";
@@ -67,26 +67,53 @@ export const Projects: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<"All" | Category>("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredProjects = useMemo(() => {
-    return ProjectData.filter((p) => {
-      const matchesCategory =
-        activeCategory === "All" || p.category === activeCategory;
+  const groupedProjects = useMemo(() => {
+    const groups: Record<string, Project[]> = {};
 
-      if (!matchesCategory) return false;
-
-      if (!searchQuery.trim()) return true;
-
-      const query = searchQuery.toLowerCase().trim();
-      const titleMatch = p.heading.toLowerCase().includes(query);
-      const descMatch = p.description.toLowerCase().includes(query);
-      const techMatch = p.techStack.some((tech) =>
-        tech.toLowerCase().includes(query),
-      );
-      const catMatch = p.category.toLowerCase().includes(query);
-
-      return titleMatch || descMatch || techMatch || catMatch;
+    ProjectData.forEach((project) => {
+      const year = project.year;
+      if (!groups[year]) {
+        groups[year] = [];
+      }
+      groups[year].push(project);
     });
-  }, [activeCategory, searchQuery]);
+
+    return groups;
+  }, []);
+
+const filteredProjects = useMemo(() => {
+    const groups: Record<string, Project[]> = {};
+
+    Object.keys(groupedProjects).forEach((year) => {
+      const yearProjects = groupedProjects[year].filter((p) => {
+        const matchesCategory =
+          activeCategory === "All" || p.category === activeCategory;
+
+        if (!matchesCategory) return false;
+
+        if (!searchQuery.trim()) {
+          groups[year] = [...(groups[year] || []), p];
+          return true;
+        }
+
+        const query = searchQuery.toLowerCase().trim();
+        const titleMatch = p.heading.toLowerCase().includes(query);
+        const descMatch = p.description.toLowerCase().includes(query);
+        const techMatch = p.techStack.some((tech: string) =>
+          tech.toLowerCase().includes(query),
+        );
+        const catMatch = p.category.toLowerCase().includes(query);
+
+        return titleMatch || descMatch || techMatch || catMatch;
+      });
+
+      if (yearProjects.length > 0) {
+        groups[year] = yearProjects;
+      }
+    });
+
+    return groups;
+  }, [activeCategory, searchQuery, groupedProjects]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -188,92 +215,103 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.heading}
-              className="group relative flex flex-col rounded-lg border border-dashed border-[var(--border-dashed)] hover:border-[var(--text-muted)] bg-[var(--card-bg)] p-2.5 transition-colors duration-200 shadow-sm"
-            >
-              {/* Corner hover crosshairs */}
-              <div className="pointer-events-none absolute inset-0 z-10 -m-px opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                <div className="absolute -left-px -top-px h-2 w-2 border-l border-t border-[var(--text-primary)]" />
-                <div className="absolute -right-px -top-px h-2 w-2 border-r border-t border-[var(--text-primary)]" />
-                <div className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-[var(--text-primary)]" />
-                <div className="absolute -bottom-px -left-px h-2 w-2 border-b border-l border-[var(--text-primary)]" />
-              </div>
-
-              {/* Project Image Preview */}
-              <div
-                onClick={() => setPreviewImage(project.image)}
-                className="z-10 h-44 min-h-44 overflow-hidden rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] relative cursor-zoom-in"
-              >
-                <img
-                  src={project.image}
-                  alt={project.heading}
-                  className="h-full w-full object-cover object-top opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
-                />
-                {project.liveLink && (
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="absolute top-2.5 right-2.5 p-1.5 rounded-md bg-black/70 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-white hover:bg-black"
-                  >
-                    <FiExternalLink className="text-xs" />
-                  </a>
-                )}
-              </div>
-
-              {/* Project Meta */}
-              <div className="mt-3 flex flex-col gap-1.5 flex-1 justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-sm font-semibold text-[var(--text-primary)] transition-colors">
-                      {project.heading}
-                    </span>
-
-                    <div className="flex items-center gap-2 text-[var(--text-muted)]">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-[var(--text-primary)] transition-colors"
-                          title="View Source on GitHub"
-                        >
-                          <FaGithub className="text-xs" />
-                        </a>
-                      )}
-                      <span className="jetbrains-mono text-[10px] rounded px-1.5 py-0.5 bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]">
-                        {project.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  <p className="jetbrains-mono line-clamp-2 text-xs tracking-tight text-[var(--text-muted)] leading-relaxed mt-1">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Tech Stack Badges */}
-                <div className="flex flex-wrap gap-1 mt-3 pt-2 border-t border-[var(--border-color)]">
-                  {project.techStack?.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="jetbrains-mono text-[9px] px-1.5 py-0.5 rounded bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]"
+        <div className="w-full">
+          {Object.entries(filteredProjects)
+            .sort(([a], [b]) => parseInt(b) - parseInt(a))
+            .map(([year, projects]) => (
+              <div key={year} className="mb-8">
+                <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-3 jetbrains-mono">
+                  {year}
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {projects.map((project) => (
+                    <div
+                      key={project.heading}
+                      className="group relative flex flex-col rounded-lg border border-dashed border-[var(--border-dashed)] hover:border-[var(--text-muted)] bg-[var(--card-bg)] p-2.5 transition-colors duration-200 shadow-sm"
                     >
-                      {tech}
-                    </span>
+                      {/* Corner hover crosshairs */}
+                      <div className="pointer-events-none absolute inset-0 z-10 -m-px opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <div className="absolute -left-px -top-px h-2 w-2 border-l border-t border-[var(--text-primary)]" />
+                        <div className="absolute -right-px -top-px h-2 w-2 border-r border-t border-[var(--text-primary)]" />
+                        <div className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-[var(--text-primary)]" />
+                        <div className="absolute -bottom-px -left-px h-2 w-2 border-b border-l border-[var(--text-primary)]" />
+                      </div>
+
+                      {/* Project Image Preview */}
+                      <div
+                        onClick={() => setPreviewImage(project.image)}
+                        className="z-10 h-44 min-h-44 overflow-hidden rounded-md border border-[var(--border-color)] bg-[var(--pill-bg)] relative cursor-zoom-in"
+                      >
+                        <img
+                          src={project.image}
+                          alt={project.heading}
+                          className="h-full w-full object-cover object-top opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
+                        />
+                        {project.liveLink && (
+                          <a
+                            href={project.liveLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="absolute top-2.5 right-2.5 p-1.5 rounded-md bg-black/70 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-white hover:bg-black"
+                          >
+                            <FiExternalLink className="text-xs" />
+                          </a>
+                        )}
+                      </div>
+
+                      {/* Project Meta */}
+                      <div className="mt-3 flex flex-col gap-1.5 flex-1 justify-between">
+                        <div>
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-sm font-semibold text-[var(--text-primary)] transition-colors">
+                              {project.heading}
+                            </span>
+
+                            <div className="flex items-center gap-2 text-[var(--text-muted)]">
+                              {project.github && (
+                                <a
+                                  href={project.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="hover:text-[var(--text-primary)] transition-colors"
+                                  title="View Source on GitHub"
+                                >
+                                  <FaGithub className="text-xs" />
+                                </a>
+                              )}
+                              <span className="jetbrains-mono text-[10px] rounded px-1.5 py-0.5 bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]">
+                                {project.category}
+                              </span>
+                            </div>
+                          </div>
+
+                          <p className="jetbrains-mono line-clamp-2 text-xs tracking-tight text-[var(--text-muted)] leading-relaxed mt-1">
+                            {project.description}
+                          </p>
+                        </div>
+
+                        {/* Tech Stack Badges */}
+                        <div className="flex flex-wrap gap-1 mt-3 pt-2 border-t border-[var(--border-color)]">
+                          {project.techStack?.map((tech: string, i: number) => (
+                            <span
+                              key={i}
+                              className="jetbrains-mono text-[9px] px-1.5 py-0.5 rounded bg-[var(--badge-subtle-bg)] text-[var(--badge-subtle-text)] border border-[var(--badge-subtle-border)]"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         {/* Empty State */}
-        {filteredProjects.length === 0 && (
+        {Object.values(filteredProjects).every((projects) => projects.length === 0) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
