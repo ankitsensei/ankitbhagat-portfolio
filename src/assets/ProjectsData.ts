@@ -9,6 +9,7 @@ import graphite from "./imgs/graphite.jpg";
 import findit from "./imgs/findit.png";
 import aiChatBot from "./imgs/aiChatBot.png";
 import gmeet from "./imgs/gmeet.png";
+import HabitStreaks from "./imgs/HabitStreaks.png";
 
 export type Category = "Full-Stack" | "Frontend" | "Extensions";
 
@@ -25,6 +26,17 @@ export interface Project {
 
 export const ProjectData: Project[] = [
   {
+    image: HabitStreaks,
+    heading: "HabitStreaks",
+    description:
+      "HabitStreaks is a full-stack habit tracker featuring a GitHub-style annual graph, weekly streak goals, and a responsive, mobile-first interface. Each habit you add receives a dynamic 12-month heatmap.",
+    techStack: ["Reactjs", "TypeScript", "Expressjs", "Postgresql"],
+    github: "https://github.com/ankitsensei/HabitStreaks",
+    liveLink: "https://habit-streaks-k22x.vercel.app/",
+    category: "Full-Stack",
+    year: "2026",
+  },
+  {
     image: gmeet,
     heading: "gmeet",
     description:
@@ -33,7 +45,7 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/gmeet",
     liveLink: "https://gmeet-three.vercel.app",
     category: "Full-Stack",
-    year:"2026",
+    year: "2026",
   },
   {
     image: aiChatBot,
@@ -44,7 +56,7 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/mini-chatbot",
     liveLink: "https://chat-bot-tau-taupe.vercel.app",
     category: "Full-Stack",
-    year:"2026",
+    year: "2026",
   },
   {
     image: findit,
@@ -55,7 +67,7 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/findIt",
     liveLink: "https://find-it-rho.vercel.app",
     category: "Full-Stack",
-    year:"2026",
+    year: "2026",
   },
   {
     image: graphite,
@@ -66,7 +78,7 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/graphite",
     liveLink: "https://graphite-five-plum.vercel.app",
     category: "Frontend",
-    year:"2026",
+    year: "2026",
   },
   {
     image: theNorthFace,
@@ -77,7 +89,7 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/theNorthFace",
     liveLink: "https://the-north-face-kappa.vercel.app",
     category: "Full-Stack",
-    year:"2026",
+    year: "2026",
   },
   {
     image: UrlShortener,
@@ -88,7 +100,7 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/url-shortener",
     liveLink: "",
     category: "Full-Stack",
-    year:"2026",
+    year: "2026",
   },
   {
     image: XClone,
@@ -99,7 +111,7 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/X-Clone",
     liveLink: "https://x-clone-phi-one.vercel.app",
     category: "Full-Stack",
-    year:"2026",
+    year: "2026",
   },
   {
     image: BookList,
@@ -110,7 +122,7 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/book-store",
     liveLink: "https://book-store-one-lac.vercel.app",
     category: "Full-Stack",
-    year:"2025",
+    year: "2025",
   },
   {
     image: Rhythm,
@@ -121,7 +133,7 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/rhythm",
     liveLink: "https://rhythm-topaz.vercel.app",
     category: "Frontend",
-    year:"2025",
+    year: "2025",
   },
   {
     image: FocusMode,
@@ -132,7 +144,7 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/Focus-Mode-Extension",
     liveLink: "https://github.com/ankitsensei/Focus-Mode-Extension",
     category: "Extensions",
-    year:"2024",
+    year: "2024",
   },
   {
     image: BillSplitter,
@@ -143,6 +155,6 @@ export const ProjectData: Project[] = [
     github: "https://github.com/ankitsensei/Bill-Splitter-with-History",
     liveLink: "https://bill-splitter-with-history.vercel.app",
     category: "Frontend",
-    year:"2024",
+    year: "2024",
   },
 ];
