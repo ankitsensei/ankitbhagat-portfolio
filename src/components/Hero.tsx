@@ -1,5 +1,5 @@
 import React from "react";
-import DP from "../assets/android-chrome-512x512.jpg";
+import DP from "../assets/profile2.jpg";
 import { HiOutlineDocumentText } from "react-icons/hi2";
 import { FiMail } from "react-icons/fi";
 
