@@ -19,7 +19,6 @@ Personal portfolio website built with React, TypeScript, and Vite.
 - `/projects` — Project showcase with image preview
 - `/resume` — Embedded PDF resume viewer
 - `/contact` — Contact section
-- `/blogs` — Blog posts
 
 ## Getting Started
 
